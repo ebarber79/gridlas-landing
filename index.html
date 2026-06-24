@@ -214,7 +214,7 @@
     e.preventDefault();
     var email = (document.getElementById('leadEmail').value || '').trim();
     if(!email){ return; }
-    if(KLAVIYO_LIST_ID === 'Um8YCH'){            // not wired yet
+    if(!KLAVIYO_LIST_ID || KLAVIYO_LIST_ID === 'YOUR_LIST_ID'){   // falls back to PDF-only until a real List ID is set
       downloadSample();
       showToast('✓ Summary downloading — connect Klaviyo to capture emails.', true);
       return;
