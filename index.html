@@ -99,7 +99,7 @@
   @media(max-width:520px){.stats,.grid3,.tiers{grid-template-columns:1fr}}
 </style>
 <!-- Klaviyo onsite tracking (optional but recommended). Set company_id = your PUBLIC API key. -->
-<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=YOUR_COMPANY_ID"></script>
+<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=TCaVFy"></script>
 </head>
 <body>
 <div class="wrap">
@@ -141,7 +141,7 @@
 
   <section>
     <h2>What's inside the full report</h2>
-    <p class="section-sub">35+ pages of maps, data, and analysis — every figure sourced.</p>
+    <p class="section-sub">36 pages of maps, data, and analysis — every figure sourced.</p>
     <div class="grid3">
       <div class="feat"><h3>Where AI is landing</h3><p>The top 15 metros, mapped and ranked — from Northern Virginia to the inland breakout markets.</p></div>
       <div class="feat"><h3>The power racing to keep up</h3><p>Gas, nuclear &amp; SMRs, solar-plus-storage — and the on-site generation boom.</p></div>
@@ -165,7 +165,7 @@
     <h2>Get the full report</h2>
     <p class="section-sub">Instant download. Built from public data. Independent &amp; unaffiliated.</p>
     <div class="tiers">
-      <div class="tier"><div class="name">Report</div><div class="price">$99</div><div class="desc">The full 35-page PDF.</div></div>
+      <div class="tier"><div class="name">Report</div><div class="price">$99</div><div class="desc">The full 36-page PDF.</div></div>
       <div class="tier best"><span class="badge">MOST POPULAR</span><div class="name">Report + Dataset</div><div class="price">$179</div><div class="desc">Adds power plants, queues &amp; clusters as CSV / GeoJSON.</div></div>
       <div class="tier"><div class="name">+ Quarterly</div><div class="price">$349</div><div class="desc">Four editions across the year — always current.</div></div>
     </div>
@@ -194,8 +194,8 @@
           Settings; the "List ID", 6 chars) → "KLAVIYO_LIST_ID" below.
      Until both are set, the form just delivers the PDF (no capture).
      ============================================================ */
-  var KLAVIYO_LIST_ID = 'YOUR_LIST_ID';
-  var KLAVIYO_COMPANY = 'YOUR_COMPANY_ID';
+  var KLAVIYO_LIST_ID = 'Um8YCH';
+  var KLAVIYO_COMPANY = 'TCaVFy';
 
   var form  = document.getElementById('lead');
   var toast = document.getElementById('toast');
@@ -214,7 +214,7 @@
     e.preventDefault();
     var email = (document.getElementById('leadEmail').value || '').trim();
     if(!email){ return; }
-    if(KLAVIYO_LIST_ID === 'YOUR_LIST_ID'){            // not wired yet
+    if(KLAVIYO_LIST_ID === 'Um8YCH'){            // not wired yet
       downloadSample();
       showToast('✓ Summary downloading — connect Klaviyo to capture emails.', true);
       return;
