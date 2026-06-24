@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Powering AI — The U.S. Data Center Buildout Report | Gridlas</title>
+<meta name="description" content="Free 3-page Executive Summary: where AI data centers are being built, the power they need, and the grid bottlenecks ahead. Built from public EIA, LBNL & ERCOT data.">
+<meta property="og:title" content="Powering AI — The U.S. Data Center Buildout Report">
+<meta property="og:description" content="Where AI data centers are being built, the power they need, and the grid bottlenecks ahead.">
+<meta property="og:image" content="./assets/hero.png">
+<link rel="icon" href="./assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0A14; --surface:#15151F; --line:#23232F;
+    --cyan:#37C5E0; --white:#EAFFFF; --text:#E6E8EF; --muted:#8A90A2;
+    --gas:#FF7A3C; --solar:#FFD400;
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+  h1,h2,h3,.mono-h{font-family:'Space Grotesk','Inter',sans-serif}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  a{color:var(--cyan);text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  /* nav */
+  nav{display:flex;align-items:center;gap:10px;padding:22px 0}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--cyan);
+    box-shadow:0 0 12px var(--cyan)}
+  .brand{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:20px;letter-spacing:.3px}
+  /* hero */
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero-bg{position:absolute;inset:0;background:url('./assets/hero.png') center/cover no-repeat;opacity:.28}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(80% 70% at 50% 30%,rgba(10,10,20,.2),var(--bg) 75%)}
+  .hero-inner{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;
+    align-items:center;padding:48px 0 64px}
+  .eyebrow{font-family:'IBM Plex Mono';color:var(--cyan);font-size:13px;letter-spacing:2px;text-transform:uppercase}
+  h1{font-size:54px;line-height:1.02;margin:14px 0 6px;color:var(--white);font-weight:700}
+  .accent{height:4px;width:74px;background:var(--cyan);border-radius:3px;margin:14px 0 18px;box-shadow:0 0 14px var(--cyan)}
+  .lede{font-size:18px;color:var(--text);max-width:30em}
+  .sub{color:var(--muted);font-size:15px;margin-top:10px}
+  /* form card */
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .card h3{margin:0 0 4px;color:var(--white);font-size:20px}
+  .card p{margin:0 0 16px;color:var(--muted);font-size:14px}
+  form{display:flex;flex-direction:column;gap:12px}
+  input[type=email]{width:100%;padding:14px 16px;border-radius:10px;border:1px solid var(--line);
+    background:#0E0E18;color:var(--white);font-size:15px;font-family:'Inter'}
+  input[type=email]:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(55,197,224,.18)}
+  button{padding:14px 18px;border:0;border-radius:10px;cursor:pointer;
+    background:var(--cyan);color:#06131A;font-family:'Space Grotesk';font-weight:700;font-size:15px;
+    box-shadow:0 0 18px rgba(55,197,224,.35);transition:transform .1s,box-shadow .2s}
+  button:hover{transform:translateY(-1px);box-shadow:0 0 28px rgba(55,197,224,.6)}
+  .fineprint{color:var(--muted);font-size:12px;margin-top:4px}
+  .or{color:var(--muted);font-size:12.5px;text-align:center;margin:2px 0}
+  .ghost{display:inline-block;color:var(--cyan);border:1px solid var(--cyan);border-radius:10px;
+    padding:11px 16px;text-align:center;font-family:'Space Grotesk';font-weight:600;font-size:14px}
+  /* stat bar */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:40px 0}
+  .stat{background:var(--bg);padding:22px 18px;text-align:center}
+  .stat .n{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:26px}
+  .stat .l{color:var(--muted);font-size:12.5px;margin-top:4px}
+  /* sections */
+  section{padding:56px 0}
+  h2{font-size:30px;color:var(--white);margin:0 0 8px}
+  .section-sub{color:var(--muted);margin:0 0 28px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .feat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;position:relative}
+  .feat::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;background:var(--cyan);border-radius:3px}
+  .feat h3{margin:0 0 6px;color:var(--white);font-size:17px;padding-left:10px}
+  .feat p{margin:0;color:var(--muted);font-size:14px;padding-left:10px}
+  .peek{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+  .peek img{width:100%;border-radius:12px;border:1px solid var(--line)}
+  /* tiers */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .tier{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center}
+  .tier.best{border-color:var(--cyan);box-shadow:0 0 24px rgba(55,197,224,.15)}
+  .tier .name{color:var(--muted);font-size:13px;letter-spacing:1px;text-transform:uppercase;font-family:'IBM Plex Mono'}
+  .tier .price{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:34px;margin:8px 0}
+  .tier .desc{color:var(--muted);font-size:13.5px;min-height:38px}
+  .badge{display:inline-block;background:var(--cyan);color:#06131A;font-size:11px;font-weight:700;
+    font-family:'IBM Plex Mono';padding:3px 8px;border-radius:20px;margin-bottom:8px}
+  /* cta band */
+  .cta{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:40px;text-align:center}
+  .cta h2{margin:0 0 18px}
+  footer{border-top:1px solid var(--line);padding:28px 0 56px;color:var(--muted);font-size:13px}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--cyan);
+    color:#06131A;font-family:'Space Grotesk';font-weight:700;padding:12px 20px;border-radius:10px;
+    box-shadow:0 8px 30px rgba(0,0,0,.5);display:none}
+  @media(max-width:820px){
+    .hero-inner,.peek{grid-template-columns:1fr;gap:28px}
+    h1{font-size:40px} .stats,.grid3,.tiers{grid-template-columns:1fr 1fr}
+    .stats{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:520px){.stats,.grid3,.tiers{grid-template-columns:1fr}}
+</style>
+<!-- Klaviyo onsite tracking (optional but recommended). Set company_id = your PUBLIC API key. -->
+<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=YOUR_COMPANY_ID"></script>
+</head>
+<body>
+<div class="wrap">
+  <nav><span class="dot"></span><span class="brand">gridlas</span></nav>
+</div>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Free Executive Summary</div>
+      <h1>Powering AI</h1>
+      <div class="accent"></div>
+      <p class="lede">Where AI data centers are being built, the power they need, and the grid bottlenecks standing in the way.</p>
+      <p class="sub">The U.S. Data Center Buildout Report · 2026 · Built from public EIA, LBNL &amp; ERCOT data.</p>
+    </div>
+    <div class="card">
+      <h3>Get the free 3-page summary</h3>
+      <p>The 8 findings, the chart that explains the AI power crunch, and a preview of the regional race.</p>
+      <!-- Wired to Klaviyo (see <script> at bottom: set KLAVIYO_LIST_ID + KLAVIYO_COMPANY). -->
+      <form id="lead" novalidate>
+        <input type="email" name="email" id="leadEmail" placeholder="you@company.com" required aria-label="Email">
+        <button type="submit">Send me the summary →</button>
+      </form>
+      <div class="fineprint">No spam. Unsubscribe anytime. We email the report, not noise.</div>
+      <div class="or">— or —</div>
+      <a class="ghost" href="./Gridlas-Powering-AI-Sample.pdf" download>Download the sample PDF directly</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="n">4.4%→12%</div><div class="l">U.S. electricity to data centers by 2028</div></div>
+    <div class="stat"><div class="n">226 GW</div><div class="l">queued in Texas · 77% data centers</div></div>
+    <div class="stat"><div class="n">~4.5 yrs</div><div class="l">typical interconnection wait</div></div>
+    <div class="stat"><div class="n">4,040 MW</div><div class="l">Northern Virginia capacity</div></div>
+  </div>
+
+  <section>
+    <h2>What's inside the full report</h2>
+    <p class="section-sub">35+ pages of maps, data, and analysis — every figure sourced.</p>
+    <div class="grid3">
+      <div class="feat"><h3>Where AI is landing</h3><p>The top 15 metros, mapped and ranked — from Northern Virginia to the inland breakout markets.</p></div>
+      <div class="feat"><h3>The power racing to keep up</h3><p>Gas, nuclear &amp; SMRs, solar-plus-storage — and the on-site generation boom.</p></div>
+      <div class="feat"><h3>The interconnection bottleneck</h3><p>Queue sizes, wait times, and why "queued" is nowhere near "built."</p></div>
+      <div class="feat"><h3>Five regional deep-dives</h3><p>Texas, Virginia, Arizona, Ohio &amp; Georgia — each with a map, stats, and risk rating.</p></div>
+      <div class="feat"><h3>A 12-month outlook</h3><p>Five scenarios for where the next wave of capital and capacity lands.</p></div>
+      <div class="feat"><h3>Companion dataset</h3><p>Power plants, queues &amp; data-center clusters as CSV / GeoJSON you can use.</p></div>
+    </div>
+  </section>
+
+  <section class="peek">
+    <img src="./assets/peek.png" alt="Generation vs. demand map — U.S. power plants over data-center load">
+    <div>
+      <h2>The collision, mapped</h2>
+      <p class="section-sub">Supply is everywhere — 2,459 utility-scale plants — but demand concentrates onto specific, already-stressed grids. The full report breaks down every market, queue, and scenario.</p>
+      <a class="ghost" href="#top" onclick="document.getElementById('lead').email?.focus()">Get the free summary →</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Get the full report</h2>
+    <p class="section-sub">Instant download. Built from public data. Independent &amp; unaffiliated.</p>
+    <div class="tiers">
+      <div class="tier"><div class="name">Report</div><div class="price">$99</div><div class="desc">The full 35-page PDF.</div></div>
+      <div class="tier best"><span class="badge">MOST POPULAR</span><div class="name">Report + Dataset</div><div class="price">$179</div><div class="desc">Adds power plants, queues &amp; clusters as CSV / GeoJSON.</div></div>
+      <div class="tier"><div class="name">+ Quarterly</div><div class="price">$349</div><div class="desc">Four editions across the year — always current.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="cta">
+      <h2>Start with the free summary</h2>
+      <a class="ghost" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>document.querySelector('#lead input').focus(),400)">Get it now →</a>
+    </div>
+  </section>
+</div>
+
+<footer class="wrap">
+  Built from public U.S. EIA, Lawrence Berkeley National Laboratory, ERCOT, CBRE &amp; IEA data. Data-center cluster figures are approximate. Independent &amp; unaffiliated. © 2026 Gridlas · <a href="https://gridlas.com">gridlas.com</a>
+</footer>
+
+<div class="toast" id="toast">✓ Check your inbox — summary on the way.</div>
+<script>
+  /* ============================================================
+     KLAVIYO SETUP — paste two IDs from your Klaviyo account:
+       1) PUBLIC API KEY  (Account → Settings → API Keys; 6 chars)
+          → use it for BOTH "KLAVIYO_COMPANY" below AND company_id in the
+            klaviyo.js <script> in <head>.
+       2) LIST ID         (Audience → Lists & Segments → open your list →
+          Settings; the "List ID", 6 chars) → "KLAVIYO_LIST_ID" below.
+     Until both are set, the form just delivers the PDF (no capture).
+     ============================================================ */
+  var KLAVIYO_LIST_ID = 'YOUR_LIST_ID';
+  var KLAVIYO_COMPANY = 'YOUR_COMPANY_ID';
+
+  var form  = document.getElementById('lead');
+  var toast = document.getElementById('toast');
+  function showToast(msg, ok){
+    toast.textContent = msg;
+    toast.style.background = ok ? 'var(--cyan)' : '#FF7A3C';
+    toast.style.color = '#06131A';
+    toast.style.display = 'block';
+    setTimeout(function(){ toast.style.display = 'none'; }, 4500);
+  }
+  function downloadSample(){
+    try{ var a=document.createElement('a'); a.href='./Gridlas-Powering-AI-Sample.pdf';
+         a.download=''; document.body.appendChild(a); a.click(); a.remove(); }catch(e){}
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = (document.getElementById('leadEmail').value || '').trim();
+    if(!email){ return; }
+    if(KLAVIYO_LIST_ID === 'YOUR_LIST_ID'){            // not wired yet
+      downloadSample();
+      showToast('✓ Summary downloading — connect Klaviyo to capture emails.', true);
+      return;
+    }
+    var body = new URLSearchParams({ g: KLAVIYO_LIST_ID, email: email, '$source': 'gridlas-landing' });
+    fetch('https://manage.kmail-lists.com/ajax/subscriptions/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },  // simple type → no CORS preflight
+      body: body
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if(d && d.success){ downloadSample(); form.reset();
+        showToast('✓ Check your inbox — summary on the way.', true); }
+      else { showToast((d && d.errors && d.errors[0]) || 'Hmm, try again in a moment.', false); }
+    })
+    .catch(function(){ downloadSample(); showToast('✓ Summary downloading.', true); });
+  });
+</script>
+</body>
+</html>
