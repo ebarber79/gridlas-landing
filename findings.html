@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapping the U.S. Data Center Buildout (public EIA + ERCOT data)</title>
+<meta name="description" content="Where AI data centers are landing relative to the U.S. power grid — mapped from public EIA, LBNL and ERCOT data. Findings on the interconnection queue, regional concentration, and the supply-vs-demand gap.">
+<meta property="og:title" content="Mapping the U.S. Data Center Buildout">
+<meta property="og:description" content="Where AI data centers are landing relative to the power grid — from public EIA, LBNL & ERCOT data.">
+<meta property="og:image" content="./assets/fig-hero.png">
+<link rel="icon" href="./assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0A0A14;--surface:#15151F;--line:#23232F;--cyan:#37C5E0;--white:#EAFFFF;--text:#D8DBE6;--muted:#8A90A2}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+  nav{display:flex;align-items:center;gap:9px;padding:20px 0;border-bottom:1px solid var(--line);margin-bottom:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+  .brand{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:18px}
+  h1{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:34px;line-height:1.12;margin:30px 0 8px}
+  h2{font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:23px;margin:46px 0 6px}
+  .kicker{font-family:'IBM Plex Mono';color:var(--cyan);font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase}
+  .standfirst{font-size:18px;color:var(--muted);margin:6px 0 0}
+  .byline{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--muted);margin:18px 0 0;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  p{margin:16px 0;font-size:16.5px}
+  figure{margin:30px 0;padding:0}
+  figure img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+  figcaption{font-family:'IBM Plex Mono';font-size:12px;color:var(--muted);margin-top:8px;text-align:center}
+  .stat{font-family:'Space Grotesk';color:var(--white)}
+  ul{padding-left:20px} li{margin:7px 0;font-size:16px}
+  .callout{background:var(--surface);border-left:4px solid var(--cyan);border-radius:8px;padding:16px 18px;margin:26px 0;font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:18px}
+  .sources{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:26px 0;font-size:14.5px}
+  .sources b{color:var(--white)}
+  .foot{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 60px;color:var(--muted);font-size:14.5px}
+  .foot a{font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><span class="dot"></span><span class="brand">gridlas</span></nav>
+
+  <div class="kicker">Data · U.S. EIA · LBNL · ERCOT</div>
+  <h1>Mapping the U.S. data-center buildout over the power grid</h1>
+  <p class="standfirst">Where AI infrastructure is landing — and the grid bottlenecks standing in the way. Built entirely from public data.</p>
+  <p class="byline">A Gridlas analysis · maps rendered with QGIS + matplotlib · figures current as of late 2025</p>
+
+  <p>The bottleneck for AI isn't chips — it's electricity, and the years-long wait to connect to the grid. I wanted to see that collision spatially, so I pulled public datasets — EIA for power plants and transmission lines, Lawrence Berkeley National Laboratory's "Queued Up" for interconnection queues, and ERCOT's load reports — and rendered them into maps. Here's what stood out.</p>
+
+  <h2>1. Data centers are bending a flat demand curve</h2>
+  <p>For two decades U.S. electricity demand was essentially flat — efficiency offset growth. AI broke that. Data centers consumed <span class="stat">4.4% of U.S. electricity in 2023</span>, a share LBNL projects will reach <span class="stat">6.7%–12% by 2028</span>. The load is also concentrated: it lands on specific grids, around the clock, faster than utilities have ever had to respond.</p>
+  <figure><img src="./assets/fig-share.png" alt="Data center share of U.S. electricity, 2023 vs 2028"><figcaption>Data-center share of U.S. electricity. Source: LBNL (2024).</figcaption></figure>
+
+  <h2>2. The map is concentrating</h2>
+  <p>Plotting every major cluster, one market dwarfs the rest: Northern Virginia, at roughly <span class="stat">4,040 MW</span>, is about <span class="stat">3.5× every secondary U.S. market combined</span>. Dallas–Fort Worth and Atlanta have each crossed a gigawatt; Phoenix and central Ohio are climbing fast.</p>
+  <figure><img src="./assets/fig-hero.png" alt="Map of major U.S. data-center clusters over the power grid"><figcaption>Major U.S. data-center clusters, sized by operating capacity. Cluster locations approximate (public CBRE/JLL, late 2025).</figcaption></figure>
+  <figure><img src="./assets/fig-metros.png" alt="Top U.S. data-center markets by capacity"><figcaption>Top markets by operating capacity. Source: CBRE / JLL (H2 2025).</figcaption></figure>
+
+  <h2>3. The real bottleneck: the interconnection queue</h2>
+  <p>No market shows the strain like Texas. ERCOT's large-load interconnection queue went from <span class="stat">63 GW at the end of 2024 to ~226 GW by November 2025</span> — roughly a 4× jump in a year, with about <span class="stat">77% of it data centers</span> aiming to connect by 2030.</p>
+  <figure><img src="./assets/fig-ercot.png" alt="ERCOT large-load queue growth"><figcaption>ERCOT large-load interconnection queue. Source: ERCOT / Latitude Media (Nov 2025).</figcaption></figure>
+  <p>But a queue is a wish list, not a build plan. Of that 226 GW, only about <span class="stat">1.8% is actually operational</span> and drawing power — more than half hasn't even submitted enough information to begin review.</p>
+  <figure><img src="./assets/fig-funnel.png" alt="Queued versus operational capacity in ERCOT"><figcaption>Queued ≠ built. Source: ERCOT / Latitude Media (Nov 2025).</figcaption></figure>
+  <p>Why so little gets through? The wait. Nationally, the median time from interconnection request to commercial operation has more than doubled — from under two years in the 2000s to about <span class="stat">4.5 years</span> for projects reaching operation in 2024.</p>
+  <figure><img src="./assets/fig-wait.png" alt="Interconnection wait times over time"><figcaption>Median interconnection duration. Source: LBNL "Queued Up" (2025).</figcaption></figure>
+  <div class="callout">Compute scales in months. Power scales in years. That mismatch is the whole story.</div>
+
+  <h2>4. Supply is everywhere; demand isn't</h2>
+  <p>Layering ~2,459 utility-scale power plants (≥100 MW, ~1,089 GW) under the demand picture makes the mismatch clear: generation blankets the country, but data-center load concentrates onto a handful of already-stressed grids. The problem isn't total capacity — it's location and timing.</p>
+  <figure><img src="./assets/fig-gendemand.png" alt="Generation versus demand map"><figcaption>EIA power plants (colored by fuel) over data-center load by state. Source: U.S. EIA (public domain); clusters approximate.</figcaption></figure>
+
+  <h2>Methodology &amp; sources</h2>
+  <div class="sources">
+    <p style="margin-top:0"><b>Tools:</b> maps and charts rendered with QGIS and Python (matplotlib) from raw public datasets. No proprietary data.</p>
+    <p><b>Sources:</b></p>
+    <ul>
+      <li><b>U.S. EIA</b> — Energy Atlas; "Power Plants in the U.S." and transmission-line feature services (public domain)</li>
+      <li><b>LBNL</b> — 2024 U.S. Data Center Energy Usage Report; "Queued Up" 2025 Edition</li>
+      <li><b>ERCOT</b> — interconnection &amp; load reports (via Latitude Media / Utility Dive)</li>
+      <li><b>CBRE / JLL</b> — North America Data Center reports, H2 2025</li>
+      <li><b>IEA</b> — data-centre electricity analysis, 2025</li>
+    </ul>
+    <p style="margin-bottom:0"><b>Caveat:</b> data-center cluster locations and capacities are approximate, compiled from public market reports. Generation/transmission/queue figures are from the government/lab sources above. Current as of late 2025.</p>
+  </div>
+
+  <div class="foot">
+    I compiled the full version — five regional deep-dives, a 12-month outlook, and the underlying dataset (CSV/GeoJSON) — into a report. If you want the maps in high-res, the data, or just to talk methodology, it's all <a href="./index.html">over here</a>. Feedback and corrections welcome.
+    <br><br>
+    Gridlas · independent &amp; unaffiliated · built from public data.
+  </div>
+</div>
+</body>
+</html>
