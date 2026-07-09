@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Water Problem: What Cooling AI Costs the Ground It Sits On | Gridlas</title>
+<meta name="description" content="Power gets the headlines; water decides where data centers can go. Cooling intensity, hyperscaler water use, and why ~two-thirds of new US data centers sit in water-stressed areas.">
+<link rel="canonical" href="https://gridlas.com/data-center-water/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Gridlas">
+<meta property="og:url" content="https://gridlas.com/data-center-water/">
+<meta property="og:title" content="The Water Problem: What Cooling AI Actually Costs">
+<meta property="og:description" content="Cooling is a water decision. Google used 6.4B gallons in 2023, ~2/3 of new US data centers sit in high-water-stress areas, and &#x27;zero-water&#x27; cooling just moves the water upstream. Data-backed.">
+<meta property="og:image" content="https://gridlas.com/assets/fig-hero.png">
+<meta property="og:image:width" content="2155">
+<meta property="og:image:height" content="1469">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Water Problem: What Cooling AI Actually Costs">
+<meta name="twitter:description" content="Cooling is a water decision. Google used 6.4B gallons in 2023, ~2/3 of new US data centers sit in high-water-stress areas, and &#x27;zero-water&#x27; cooling just moves the water upstream. Data-backed.">
+<meta name="twitter:image" content="https://gridlas.com/assets/fig-hero.png">
+<link rel="icon" href="../assets/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Water Problem: What Cooling AI Actually Costs the Ground It Sits On",
+  "description": "Cooling is a water decision. Google used 6.4B gallons in 2023, ~2/3 of new US data centers sit in high-water-stress areas, and &#x27;zero-water&#x27; cooling just moves the water upstream. Data-backed.",
+  "image": "https://gridlas.com/assets/fig-hero.png",
+  "url": "https://gridlas.com/data-center-water/",
+  "author": { "@type": "Person", "name": "Eugene Barber" },
+  "publisher": { "@type": "Organization", "name": "Gridlas", "url": "https://gridlas.com/" },
+  "mainEntityOfPage": "https://gridlas.com/data-center-water/",
+  "keywords": ["data center water usage", "AI data center water consumption", "data center cooling water WUE", "data center water stress drought", "Google Microsoft data center water", "data center water footprint"],
+  "isAccessibleForFree": true
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
+<style>
+  :root{--bg:#0A0A14;--surface:#15151F;--line:#23232F;--cyan:#37C5E0;--white:#EAFFFF;--text:#D8DBE6;--muted:#8A90A2}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+  nav{display:flex;align-items:center;gap:9px;padding:20px 0;border-bottom:1px solid var(--line);margin-bottom:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+  .brand{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:18px}
+  .spacer{flex:1} .navlink{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--muted)}
+  h1{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:33px;line-height:1.14;margin:30px 0 8px}
+  h2{font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:23px;margin:48px 0 6px}
+  .kicker{font-family:'IBM Plex Mono';color:var(--cyan);font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase}
+  .standfirst{font-size:18px;color:var(--muted);margin:6px 0 0}
+  .byline{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--muted);margin:18px 0 0;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  p{margin:16px 0;font-size:16.5px}
+  .lead{font-size:18.5px;color:var(--text)}
+  figure{margin:30px 0;padding:0}
+  figcaption{font-family:'IBM Plex Mono';font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+  .stat{font-family:'Space Grotesk';color:var(--white)}
+  ul{padding-left:20px} li{margin:8px 0;font-size:16px}
+  .statrow{display:flex;gap:12px;margin:24px 0;flex-wrap:wrap}
+  .statrow .s{flex:1;min-width:150px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:15px 16px}
+  .statrow .n{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:24px}
+  .statrow .l{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+  .callout{background:var(--surface);border-left:4px solid var(--cyan);border-radius:8px;padding:16px 18px;margin:26px 0;font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:18px}
+  .note{background:rgba(55,197,224,.05);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:24px 0;font-size:14px;color:var(--muted)}
+  .note b{color:var(--cyan);font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.5px;text-transform:uppercase}
+  .sources{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:26px 0;font-size:14.5px}
+  .sources b{color:var(--white)}
+  .cta{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;margin:34px 0;text-align:center}
+  .btn{display:inline-block;background:var(--cyan);color:#04121a;font-family:'Space Grotesk';font-weight:700;padding:12px 22px;border-radius:9px;margin-top:8px}
+  .foot{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 60px;color:var(--muted);font-size:14.5px}
+  .foot a{font-weight:600}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gridlas.com/"},{"@type":"ListItem","position":2,"name":"The Water Problem","item":"https://gridlas.com/data-center-water/"}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <nav><span class="dot"></span><a class="brand" href="../index.html">gridlas</a><span class="spacer"></span><a class="navlink" href="../findings.html">Analysis</a> · <a class="navlink" href="../data-centers/">Regions</a></nav>
+
+  <div class="kicker">Analysis · ESG reports · Bloomberg · Ceres · LBNL · EESI</div>
+  <h1>The water problem: what cooling AI actually costs the ground it sits on</h1>
+  <p class="standfirst">Power gets the headlines and the lawsuits. But the resource that quietly decides where a data center can actually be built — and where the buildout runs into a wall it can't buy its way past — is water.</p>
+  <p class="byline">A Gridlas analysis · built from public data · figures 2021–2026, primary sources cited throughout</p>
+
+  <p class="lead">Our first two analyses were about electricity — the <a href="../grid-bottleneck/">interconnection queue</a> and the <a href="../powering-around-the-queue/">workarounds</a> operators use to get power fast. Water is the other meter, and it behaves differently. A cluster that can't get grid power can burn gas on-site or sign a nuclear PPA. A cluster that runs a region's aquifer or river dry has no equivalent escape hatch. Cooling is where AI touches the ground most directly, it is increasingly landing in the driest places in the country, and it is the constraint least amenable to a clever deal. Here is what the public record shows.</p>
+
+  <h2>1. Cooling is a water decision, not just a power one</h2>
+  <p>Most large data centers reject heat by evaporating water in cooling towers — trading water for electricity, because evaporative cooling is far more energy-efficient than refrigeration. The metric is <span class="stat">Water Usage Effectiveness (WUE)</span>, liters of water per kWh of IT load. The industry average sits around <span class="stat">1.8 L/kWh</span>; best-in-class evaporative designs reach 0.3–0.7; and sealed closed-loop liquid or air cooling use almost no water on-site at all.</p>
+
+  <figure>
+  <svg viewBox="0 0 720 246" width="100%" role="img" aria-label="Bar chart: water usage effectiveness by cooling approach, in liters per kilowatt-hour. Industry-average evaporative cooling about 1.8; best-in-class evaporative about 0.5; closed-loop liquid and air-cooled both near zero on-site." style="display:block;font-family:'IBM Plex Mono',monospace">
+  <line x1="206.0" y1="26" x2="206.0" y2="216" stroke="#23232F" stroke-width="1"/>
+  <text x="206.0" y="232" fill="#8A90A2" font-size="11" text-anchor="middle">0</text>
+  <line x1="328.0" y1="26" x2="328.0" y2="216" stroke="#23232F" stroke-width="1"/>
+  <text x="328.0" y="232" fill="#8A90A2" font-size="11" text-anchor="middle">0.5</text>
+  <line x1="450.0" y1="26" x2="450.0" y2="216" stroke="#23232F" stroke-width="1"/>
+  <text x="450.0" y="232" fill="#8A90A2" font-size="11" text-anchor="middle">1</text>
+  <line x1="572.0" y1="26" x2="572.0" y2="216" stroke="#23232F" stroke-width="1"/>
+  <text x="572.0" y="232" fill="#8A90A2" font-size="11" text-anchor="middle">1.5</text>
+  <line x1="694.0" y1="26" x2="694.0" y2="216" stroke="#23232F" stroke-width="1"/>
+  <text x="694.0" y="232" fill="#8A90A2" font-size="11" text-anchor="middle">2</text>
+  <text x="196" y="49" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Evaporative</text>
+  <text x="196" y="64" fill="#8A90A2" font-size="10" text-anchor="end">cooling towers · industry avg</text>
+  <rect x="206" y="40" width="439.2" height="22" rx="4" fill="#C77F2A"><title>Industry-average evaporative cooling: about 1.8 L/kWh</title></rect>
+  <text x="653.2" y="56" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">~1.8 L/kWh</text>
+  <text x="196" y="97" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Efficient evaporative</text>
+  <text x="196" y="112" fill="#8A90A2" font-size="10" text-anchor="end">best-in-class (e.g. NREL)</text>
+  <rect x="206" y="88" width="122.0" height="22" rx="4" fill="#37C5E0"><title>Best-in-class evaporative cooling: roughly 0.3–0.7 L/kWh</title></rect>
+  <text x="336.0" y="104" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">~0.5 L/kWh</text>
+  <text x="196" y="145" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Closed-loop liquid</text>
+  <text x="196" y="160" fill="#8A90A2" font-size="10" text-anchor="end">sealed, recirculated</text>
+  <rect x="206" y="136" width="9.8" height="22" rx="4" fill="#279BBE"><title>Closed-loop liquid cooling: near-zero on-site water (WUE ~0)</title></rect>
+  <text x="223.8" y="152" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">~0 on-site</text>
+  <text x="196" y="193" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Air-cooled</text>
+  <text x="196" y="208" fill="#8A90A2" font-size="10" text-anchor="end">no evaporation</text>
+  <rect x="206" y="184" width="4.9" height="22" rx="4" fill="#279BBE"><title>Air-cooled: virtually zero on-site water — but higher energy use</title></rect>
+  <text x="218.9" y="200" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">~0 on-site</text>
+  </svg>
+  <figcaption>Water intensity by cooling approach (WUE, liters per kWh of IT load). Evaporative cooling trades water for energy efficiency; closed-loop and air cooling use near-zero water on-site. Sources: industry WUE benchmarks (Introl, EESI); NREL; Microsoft (closed-loop).</figcaption>
+  </figure>
+
+  <div class="note"><b>The "zero-water" catch</b> — Air and closed-loop cooling don't erase the water; they move it upstream. A drier cooling design usually needs more electricity, and thermoelectric power generation is itself water-intensive — the <span style="color:var(--text)">indirect</span> water footprint from a data center's electricity is estimated at roughly <span style="color:var(--text)">10×</span> its direct cooling use. "Zero-water cooling" means the water is spent at the power plant instead of the campus.</div>
+
+  <p>That trade-off is why the number that matters isn't just how much a facility draws, but <em>where</em> the draw lands — because the same gallons mean very different things in Virginia and in Arizona.</p>
+
+  <h2>2. The direct number is big — and the real number is bigger</h2>
+  <p>The hyperscalers do report direct water use, and it is climbing fast. Google's data centers consumed <span class="stat">6.4 billion gallons</span> in 2023 — up about 50% from 2021 — with roughly 95% of that going to cooling. Microsoft used 1.7 billion gallons, up 34% in a single year; Meta reported about 0.81 billion. The largest individual campuses can draw <span class="stat">several million gallons a day</span>, on the order of a town of tens of thousands of people.</p>
+
+  <figure>
+  <svg viewBox="0 0 720 198" width="100%" role="img" aria-label="Bar chart: reported direct data-center water consumption in 2023, in billions of gallons. Google 6.4, up about 50 percent since 2021; Microsoft 1.7, up 34 percent from 2022; Meta 0.81." style="display:block;font-family:'IBM Plex Mono',monospace">
+  <line x1="206.0" y1="26" x2="206.0" y2="168" stroke="#23232F" stroke-width="1"/>
+  <text x="206.0" y="184" fill="#8A90A2" font-size="11" text-anchor="middle">0</text>
+  <line x1="345.4" y1="26" x2="345.4" y2="168" stroke="#23232F" stroke-width="1"/>
+  <text x="345.4" y="184" fill="#8A90A2" font-size="11" text-anchor="middle">2</text>
+  <line x1="484.9" y1="26" x2="484.9" y2="168" stroke="#23232F" stroke-width="1"/>
+  <text x="484.9" y="184" fill="#8A90A2" font-size="11" text-anchor="middle">4</text>
+  <line x1="624.3" y1="26" x2="624.3" y2="168" stroke="#23232F" stroke-width="1"/>
+  <text x="624.3" y="184" fill="#8A90A2" font-size="11" text-anchor="middle">6</text>
+  <text x="196" y="49" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Google</text>
+  <text x="196" y="64" fill="#8A90A2" font-size="10" text-anchor="end">2023 · up ~50% since 2021</text>
+  <rect x="206" y="40" width="446.2" height="22" rx="4" fill="#37C5E0"><title>Google 2023: 6.4 billion gallons direct water, ~95% for data-center cooling</title></rect>
+  <text x="644.2" y="56" fill="#04121a" font-size="12" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">6.4 B gal</text>
+  <text x="196" y="97" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Microsoft</text>
+  <text x="196" y="112" fill="#8A90A2" font-size="10" text-anchor="end">2023 · +34% vs 2022</text>
+  <rect x="206" y="88" width="118.5" height="22" rx="4" fill="#37C5E0"><title>Microsoft 2023: 1.7 billion gallons, up 34% from 2022</title></rect>
+  <text x="332.5" y="104" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">1.7 B gal</text>
+  <text x="196" y="145" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Meta</text>
+  <text x="196" y="160" fill="#8A90A2" font-size="10" text-anchor="end">2023</text>
+  <rect x="206" y="136" width="56.5" height="22" rx="4" fill="#37C5E0"><title>Meta 2023: 813 million gallons (~0.81 billion), ~95% data centers</title></rect>
+  <text x="270.5" y="152" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">0.81 B gal</text>
+  </svg>
+  <figcaption>Reported direct data-center water consumption, 2023 (billions of gallons). Direct cooling only — the indirect footprint from electricity is far larger, and disclosure is voluntary and inconsistent. Sources: Google, Microsoft &amp; Meta environmental/sustainability reports; Civil Beat / Fast Company on reporting gaps.</figcaption>
+  </figure>
+
+  <div class="statrow">
+    <div class="s"><div class="n">6.4 B gal</div><div class="l">Google's 2023 direct water — up ~50% since 2021</div></div>
+    <div class="s"><div class="n">~10×</div><div class="l">indirect (power-generation) water vs direct cooling</div></div>
+    <div class="s"><div class="n">~2/3</div><div class="l">of new U.S. data centers sit in high-water-stress areas (Bloomberg)</div></div>
+  </div>
+
+  <p>And these are the companies that disclose. Multiple investigations — Honolulu Civil Beat, Fast Company, the Global Investigative Journalism Network — have found that most operators reveal little or nothing about site-level water use, so the public totals almost certainly understate the real draw.</p>
+
+  <h2>3. The compute is landing where the water isn't</h2>
+  <p>The siting data is the uncomfortable part. A 2025 Bloomberg analysis found that about <span class="stat">two-thirds of new U.S. data centers</span> built or in development since 2022 sit in places already under high water stress — and just five states account for <span class="stat">72%</span> of them. Two of those five, Arizona and Texas, are among the most drought-exposed in the country.</p>
+
+  <figure>
+  <svg viewBox="0 0 720 276" width="100%" role="img" aria-label="Bar chart: number of new US data centers built or in development in high-water-stress areas since 2022, top five states. Virginia 67, Arizona 26, Texas 26, Illinois 23, California 17. These five are 72 percent of the national total, which is about two-thirds of all new data centers." style="display:block;font-family:'IBM Plex Mono',monospace">
+  <line x1="206.0" y1="26" x2="206.0" y2="246" stroke="#23232F" stroke-width="1"/>
+  <text x="206.0" y="262" fill="#8A90A2" font-size="11" text-anchor="middle">0</text>
+  <line x1="345.4" y1="26" x2="345.4" y2="246" stroke="#23232F" stroke-width="1"/>
+  <text x="345.4" y="262" fill="#8A90A2" font-size="11" text-anchor="middle">20</text>
+  <line x1="484.9" y1="26" x2="484.9" y2="246" stroke="#23232F" stroke-width="1"/>
+  <text x="484.9" y="262" fill="#8A90A2" font-size="11" text-anchor="middle">40</text>
+  <line x1="624.3" y1="26" x2="624.3" y2="246" stroke="#23232F" stroke-width="1"/>
+  <text x="624.3" y="262" fill="#8A90A2" font-size="11" text-anchor="middle">60</text>
+  <text x="196" y="49" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Virginia</text>
+  <rect x="206" y="40" width="467.1" height="20" rx="4" fill="#279BBE"><title>Virginia: 67 new data centers in high-water-stress areas</title></rect>
+  <text x="665.1" y="56" fill="#04121a" font-size="12" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">67</text>
+  <text x="196" y="93" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Arizona</text>
+  <rect x="206" y="84" width="181.3" height="20" rx="4" fill="#279BBE"><title>Arizona: 26 new data centers in high-water-stress areas</title></rect>
+  <text x="395.3" y="100" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">26</text>
+  <text x="196" y="137" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Texas</text>
+  <rect x="206" y="128" width="181.3" height="20" rx="4" fill="#279BBE"><title>Texas: 26 new data centers in high-water-stress areas</title></rect>
+  <text x="395.3" y="144" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">26</text>
+  <text x="196" y="181" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Illinois</text>
+  <rect x="206" y="172" width="160.3" height="20" rx="4" fill="#279BBE"><title>Illinois: 23 new data centers in high-water-stress areas</title></rect>
+  <text x="374.3" y="188" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">23</text>
+  <text x="196" y="225" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">California</text>
+  <rect x="206" y="216" width="118.5" height="20" rx="4" fill="#279BBE"><title>California: 17 new data centers in high-water-stress areas</title></rect>
+  <text x="332.5" y="232" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">17</text>
+  </svg>
+  <figcaption>New U.S. data centers in high-water-stress areas since 2022, top five states (counts of facilities, not size). These five are ~72% of the national total. Source: Bloomberg analysis using WRI Aqueduct water-stress data, through Q1 2025.</figcaption>
+  </figure>
+
+  <p>The flashpoints follow the map. In <a href="../data-centers/memphis-tennessee/">Memphis</a>, xAI's cooling draws on the Memphis Sand aquifer, the city's drinking-water source. In <a href="../data-centers/phoenix-arizona/">Phoenix</a> and across the Southwest, campuses compete with cities for Colorado River water. A single proposed <a href="../data-centers/salt-lake-city-utah/">Utah</a> campus was reported to need up to ~16 billion gallons a year — more than double Google's entire global 2023 direct use — though such headline figures are contested and often reflect worst-case permitting estimates. The pattern is consistent even where the numbers are fuzzy: the cheapest land and fastest power sit in exactly the basins with the least water to spare.</p>
+
+  <div class="callout">Power can be trucked in — as gas, as a nuclear contract, as a new line. Water can't. It's local, it's political, and once a basin is stressed there's no PPA that refills it.</div>
+
+  <h2>4. Why water, not power, may decide the map</h2>
+  <p>Put the three Gridlas analyses together and a hierarchy of constraints emerges. The <a href="../grid-bottleneck/">grid queue</a> is slow, but it has exits — the whole point of <a href="../powering-around-the-queue/">powering around the queue</a> is that a determined operator can generate its own electricity. Water has far fewer exits. The efficient fixes — closed-loop and air cooling, recycled and non-potable supply — are real and spreading (Microsoft now ships chip-level closed-loop designs), but they cost capex, energy, or both, and they don't help a project already permitted for evaporative cooling in a drought.</p>
+  <p>So water is likely to become the harder gate. It won't stop the buildout, but it will increasingly decide its <em>geography</em> — pushing new campuses toward the Midwest and the Pacific Northwest, toward recycled-water deals, and away from the sunbelt basins that cheap power and fast permitting made attractive in the first place. The map of AI, in the end, may be drawn less by where the electrons are than by where the water is.</p>
+
+  <div class="callout">The buildout has proven it can find power almost anywhere. Whether it can find water — in the places it actually wants to build — is the constraint still without a workaround.</div>
+
+  <div class="cta">
+    <p><b>The full picture, mapped.</b> The Gridlas report puts demand, the interconnection queue, and five regional deep-dives onto the grid — with high-res maps and the underlying dataset (CSV/GeoJSON), built entirely from public data.</p>
+    <a class="btn" href="../index.html">Get the report →</a>
+  </div>
+
+  <div class="note"><b>On the numbers</b> — Company water figures are self-reported <span style="color:var(--text)">direct</span> consumption for the stated year and cover cooling plus humidification; the far larger indirect footprint from electricity generation is excluded. WUE benchmarks are typical ranges, not a single facility. The Bloomberg siting analysis counts facilities in high-stress watersheds (WRI Aqueduct), not their size or actual withdrawals. Headline single-project figures (e.g. the ~16-billion-gallon Utah number) are contested permitting estimates — treat them as worst-case, not confirmed draw.</div>
+
+  <div class="sources">
+    <b>Sources:</b>
+    <ul>
+      <li><b>Cooling &amp; WUE</b> — Introl, EESI, KETOS (WUE benchmarks, evaporative vs closed-loop); NREL (0.7 L/kWh); Microsoft Cloud blog (chip-level closed-loop)</li>
+      <li><b>Hyperscaler water</b> — Google, Microsoft &amp; Meta environmental / sustainability reports (2021–2023 direct use); Honolulu Civil Beat, Fast Company, GIJN (disclosure gaps)</li>
+      <li><b>Water stress &amp; siting</b> — Bloomberg, "The AI Boom Is Draining Water" (2025, WRI Aqueduct); Ceres "Drained by Data"; S&amp;P Global Sustainable1; DCD</li>
+      <li><b>Flashpoints</b> — SELC / local reporting (xAI Memphis aquifer); NPR &amp; DRI (Nevada); Deseret / Snopes (Utah ~16B-gallon figure, contested); regional drought reporting (Arizona, Texas)</li>
+      <li><b>Indirect footprint</b> — EESI; peer-reviewed data-center water studies (direct vs electricity-related water)</li>
+    </ul>
+    See also the <a href="../grid-bottleneck/">grid-bottleneck analysis</a>, <a href="../powering-around-the-queue/">powering around the queue</a>, and the <a href="../findings.html">full methodology &amp; sources</a>.
+  </div>
+
+  <div class="foot">
+    This is the third Gridlas analysis, alongside <a href="../grid-bottleneck/">the grid bottleneck</a> and <a href="../powering-around-the-queue/">powering around the queue</a>. The <a href="../findings.html">visual analysis</a> maps demand over the U.S. grid, and the <a href="../data-centers/">regional pages</a> break it down market by market.
+    <br><br>
+    Gridlas · independent &amp; unaffiliated · built from public data.
+  </div>
+</div>
+</body>
+</html>
