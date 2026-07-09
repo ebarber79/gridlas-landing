@@ -23,6 +23,28 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://gridlas.com/#org",
+      "name": "Gridlas",
+      "url": "https://gridlas.com/",
+      "description": "Independent research on the U.S. AI data-center buildout and the power grid, built from public data.",
+      "logo": "https://gridlas.com/assets/favicon.svg"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://gridlas.com/#website",
+      "name": "Gridlas",
+      "url": "https://gridlas.com/",
+      "publisher": { "@id": "https://gridlas.com/#org" }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Powering AI: The U.S. Data Center Buildout (2026)",
   "description": "Where AI data centers are being built across the U.S., the power they need, and the grid interconnection bottlenecks ahead — compiled from public EIA, LBNL and ERCOT data. Includes regional rankings, supply-vs-demand analysis, and a companion CSV/GeoJSON dataset.",
@@ -213,7 +235,7 @@
 
 <footer class="wrap">
   Built from public U.S. EIA, Lawrence Berkeley National Laboratory, ERCOT, CBRE &amp; IEA data. Data-center cluster figures are approximate. Independent &amp; unaffiliated. © 2026 Gridlas · <a href="https://gridlas.com">gridlas.com</a><br>
-  Explore: <a href="./findings.html">the analysis</a> · <a href="./data-centers/">data centers by region</a> · <a href="./data-centers/northern-virginia/">Northern Virginia</a> · <a href="./data-centers/texas-ercot-queue/">Texas</a> · <a href="./data-centers/atlanta-georgia/">Atlanta</a> · <a href="./data-centers/phoenix-arizona/">Phoenix</a> · <a href="./data-centers/columbus-ohio/">Ohio</a>
+  Explore: <a href="./findings.html">the analysis</a> · <a href="./grid-bottleneck/">the grid bottleneck</a> · <a href="./data-centers/">data centers by region</a> · <a href="./data-centers/northern-virginia/">Northern Virginia</a> · <a href="./data-centers/texas-ercot-queue/">Texas</a> · <a href="./data-centers/atlanta-georgia/">Atlanta</a> · <a href="./data-centers/phoenix-arizona/">Phoenix</a> · <a href="./data-centers/columbus-ohio/">Ohio</a> · <a href="./data-centers/dallas-fort-worth/">Dallas–Fort Worth</a> · <a href="./data-centers/silicon-valley-santa-clara/">Silicon Valley</a> · <a href="./data-centers/chicago-illinois/">Chicago</a> · <a href="./data-centers/new-york-tri-state/">New York</a>
 </footer>
 
 <div class="toast" id="toast">✓ Check your inbox — summary on the way.</div>
