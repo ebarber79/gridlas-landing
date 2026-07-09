@@ -13,8 +13,8 @@
 <meta property="og:title" content="Powering AI — The U.S. Data Center Buildout Report">
 <meta property="og:description" content="Where AI data centers are being built, the power they need, and the grid bottlenecks ahead.">
 <meta property="og:image" content="https://gridlas.com/assets/hero.png">
-<meta property="og:image:width" content="2155">
-<meta property="og:image:height" content="1469">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="954">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Powering AI — The U.S. Data Center Buildout Report">
 <meta name="twitter:description" content="Where AI data centers are being built, the power they need, and the grid bottlenecks ahead. Built from public EIA, LBNL & ERCOT data.">
@@ -130,7 +130,7 @@
   .peek{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
   .peek img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
   /* tiers */
-  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   .tier{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center}
   .tier.best{border-color:var(--cyan);box-shadow:0 0 24px rgba(55,197,224,.15)}
   .tier .name{color:var(--muted);font-size:13px;letter-spacing:1px;text-transform:uppercase;font-family:'IBM Plex Mono'}
@@ -211,7 +211,7 @@
     <div>
       <h2>The collision, mapped</h2>
       <p class="section-sub">Supply is everywhere — 2,459 utility-scale plants — but demand concentrates onto specific, already-stressed grids. The full report breaks down every market, queue, and scenario.</p>
-      <a class="ghost" href="#top" onclick="document.getElementById('lead').email?.focus()">Get the free summary →</a>
+      <a class="ghost" href="#lead" onclick="window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>document.querySelector('#lead input').focus(),400)">Get the free summary →</a>
     </div>
   </section>
 
@@ -229,7 +229,7 @@
   <section>
     <div class="cta">
       <h2>Start with the free summary</h2>
-      <a class="ghost" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>document.querySelector('#lead input').focus(),400)">Get it now →</a>
+      <a class="ghost" href="#lead" onclick="window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>document.querySelector('#lead input').focus(),400)">Get it now →</a>
     </div>
   </section>
 </div>
