@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Powering Around the Queue: How AI Buys Its Way Past the Grid | Gridlas</title>
+<meta name="description" content="With grid interconnection running ~5 years, AI data centers are routing around the queue — on-site gas, nuclear restarts, and SMRs. The deals, MW and dates, primary-source cited.">
+<link rel="canonical" href="https://gridlas.com/powering-around-the-queue/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Gridlas">
+<meta property="og:url" content="https://gridlas.com/powering-around-the-queue/">
+<meta property="og:title" content="Powering Around the Queue: How AI Is Bypassing the Grid Bottleneck">
+<meta property="og:description" content="If interconnection is the bottleneck, here&#x27;s the workaround: behind-the-meter gas (xAI, Meta), nuclear restarts (Three Mile Island, Palisades, Duane Arnold) and SMRs. Data-backed.">
+<meta property="og:image" content="https://gridlas.com/assets/fig-hero.png">
+<meta property="og:image:width" content="2155">
+<meta property="og:image:height" content="1469">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Powering Around the Queue: How AI Is Bypassing the Grid Bottleneck">
+<meta name="twitter:description" content="If interconnection is the bottleneck, here&#x27;s the workaround: behind-the-meter gas (xAI, Meta), nuclear restarts (Three Mile Island, Palisades, Duane Arnold) and SMRs. Data-backed.">
+<meta name="twitter:image" content="https://gridlas.com/assets/fig-hero.png">
+<link rel="icon" href="../assets/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Powering Around the Queue: How AI Is Buying Its Way Past the Grid",
+  "description": "If interconnection is the bottleneck, here&#x27;s the workaround: behind-the-meter gas (xAI, Meta), nuclear restarts (Three Mile Island, Palisades, Duane Arnold) and SMRs. Data-backed.",
+  "image": "https://gridlas.com/assets/fig-hero.png",
+  "url": "https://gridlas.com/powering-around-the-queue/",
+  "author": { "@type": "Person", "name": "Eugene Barber" },
+  "publisher": { "@type": "Organization", "name": "Gridlas", "url": "https://gridlas.com/" },
+  "mainEntityOfPage": "https://gridlas.com/powering-around-the-queue/",
+  "keywords": ["behind the meter gas data center", "nuclear restart data center", "Three Mile Island Microsoft", "SMR data center Amazon Google", "xAI Colossus gas turbines", "data center power workaround", "on-site power generation AI"],
+  "isAccessibleForFree": true
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
+<style>
+  :root{--bg:#0A0A14;--surface:#15151F;--line:#23232F;--cyan:#37C5E0;--white:#EAFFFF;--text:#D8DBE6;--muted:#8A90A2}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+  nav{display:flex;align-items:center;gap:9px;padding:20px 0;border-bottom:1px solid var(--line);margin-bottom:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+  .brand{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:18px}
+  .spacer{flex:1} .navlink{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--muted)}
+  h1{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:33px;line-height:1.14;margin:30px 0 8px}
+  h2{font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:23px;margin:48px 0 6px}
+  .kicker{font-family:'IBM Plex Mono';color:var(--cyan);font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase}
+  .standfirst{font-size:18px;color:var(--muted);margin:6px 0 0}
+  .byline{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--muted);margin:18px 0 0;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  p{margin:16px 0;font-size:16.5px}
+  .lead{font-size:18.5px;color:var(--text)}
+  figure{margin:30px 0;padding:0}
+  figcaption{font-family:'IBM Plex Mono';font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+  .stat{font-family:'Space Grotesk';color:var(--white)}
+  ul{padding-left:20px} li{margin:8px 0;font-size:16px}
+  .statrow{display:flex;gap:12px;margin:24px 0;flex-wrap:wrap}
+  .statrow .s{flex:1;min-width:150px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:15px 16px}
+  .statrow .n{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:24px}
+  .statrow .l{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+  .callout{background:var(--surface);border-left:4px solid var(--cyan);border-radius:8px;padding:16px 18px;margin:26px 0;font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:18px}
+  .note{background:rgba(55,197,224,.05);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:24px 0;font-size:14px;color:var(--muted)}
+  .note b{color:var(--cyan);font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.5px;text-transform:uppercase}
+  .sources{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:26px 0;font-size:14.5px}
+  .sources b{color:var(--white)}
+  .cta{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;margin:34px 0;text-align:center}
+  .btn{display:inline-block;background:var(--cyan);color:#04121a;font-family:'Space Grotesk';font-weight:700;padding:12px 22px;border-radius:9px;margin-top:8px}
+  .foot{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 60px;color:var(--muted);font-size:14.5px}
+  .foot a{font-weight:600}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gridlas.com/"},{"@type":"ListItem","position":2,"name":"Powering Around the Queue","item":"https://gridlas.com/powering-around-the-queue/"}]}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <nav><span class="dot"></span><a class="brand" href="../index.html">gridlas</a><span class="spacer"></span><a class="navlink" href="../findings.html">Analysis</a> · <a class="navlink" href="../data-centers/">Regions</a></nav>
+
+  <div class="kicker">Analysis · EIA · NRC · DOE · company filings &amp; PPAs</div>
+  <h1>Powering around the queue: how AI is buying its way past the grid</h1>
+  <p class="standfirst">If the interconnection queue is a five-year line, the fastest way through it is not to stand in it. Three workarounds are already reshaping who gets power — and when.</p>
+  <p class="byline">A Gridlas analysis · built from public data · figures 2024–2026, primary sources cited throughout</p>
+
+  <p class="lead">Our <a href="../grid-bottleneck/">companion analysis</a> made the case that the real limit on the AI buildout isn't generation — it's the <b style="color:var(--white)">interconnection queue</b>, where the median wait has doubled to about five years and roughly 77% of proposed capacity is eventually withdrawn. So the hyperscalers stopped waiting. Faced with a queue measured in years and GPUs measured in months, they are routing around it three ways: <b style="color:var(--white)">burn gas on-site now</b>, <b style="color:var(--white)">restart the reactors we already shut down</b>, and <b style="color:var(--white)">bet on small modular reactors</b> for the 2030s. Here is what each route actually delivers, in megawatts and dates, from the public record.</p>
+
+  <h2>1. The five-year wait created a workaround market</h2>
+  <p>The logic is simple arithmetic. A new grid interconnection now takes about five years at the median — and that is <em>if</em> the project survives the queue at all. A GPU cluster depreciates on a two-to-three-year clock. When the power path is slower than the asset it powers, operators pay almost anything to shorten it. That gap is the entire market for the workarounds below, and it explains why each one trades a premium — higher cost, more emissions, or execution risk — for one thing: <span class="stat">time to power</span>.</p>
+
+  <figure>
+  <svg viewBox="0 0 720 246" width="100%" role="img" aria-label="Bar chart: rough time from decision to delivered power, by route. On-site gas with turbines already on site delivers in about one year; a nuclear restart takes about three to four years; a new grid interconnection takes about five years at the median; new nuclear or a small modular reactor takes roughly six or more years, with first units around 2030." style="display:block;font-family:'IBM Plex Mono',monospace">
+  <line x1="206.0" y1="26" x2="206.0" y2="216" stroke="#23232F" stroke-width="1"/>
+  <text x="206.0" y="232" fill="#8A90A2" font-size="11" text-anchor="middle">0 yr</text>
+  <line x1="328.0" y1="26" x2="328.0" y2="216" stroke="#23232F" stroke-width="1"/>
+  <text x="328.0" y="232" fill="#8A90A2" font-size="11" text-anchor="middle">2 yr</text>
+  <line x1="450.0" y1="26" x2="450.0" y2="216" stroke="#23232F" stroke-width="1"/>
+  <text x="450.0" y="232" fill="#8A90A2" font-size="11" text-anchor="middle">4 yr</text>
+  <line x1="572.0" y1="26" x2="572.0" y2="216" stroke="#23232F" stroke-width="1"/>
+  <text x="572.0" y="232" fill="#8A90A2" font-size="11" text-anchor="middle">6 yr</text>
+  <line x1="694.0" y1="26" x2="694.0" y2="216" stroke="#23232F" stroke-width="1"/>
+  <text x="694.0" y="232" fill="#8A90A2" font-size="11" text-anchor="middle">8 yr</text>
+  <text x="196" y="49" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">On-site gas</text>
+  <text x="196" y="64" fill="#8A90A2" font-size="10" text-anchor="end">turbines already on site</text>
+  <rect x="206" y="40" width="73.2" height="22" rx="4" fill="#37C5E0"><title>On-site gas (existing turbines): power in months to ~1.5 years</title></rect>
+  <text x="287.2" y="56" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">~1 yr</text>
+  <text x="196" y="97" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Nuclear restart</text>
+  <text x="196" y="112" fill="#8A90A2" font-size="10" text-anchor="end">TMI, Duane Arnold</text>
+  <rect x="206" y="88" width="213.5" height="22" rx="4" fill="#37C5E0"><title>Nuclear restart: ~3–4 years from deal to grid</title></rect>
+  <text x="427.5" y="104" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">~3–4 yr</text>
+  <text x="196" y="145" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">New grid interconnection</text>
+  <text x="196" y="160" fill="#8A90A2" font-size="10" text-anchor="end">median, LBNL</text>
+  <rect x="206" y="136" width="305.0" height="22" rx="4" fill="#C77F2A"><title>New grid interconnection: ~5-year median wait (LBNL)</title></rect>
+  <text x="519.0" y="152" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">~5 yr</text>
+  <text x="196" y="193" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">New nuclear / SMR</text>
+  <text x="196" y="208" fill="#8A90A2" font-size="10" text-anchor="end">first units ~2030+</text>
+  <rect x="206" y="184" width="396.5" height="22" rx="4" fill="#37C5E0"><title>New nuclear or SMR: ~6+ years — first units around 2030 at the earliest</title></rect>
+  <text x="610.5" y="200" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">2030+</text>
+  </svg>
+  <figcaption>Rough time from decision to delivered power, by route. On-site gas is fastest only when turbines are already in hand; restarts and new build are multi-year. Sources: LBNL "Queued Up" (grid median); company restart timelines (Constellation, NextEra); IEA "Energy and AI" (SMR timing).</figcaption>
+  </figure>
+
+  <div class="note"><b>The catch on "one year"</b> — On-site gas is fast only if you already have turbines. New orders now hit a wall: GE Vernova ended 2025 with an <span style="color:var(--text)">~80 GW</span> gas-turbine backlog stretching into 2029, and expects reservations sold out through 2030 by the end of 2026 — 3–4 year lead times on a new machine. The fast lane fills up too.</div>
+
+  <h2>2. Route one — burn gas on-site, now</h2>
+  <p>The bluntest workaround is to build your own power plant behind the meter and skip the queue entirely. The signature case is xAI's <a href="../data-centers/memphis-tennessee/">Colossus</a> in Memphis: with only an 8 MW grid connection at first, xAI wheeled in <span class="stat">35 gas turbines (~422 MW)</span> — more than a conventional peaker — to energize the site while the utility caught up. Aerial imagery caught the full count; the site was permitted for just 15, drawing a Clean Air Act notice from the Southern Environmental Law Center, and xAI has since pared back and permitted the remainder. A second site in Southaven, Mississippi added <span class="stat">27 more turbines (~495 MW)</span>.</p>
+  <p>The utilities are doing the same thing at far larger scale. For Meta's Richland Parish campus in Louisiana, Entergy broke ground on <span class="stat">2.26 GW of new gas generation</span> dedicated to a single customer — regulator-approved, online from 2028. Behind-the-meter turbines or utility-built plants, the move is identical: attach firm gas to one campus rather than wait in the shared line.</p>
+
+  <figure>
+  <svg viewBox="0 0 720 198" width="100%" role="img" aria-label="Bar chart: dedicated gas generation built for single AI campuses, in megawatts. xAI Colossus 1 in Memphis about 422 megawatts from 35 on-site turbines; xAI Colossus 2 in Southaven Mississippi up to 495 megawatts from 27 turbines; Meta&#x27;s Richland Parish campus in Louisiana 2,260 megawatts of new Entergy gas plants coming online from 2028." style="display:block;font-family:'IBM Plex Mono',monospace">
+  <line x1="206.0" y1="26" x2="206.0" y2="168" stroke="#23232F" stroke-width="1"/>
+  <text x="206.0" y="184" fill="#8A90A2" font-size="11" text-anchor="middle">0</text>
+  <line x1="368.7" y1="26" x2="368.7" y2="168" stroke="#23232F" stroke-width="1"/>
+  <text x="368.7" y="184" fill="#8A90A2" font-size="11" text-anchor="middle">800</text>
+  <line x1="531.3" y1="26" x2="531.3" y2="168" stroke="#23232F" stroke-width="1"/>
+  <text x="531.3" y="184" fill="#8A90A2" font-size="11" text-anchor="middle">1600</text>
+  <line x1="694.0" y1="26" x2="694.0" y2="168" stroke="#23232F" stroke-width="1"/>
+  <text x="694.0" y="184" fill="#8A90A2" font-size="11" text-anchor="middle">2400</text>
+  <text x="196" y="49" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">xAI Colossus 1</text>
+  <text x="196" y="64" fill="#8A90A2" font-size="10" text-anchor="end">Memphis TN · 35 turbines</text>
+  <rect x="206" y="40" width="85.8" height="22" rx="4" fill="#37C5E0"><title>xAI Colossus 1, Memphis: ~422 MW from 35 on-site gas turbines (later permitted to 15)</title></rect>
+  <text x="299.8" y="56" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">~422 MW</text>
+  <text x="196" y="97" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">xAI Colossus 2</text>
+  <text x="196" y="112" fill="#8A90A2" font-size="10" text-anchor="end">Southaven MS · 27 turbines</text>
+  <rect x="206" y="88" width="100.7" height="22" rx="4" fill="#37C5E0"><title>xAI Colossus 2, Southaven MS: up to ~495 MW from 27 on-site gas turbines</title></rect>
+  <text x="314.6" y="104" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">~495 MW</text>
+  <text x="196" y="145" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Meta · Richland Parish</text>
+  <text x="196" y="160" fill="#8A90A2" font-size="10" text-anchor="end">LA · Entergy, online 2028</text>
+  <rect x="206" y="136" width="459.5" height="22" rx="4" fill="#279BBE"><title>Meta Richland Parish, Louisiana: 2.26 GW of new Entergy gas generation, online from 2028</title></rect>
+  <text x="657.5" y="152" fill="#04121a" font-size="12" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">2,260 MW</text>
+  </svg>
+  <figcaption>Dedicated gas generation built for single AI campuses (MW). xAI's turbines are behind-the-meter and running; Meta's is utility-built, front-of-the-meter, online from 2028 — different mechanisms, same idea. Sources: DCD, SELC, Governors' Wind Energy Coalition (xAI); DCD, POWER, S&amp;P Global (Meta/Entergy).</figcaption>
+  </figure>
+
+  <div class="callout">The queue rations connections. On-site gas opts out of the queue — and, for now, out of the wait. The trade is carbon and controversy for speed.</div>
+
+  <p>The speed is real, and so is the cost. On-site gas re-carbonizes the near-term buildout exactly as utilities were retiring coal, and the Memphis fight shows the permitting and environmental-justice backlash it invites. It is a bridge, not a destination — which is why the same companies are simultaneously buying the cleanest firm power on the board.</p>
+
+  <h2>3. Route two — restart the reactors we already shut down</h2>
+  <p>The most striking signal that AI has changed the power market: plants the market had left for dead are coming back, paid for by hyperscaler contracts. Constellation is restarting <span class="stat">Three Mile Island Unit 1</span> — rechristened the Crane Clean Energy Center — on the strength of a 20-year Microsoft PPA, targeting <span class="stat">835 MW by 2028</span> at roughly $1.6B of capex. In Michigan, Holtec's <span class="stat">800 MW Palisades</span> plant became the first U.S. reactor ever approved to return from decommissioning, backed by DOE loans. And Google is funding NextEra's restart of Iowa's <span class="stat">~615 MW Duane Arnold</span> under a 25-year PPA, targeting early 2029.</p>
+  <p>Where a full restart isn't on the table, the deals reallocate output from existing reactors. Amazon's expanded, 17-year, $18B agreement with Talen draws up to <span class="stat">1,920 MW</span> from the Susquehanna plant; Meta signed for the full output of Constellation's Clinton plant in Illinois. FERC has pushed back on the pure behind-the-meter version of these co-location deals — rejecting an expanded Susquehanna interconnection in a 2024 order — which is exactly why Talen and Amazon restructured into a grid-connected retail PPA.</p>
+
+  <figure>
+  <svg viewBox="0 0 720 386" width="100%" role="img" aria-label="Bar chart: nuclear capacity contracted or restarting to serve AI data centers, in megawatts, by type. Existing-plant power purchase agreement: Susquehanna 1,920 megawatts to Amazon. Restarts: Crane / Three Mile Island 835 megawatts for Microsoft, Palisades 800 megawatts, Duane Arnold 615 megawatts for Google. New small modular reactors, first units around 2030 or later: Google–Kairos up to 500, Oklo–Equinix 500, Amazon–X-energy 300 megawatts." style="display:block;font-family:'IBM Plex Mono',monospace">
+  <line x1="206.0" y1="26" x2="206.0" y2="334" stroke="#23232F" stroke-width="1"/>
+  <text x="206.0" y="350" fill="#8A90A2" font-size="11" text-anchor="middle">0</text>
+  <line x1="328.0" y1="26" x2="328.0" y2="334" stroke="#23232F" stroke-width="1"/>
+  <text x="328.0" y="350" fill="#8A90A2" font-size="11" text-anchor="middle">500</text>
+  <line x1="450.0" y1="26" x2="450.0" y2="334" stroke="#23232F" stroke-width="1"/>
+  <text x="450.0" y="350" fill="#8A90A2" font-size="11" text-anchor="middle">1000</text>
+  <line x1="572.0" y1="26" x2="572.0" y2="334" stroke="#23232F" stroke-width="1"/>
+  <text x="572.0" y="350" fill="#8A90A2" font-size="11" text-anchor="middle">1500</text>
+  <line x1="694.0" y1="26" x2="694.0" y2="334" stroke="#23232F" stroke-width="1"/>
+  <text x="694.0" y="350" fill="#8A90A2" font-size="11" text-anchor="middle">2000</text>
+  <text x="196" y="49" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Susquehanna</text>
+  <text x="196" y="64" fill="#8A90A2" font-size="10" text-anchor="end">Amazon · Talen PPA</text>
+  <rect x="206" y="40" width="468.5" height="20" rx="4" fill="#279BBE"><title>Susquehanna (PA): up to 1,920 MW to Amazon under a 17-yr Talen PPA — existing plant</title></rect>
+  <text x="666.5" y="56" fill="#04121a" font-size="12" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">1,920 MW</text>
+  <text x="196" y="93" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Crane / TMI</text>
+  <text x="196" y="108" fill="#8A90A2" font-size="10" text-anchor="end">Microsoft · Constellation</text>
+  <rect x="206" y="84" width="203.7" height="20" rx="4" fill="#37C5E0"><title>Crane Clean Energy Center / Three Mile Island Unit 1: 835 MW restart, 20-yr Microsoft PPA, target 2028</title></rect>
+  <text x="417.7" y="100" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">835 MW</text>
+  <text x="196" y="137" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Palisades</text>
+  <text x="196" y="152" fill="#8A90A2" font-size="10" text-anchor="end">Holtec · DOE-backed</text>
+  <rect x="206" y="128" width="195.2" height="20" rx="4" fill="#37C5E0"><title>Palisades (MI): 800 MW restart, NRC-approved — first US reactor brought back from decommissioning</title></rect>
+  <text x="409.2" y="144" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">800 MW</text>
+  <text x="196" y="181" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Duane Arnold</text>
+  <text x="196" y="196" fill="#8A90A2" font-size="10" text-anchor="end">Google · NextEra</text>
+  <rect x="206" y="172" width="150.1" height="20" rx="4" fill="#37C5E0"><title>Duane Arnold (IA): ~615 MW restart, 25-yr Google PPA, target early 2029</title></rect>
+  <text x="364.1" y="188" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">615 MW</text>
+  <text x="196" y="225" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Kairos Power</text>
+  <text x="196" y="240" fill="#8A90A2" font-size="10" text-anchor="end">Google</text>
+  <rect x="206" y="216" width="122.0" height="20" rx="4" fill="#C77F2A"><title>Google–Kairos Power: up to 500 MW of SMRs, first unit ~2030, fleet by 2035</title></rect>
+  <text x="336.0" y="232" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">≤500 MW</text>
+  <text x="196" y="269" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">Oklo Aurora</text>
+  <text x="196" y="284" fill="#8A90A2" font-size="10" text-anchor="end">Equinix</text>
+  <rect x="206" y="260" width="122.0" height="20" rx="4" fill="#C77F2A"><title>Oklo Aurora powerhouses: 500 MW to Equinix, early 2030s</title></rect>
+  <text x="336.0" y="276" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">500 MW</text>
+  <text x="196" y="313" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">X-energy</text>
+  <text x="196" y="328" fill="#8A90A2" font-size="10" text-anchor="end">Amazon</text>
+  <rect x="206" y="304" width="73.2" height="20" rx="4" fill="#C77F2A"><title>Amazon–X-energy: 300 MW of XE-100 SMR capacity (Pacific NW &amp; Virginia), early 2030s</title></rect>
+  <text x="287.2" y="320" fill="#EAFFFF" font-size="12" text-anchor="start" style="font-family:'Space Grotesk',sans-serif">300 MW</text>
+  <rect x="206" y="354" width="11" height="11" rx="2" fill="#279BBE"/>
+  <text x="222" y="364" fill="#8A90A2" font-size="12">Existing-plant PPA</text>
+  <rect x="372.0" y="354" width="11" height="11" rx="2" fill="#37C5E0"/>
+  <text x="388.0" y="364" fill="#8A90A2" font-size="12">Restart</text>
+  <rect x="461.0" y="354" width="11" height="11" rx="2" fill="#C77F2A"/>
+  <text x="477.0" y="364" fill="#8A90A2" font-size="12">New SMR (2030+)</text>
+  </svg>
+  <figcaption>Nuclear capacity contracted or restarting to serve AI data centers, by type (MW). Restarts and existing-plant PPAs deliver this decade; SMRs are announced, with first units targeted around 2030 or later. "Up to" figures reflect phased or fleet totals. Sources: Utility Dive, World Nuclear News, ANS, NRC, company releases.</figcaption>
+  </figure>
+
+  <div class="statrow">
+    <div class="s"><div class="n">835 MW</div><div class="l">Three Mile Island restart for Microsoft — target 2028</div></div>
+    <div class="s"><div class="n">1,920 MW</div><div class="l">Susquehanna nuclear to Amazon (Talen, 17-yr PPA)</div></div>
+    <div class="s"><div class="n">~80 GW</div><div class="l">GE Vernova gas-turbine backlog into 2029 — the fast lane, filling</div></div>
+  </div>
+
+  <h2>4. Route three — the SMR bet: real money, later power</h2>
+  <p>The third route is the one everyone announces and no one has yet plugged in. Small modular reactors are the hyperscalers' hedge for the 2030s: Amazon led a $700M round in <span class="stat">X-energy</span> and contracted for ~300 MW of its XE-100 design; Google agreed with <span class="stat">Kairos Power</span> for up to 500 MW across seven units, first online targeted for 2030; and <span class="stat">Oklo</span> signed Equinix for 500 MW of its Aurora powerhouses. The dollars are committed and the ambition is real — Oklo alone claims agreements totaling ~12 GW through 2044.</p>
+  <p>But the honest caveat is the timeline. <span class="stat">Not one commercial SMR is operating in the U.S. today.</span> First units are targeted for the end of this decade, and first-of-a-kind nuclear projects have a long history of slipping. SMRs answer the 2030s demand curve, not the cluster a hyperscaler is energizing this year — which is why the same companies are burning gas and restarting old reactors in the meantime.</p>
+
+  <div class="note"><b>Announced ≠ online</b> — The nuclear chart mixes three very different certainties. Restarts (TMI, Palisades, Duane Arnold) are funded and NRC-track, delivering 2026–2029. Existing-plant PPAs (Susquehanna, Clinton) reallocate power that already exists — they add contracts, not electrons. SMRs are pre-construction announcements with 2030+ targets. Treat the dates, not just the megawatts.</div>
+
+  <h2>5. What the workaround actually changes</h2>
+  <p>Put the three routes together and a pattern emerges. The buildout isn't waiting for grid reform — it's pricing around it, and the bill comes in three currencies. Gas buys speed with <b style="color:var(--white)">carbon and local backlash</b>. Nuclear restarts buy clean firm power but only for those who can sign billion-dollar, decade-long PPAs — concentrating the scarcest resource with the <b style="color:var(--white)">deepest pockets</b>. And SMRs buy optionality on a <b style="color:var(--white)">timeline that may slip</b>. None of them make the queue faster for everyone else.</p>
+  <p>And notice that every fast lane is itself congesting: turbine slots sold out through 2030, NRC restart reviews measured in years, SMR supply chains yet to be built. The workarounds relieve the pressure on the queue precisely by creating new queues of their own. The <a href="../grid-bottleneck/">underlying bottleneck</a> — too few ways to connect firm power where the load is landing — is what all three are really paying to avoid.</p>
+
+  <div class="callout">The AI buildout has decided it can't wait for the grid. What it's building instead — gas, restarts, reactors — is the real map of where U.S. power is heading.</div>
+
+  <div class="cta">
+    <p><b>The full picture, mapped.</b> The Gridlas report puts the demand forecasts, the interconnection queue, and five regional deep-dives onto the grid — with high-res maps and the underlying dataset (CSV/GeoJSON), built entirely from public data.</p>
+    <a class="btn" href="../index.html">Get the report →</a>
+  </div>
+
+  <div class="sources">
+    <b>Sources:</b>
+    <ul>
+      <li><b>On-site gas</b> — Data Center Dynamics, Southern Environmental Law Center, Governors' Wind Energy Coalition (xAI Colossus, Memphis &amp; Southaven); DCD, POWER Magazine, S&amp;P Global, TechCrunch (Meta / Entergy Louisiana)</li>
+      <li><b>Nuclear restarts</b> — Utility Dive, World Nuclear News, CNBC, NPR (Three Mile Island / Crane, Microsoft PPA); NucNet, Canary Media, Neutron Bytes (Palisades / Holtec, NRC); ANS, World Nuclear News (Duane Arnold / NextEra–Google)</li>
+      <li><b>Existing-plant PPAs</b> — Utility Dive, POWER, ANS, Talen 8-K (Susquehanna / Amazon–Talen; FERC interconnection ruling); Constellation (Clinton / Meta)</li>
+      <li><b>SMRs</b> — Utility Dive, Data Center Frontier, TechCrunch, DCD (Amazon–X-energy, Google–Kairos, Oklo–Equinix)</li>
+      <li><b>Turbine backlog</b> — Utility Dive, Yahoo Finance, Power Engineering (GE Vernova gas-turbine backlog &amp; lead times)</li>
+      <li><b>Grid queue &amp; timing</b> — LBNL "Queued Up"; IEA "Energy and AI" (2025)</li>
+    </ul>
+    See also the <a href="../grid-bottleneck/">grid-bottleneck analysis</a>, the full <a href="../findings.html">methodology &amp; sources</a>, and the <a href="../data-centers/">regional breakdowns</a>.
+  </div>
+
+  <div class="foot">
+    This is the supply-side companion to <a href="../grid-bottleneck/">the grid bottleneck</a>. The <a href="../findings.html">visual analysis</a> plots demand over the U.S. grid, and the <a href="../data-centers/">regional pages</a> break it down market by market.
+    <br><br>
+    Gridlas · independent &amp; unaffiliated · built from public data.
+  </div>
+</div>
+</body>
+</html>
