@@ -61,6 +61,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://gridlas.com/data-centers/iowa-data-centers/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://gridlas.com/data-centers/memphis-tennessee/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
