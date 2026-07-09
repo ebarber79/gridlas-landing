@@ -64,7 +64,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
 <style>
   :root{
     --bg:#0A0A14; --surface:#15151F; --line:#23232F;
@@ -127,7 +128,7 @@
   .feat h3{margin:0 0 6px;color:var(--white);font-size:17px;padding-left:10px}
   .feat p{margin:0;color:var(--muted);font-size:14px;padding-left:10px}
   .peek{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
-  .peek img{width:100%;border-radius:12px;border:1px solid var(--line)}
+  .peek img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
   /* tiers */
   .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .tier{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center}
@@ -206,7 +207,7 @@
   </section>
 
   <section class="peek">
-    <img src="./assets/peek.png" alt="Generation vs. demand map — U.S. power plants over data-center load">
+    <img src="./assets/peek.png" alt="Generation vs. demand map — U.S. power plants over data-center load" width="1400" height="959" decoding="async" loading="lazy">
     <div>
       <h2>The collision, mapped</h2>
       <p class="section-sub">Supply is everywhere — 2,459 utility-scale plants — but demand concentrates onto specific, already-stressed grids. The full report breaks down every market, queue, and scenario.</p>

@@ -19,7 +19,8 @@
 <link rel="icon" href="../../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
 <link rel="stylesheet" href="../../assets/regional.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"Texas Data Center Power & the ERCOT Interconnection Queue (2026)","description":"ERCOT's large-load interconnection queue jumped from 63 GW to ~226 GW in a single year — about 77% data centers, only 1.8% operational. Texas data-center power demand mapped from public data.","image":"https://gridlas.com/assets/fig-region-tx.png","url":"https://gridlas.com/data-centers/texas-ercot-queue/","author":{"@type":"Person","name":"Eugene Barber"},"publisher":{"@type":"Organization","name":"Gridlas","url":"https://gridlas.com/"},"mainEntityOfPage":"https://gridlas.com/data-centers/texas-ercot-queue/","isAccessibleForFree":true,"keywords":["Texas data center power","ERCOT interconnection queue","ERCOT large load queue","Dallas Fort Worth data centers","data center electricity Texas"]}
@@ -46,11 +47,11 @@
 
   <p>ERCOT's large-load interconnection queue went from <span class="stat">63 GW at the end of 2024 to roughly 226 GW by November 2025</span> — about a 4× jump in a single year. Around <span class="stat">77% of that is data centers</span> aiming to connect by 2030. <a href="../dallas-fort-worth/">Dallas–Fort Worth</a> alone has crossed a gigawatt of operating supply.</p>
 
-  <figure><img src="../../assets/fig-region-tx.png" alt="Map of Texas data-center clusters and power plants over the ERCOT grid"><figcaption>Texas data-center clusters and generation over the ERCOT grid. Source: public EIA / ERCOT (late 2025); clusters approximate.</figcaption></figure>
+  <figure><img src="../../assets/fig-region-tx.png" alt="Map of Texas data-center clusters and power plants over the ERCOT grid" width="1389" height="1409" decoding="async" loading="lazy"><figcaption>Texas data-center clusters and generation over the ERCOT grid. Source: public EIA / ERCOT (late 2025); clusters approximate.</figcaption></figure>
 
   <p>But a queue is a wish list, not a build plan. Of that 226 GW, only about <span class="stat">1.8% is actually operational</span> and drawing power — and more than half of the requested capacity hasn't submitted enough information to even begin study. ERCOT added roughly <span class="stat">23 GW of new generation in 2024–25</span>, but the requests are arriving far faster than steel goes in the ground.</p>
 
-  <figure><img src="../../assets/fig-funnel.png" alt="Queued versus operational capacity in ERCOT"><figcaption>Queued ≠ built: how little of the ERCOT large-load queue is operational. Source: ERCOT / Latitude Media (Nov 2025).</figcaption></figure>
+  <figure><img src="../../assets/fig-funnel.png" alt="Queued versus operational capacity in ERCOT" width="1593" height="957" decoding="async" loading="lazy"><figcaption>Queued ≠ built: how little of the ERCOT large-load queue is operational. Source: ERCOT / Latitude Media (Nov 2025).</figcaption></figure>
 
   <div class="callout">Compute scales in months. Power scales in years. Texas is where that mismatch is most visible.</div>
 
