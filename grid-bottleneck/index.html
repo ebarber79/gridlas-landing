@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Grid Bottleneck: Can the U.S. Power the AI Data-Center Buildout Through 2030? | Gridlas</title>
+<meta name="description" content="The constraint on powering AI isn't a shortage of power plants — it's the interconnection queue, where the median wait has doubled to ~5 years and ~77% of proposed capacity is withdrawn. A data-backed look at U.S. data-center demand forecasts (LBNL, EIA, EPRI, IEA), the queue bottleneck, and where load is landing.">
+<link rel="canonical" href="https://gridlas.com/grid-bottleneck/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Gridlas">
+<meta property="og:url" content="https://gridlas.com/grid-bottleneck/">
+<meta property="og:title" content="The Grid Bottleneck: Can the U.S. Power the AI Buildout Through 2030?">
+<meta property="og:description" content="The bottleneck isn't power plants — it's the queue. Median interconnection wait has doubled to ~5 years and ~77% of proposed capacity is withdrawn. The data, from LBNL, EIA, EPRI & IEA.">
+<meta property="og:image" content="https://gridlas.com/assets/fig-hero.png">
+<meta property="og:image:width" content="2155">
+<meta property="og:image:height" content="1469">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Grid Bottleneck: Can the U.S. Power the AI Buildout Through 2030?">
+<meta name="twitter:description" content="The constraint isn't generation — it's the interconnection queue. Median wait doubled to ~5 yrs; ~77% of capacity withdrawn. Data-backed, from LBNL/EIA/EPRI/IEA.">
+<meta name="twitter:image" content="https://gridlas.com/assets/fig-hero.png">
+<link rel="icon" href="../assets/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Grid Bottleneck: Can the U.S. Power the AI Data-Center Buildout Through 2030?",
+  "description": "The constraint on powering AI isn't a shortage of power plants — it's the interconnection queue, where the median wait has doubled to ~5 years and ~77% of proposed capacity is withdrawn. A data-backed look at U.S. data-center demand forecasts (LBNL, EIA, EPRI, IEA), the queue bottleneck, and where load is landing.",
+  "image": "https://gridlas.com/assets/fig-hero.png",
+  "url": "https://gridlas.com/grid-bottleneck/",
+  "author": { "@type": "Person", "name": "Eugene Barber" },
+  "publisher": { "@type": "Organization", "name": "Gridlas", "url": "https://gridlas.com/" },
+  "mainEntityOfPage": "https://gridlas.com/grid-bottleneck/",
+  "keywords": ["data center power demand 2030", "AI electricity consumption", "interconnection queue bottleneck", "grid bottleneck data centers", "US data center electricity forecast", "EPRI LBNL data center forecast"],
+  "isAccessibleForFree": true
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0A0A14;--surface:#15151F;--line:#23232F;--cyan:#37C5E0;--white:#EAFFFF;--text:#D8DBE6;--muted:#8A90A2}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+  nav{display:flex;align-items:center;gap:9px;padding:20px 0;border-bottom:1px solid var(--line);margin-bottom:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+  .brand{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:18px}
+  .spacer{flex:1} .navlink{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--muted)}
+  h1{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:33px;line-height:1.14;margin:30px 0 8px}
+  h2{font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:23px;margin:48px 0 6px}
+  .kicker{font-family:'IBM Plex Mono';color:var(--cyan);font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase}
+  .standfirst{font-size:18px;color:var(--muted);margin:6px 0 0}
+  .byline{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--muted);margin:18px 0 0;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  p{margin:16px 0;font-size:16.5px}
+  .lead{font-size:18.5px;color:var(--text)}
+  figure{margin:30px 0;padding:0}
+  figcaption{font-family:'IBM Plex Mono';font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+  .stat{font-family:'Space Grotesk';color:var(--white)}
+  ul{padding-left:20px} li{margin:8px 0;font-size:16px}
+  .statrow{display:flex;gap:12px;margin:24px 0;flex-wrap:wrap}
+  .statrow .s{flex:1;min-width:150px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:15px 16px}
+  .statrow .n{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:24px}
+  .statrow .l{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+  .callout{background:var(--surface);border-left:4px solid var(--cyan);border-radius:8px;padding:16px 18px;margin:26px 0;font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:18px}
+  .note{background:rgba(55,197,224,.05);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:24px 0;font-size:14px;color:var(--muted)}
+  .note b{color:var(--cyan);font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.5px;text-transform:uppercase}
+  .sources{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:26px 0;font-size:14.5px}
+  .sources b{color:var(--white)}
+  .cta{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;margin:34px 0;text-align:center}
+  .btn{display:inline-block;background:var(--cyan);color:#04121a;font-family:'Space Grotesk';font-weight:700;padding:12px 22px;border-radius:9px;margin-top:8px}
+  .foot{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 60px;color:var(--muted);font-size:14.5px}
+  .foot a{font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><span class="dot"></span><a class="brand" href="../index.html">gridlas</a><span class="spacer"></span><a class="navlink" href="../findings.html">Analysis</a> · <a class="navlink" href="../data-centers/">Regions</a></nav>
+
+  <div class="kicker">Analysis · LBNL · EIA · EPRI · IEA · DOE</div>
+  <h1>The grid bottleneck: can the U.S. power the AI data-center buildout through 2030?</h1>
+  <p class="standfirst">There is no shortage of power plants waiting to be built. There is a shortage of ways to connect them. That distinction is the whole story.</p>
+  <p class="byline">A Gridlas analysis · built from public data · figures 2023–2026, primary sources cited throughout</p>
+
+  <p class="lead">The debate over whether the U.S. can power AI usually gets framed as a generation problem — do we have enough electricity? The data says the real constraint sits one layer down, in the <b style="color:var(--white)">interconnection queue</b>: the multi-year line every new power plant and battery must wait in before it can plug into the grid. Roughly 2,290 GW of capacity is queued today — far more than enough — but most of it will never get built, and what does will arrive years after the demand. Here is what the primary sources actually show.</p>
+
+  <h2>1. Demand is real — but the forecasts don't agree</h2>
+  <p>Every credible forecaster agrees U.S. electricity demand is climbing after two flat decades, and that data centers are the driver. The EIA calls it the <span class="stat">strongest four-year demand growth since 2000</span> — the first four straight years of growth since 2007 — projecting +1% in 2026 and +3% in 2027. Data centers used about <span class="stat">176 TWh (4.4% of U.S. electricity) in 2023</span>, already more than double their 2018 level.</p>
+  <p>Where forecasters diverge is <em>how high, how fast</em> — and the spread is enormous. That disagreement, not any single number, is the honest headline.</p>
+
+  <figure>
+  <svg viewBox="0 0 720 300" width="100%" role="img" aria-label="Range chart: forecasts for data centers as a share of U.S. electricity. LBNL projects 6.7 to 12 percent by 2028; EPRI's 2024 estimate was 4.6 to 9.1 percent by 2030; EPRI revised this up to 9 to 17 percent by 2030 in 2026." style="display:block;font-family:'IBM Plex Mono',monospace">
+  <line x1="190.0" y1="20" x2="190.0" y2="206.0" stroke="#23232F" stroke-width="1"/>
+  <text x="190.0" y="224.0" fill="#8A90A2" font-size="11" text-anchor="middle">0%</text>
+  <line x1="328.9" y1="20" x2="328.9" y2="206.0" stroke="#23232F" stroke-width="1"/>
+  <text x="328.9" y="224.0" fill="#8A90A2" font-size="11" text-anchor="middle">5%</text>
+  <line x1="467.8" y1="20" x2="467.8" y2="206.0" stroke="#23232F" stroke-width="1"/>
+  <text x="467.8" y="224.0" fill="#8A90A2" font-size="11" text-anchor="middle">10%</text>
+  <line x1="606.7" y1="20" x2="606.7" y2="206.0" stroke="#23232F" stroke-width="1"/>
+  <text x="606.7" y="224.0" fill="#8A90A2" font-size="11" text-anchor="middle">15%</text>
+  <line x1="315.0" y1="20" x2="315.0" y2="206.0" stroke="#8A90A2" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="320.0" y="32.0" fill="#8A90A2" font-size="10.5">today ~4–5%</text>
+  <text x="176" y="49.0" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">LBNL / DOE</text>
+  <text x="176" y="64.0" fill="#8A90A2" font-size="10.5" text-anchor="end">by 2028</text>
+  <rect x="376.1" y="42.0" width="147.2" height="18" rx="9" fill="#37C5E0"><title>LBNL / DOE (by 2028): 6.7–12.0% of U.S. electricity</title></rect>
+  <text x="531.3" y="56.0" fill="#EAFFFF" font-size="12" style="font-family:'Space Grotesk',sans-serif">6.7–12%</text>
+  <text x="176" y="111.0" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">EPRI — 2024 estimate</text>
+  <text x="176" y="126.0" fill="#8A90A2" font-size="10.5" text-anchor="end">by 2030</text>
+  <rect x="317.8" y="104.0" width="125.0" height="18" rx="9" fill="#4a6f78"><title>EPRI — 2024 estimate (by 2030): 4.6–9.1% of U.S. electricity</title></rect>
+  <text x="450.8" y="118.0" fill="#8A90A2" font-size="12" style="font-family:'Space Grotesk',sans-serif">4.6–9.1%</text>
+  <text x="176" y="173.0" fill="#EAFFFF" font-size="13" text-anchor="end" style="font-family:'Space Grotesk',sans-serif">EPRI — 2026 estimate</text>
+  <text x="176" y="188.0" fill="#8A90A2" font-size="10.5" text-anchor="end">by 2030</text>
+  <rect x="440.0" y="166.0" width="222.2" height="18" rx="9" fill="#37C5E0"><title>EPRI — 2026 estimate (by 2030): 9.0–17.0% of U.S. electricity</title></rect>
+  <text x="670.2" y="180.0" fill="#EAFFFF" font-size="12" style="font-family:'Space Grotesk',sans-serif">9–17%</text>
+  </svg>
+  <figcaption>Data centers as a share of U.S. electricity — competing forecasts. Note the horizon differs (LBNL to 2028; EPRI to 2030) and EPRI revised its own 2030 range up ~60% in under two years. Sources: LBNL/DOE (2024); EPRI "Powering Intelligence" (2024 &amp; 2026).</figcaption>
+  </figure>
+
+  <div class="note"><b>How to read this</b> — These are not apples-to-apples. LBNL's 6.7–12% figure is a <b style="color:var(--white);text-transform:none;font-family:inherit;font-size:inherit;letter-spacing:0">2028</b> projection (bounded by chip-shipment forecasts), not 2030, and uses equipment-shipment data; EPRI's is a 2030 projection built from commercial project pipelines. Across all models, published 2030 U.S. estimates span roughly <span class="stat">200 to over 1,050 TWh/year</span> — a 5× spread. Treat every point estimate as scenario-dependent.</div>
+
+  <div class="statrow">
+    <div class="s"><div class="n">6.7–12%</div><div class="l">of U.S. electricity by 2028 (LBNL/DOE) = 74–132 GW</div></div>
+    <div class="s"><div class="n">9–17%</div><div class="l">by 2030 (EPRI 2026) — up ~60% from its 2024 estimate</div></div>
+    <div class="s"><div class="n">~½</div><div class="l">of all U.S. demand growth to 2030 is data centers (IEA)</div></div>
+  </div>
+
+  <h2>2. The bottleneck is the queue, not the megawatts</h2>
+  <p>Here is the counterintuitive core. As of end-2024, about <span class="stat">2,290 GW</span> of generation and storage — some 10,300 projects — was seeking to connect to the U.S. grid, the queues covering ~98% of national capacity. That is multiples of what the buildout needs. The problem is throughput: the median time from interconnection request to switched-on has <span class="stat">more than doubled</span>, from under two years for projects built in 2000–07 to about five years for those built in 2023.</p>
+
+  <figure>
+  <svg viewBox="0 0 720 300" width="100%" role="img" aria-label="Bar chart: median time from interconnection request to operation rose from under 2 years for projects built 2000 to 2007, to about 3 years in 2015, to about 5 years in 2023." style="display:block;font-family:'IBM Plex Mono',monospace">
+  <line x1="52" y1="250.0" x2="700" y2="250.0" stroke="#23232F" stroke-width="1"/>
+  <text x="44" y="254.0" fill="#8A90A2" font-size="11" text-anchor="end">0 yr</text>
+  <line x1="52" y1="175.3" x2="700" y2="175.3" stroke="#23232F" stroke-width="1"/>
+  <text x="44" y="179.3" fill="#8A90A2" font-size="11" text-anchor="end">2 yr</text>
+  <line x1="52" y1="100.7" x2="700" y2="100.7" stroke="#23232F" stroke-width="1"/>
+  <text x="44" y="104.7" fill="#8A90A2" font-size="11" text-anchor="end">4 yr</text>
+  <line x1="52" y1="26.0" x2="700" y2="26.0" stroke="#23232F" stroke-width="1"/>
+  <text x="44" y="30.0" fill="#8A90A2" font-size="11" text-anchor="end">6 yr</text>
+  <rect x="100.0" y="182.8" width="120" height="67.2" rx="4" fill="#37C5E0"><title>2000–07: <2 yrs</title></rect>
+  <text x="160.0" y="173.8" fill="#EAFFFF" font-size="15" font-weight="600" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif"><2 yrs</text>
+  <text x="160.0" y="270.0" fill="#8A90A2" font-size="12" text-anchor="middle">built 2000–07</text>
+  <rect x="316.0" y="138.0" width="120" height="112.0" rx="4" fill="#37C5E0"><title>2015: ~3 yrs</title></rect>
+  <text x="376.0" y="129.0" fill="#EAFFFF" font-size="15" font-weight="600" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif">~3 yrs</text>
+  <text x="376.0" y="270.0" fill="#8A90A2" font-size="12" text-anchor="middle">built 2015</text>
+  <rect x="532.0" y="63.3" width="120" height="186.7" rx="4" fill="#37C5E0"><title>2023: ~5 yrs</title></rect>
+  <text x="592.0" y="54.3" fill="#EAFFFF" font-size="15" font-weight="600" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif">~5 yrs</text>
+  <text x="592.0" y="270.0" fill="#8A90A2" font-size="12" text-anchor="middle">built 2023</text>
+  </svg>
+  <figcaption>Median duration from interconnection request to commercial operation, by build cohort (regions with available data). Source: LBNL "Queued Up" (2024 &amp; 2025 editions), Berkeley Lab.</figcaption>
+  </figure>
+
+  <p>And the wait is only half of it. Most queued capacity is never built at all. Of everything that requested interconnection between 2000 and 2019, only <span class="stat">13% had been built</span> by end-2024 — while <span class="stat">77% was withdrawn</span>. The queue is an attrition filter, not a build pipeline.</p>
+
+  <figure>
+  <svg viewBox="0 0 720 168" width="100%" role="img" aria-label="Stacked bar: of generation and storage capacity that requested U.S. grid interconnection between 2000 and 2019, about 77% was ultimately withdrawn, only 13% was built, and 10% is still in the queue as of end 2024." style="display:block;font-family:'IBM Plex Mono',monospace">
+  <rect x="40.0" y="34" width="506.2" height="52" rx="4" fill="#C77F2A"><title>Withdrawn: 77%</title></rect>
+  <text x="293.1" y="66.0" fill="#EAFFFF" font-size="17" font-weight="700" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif">77%</text>
+  <rect x="548.2" y="34" width="83.8" height="52" rx="0" fill="#3E9E68"><title>Built: 13%</title></rect>
+  <text x="590.1" y="66.0" fill="#EAFFFF" font-size="17" font-weight="700" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif">13%</text>
+  <rect x="634.0" y="34" width="64.0" height="52" rx="4" fill="#279BBE"><title>Still in queue: 10%</title></rect>
+  <text x="666.0" y="66.0" fill="#EAFFFF" font-size="17" font-weight="700" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif">10%</text>
+  <rect x="40" y="106" width="11" height="11" rx="2" fill="#C77F2A"/>
+  <text x="56" y="116" fill="#8A90A2" font-size="12.5">Withdrawn</text>
+  <rect x="155.3" y="106" width="11" height="11" rx="2" fill="#3E9E68"/>
+  <text x="171.3" y="116" fill="#8A90A2" font-size="12.5">Built</text>
+  <rect x="239.8" y="106" width="11" height="11" rx="2" fill="#279BBE"/>
+  <text x="255.8" y="116" fill="#8A90A2" font-size="12.5">Still in queue</text>
+  </svg>
+  <figcaption>Fate of generation + storage capacity that requested U.S. interconnection, 2000–2019 (status as of end-2024). Source: LBNL "Queued Up" 2025 Edition.</figcaption>
+  </figure>
+
+  <div class="callout">There is no capacity shortage in the queue. There is a throughput shortage in the process. Compute scales in months; interconnection scales in years.</div>
+
+  <h2>3. The queue is quietly changing shape</h2>
+  <p>For the first time in a decade, the queue actually shrank — total volume fell about <span class="stat">12% in 2024</span> as withdrawals outpaced new requests, with solar (−12%), storage (−13%) and wind (−26%) all down. One resource ran the other way: <span class="stat">natural gas surged 72%</span> to 136 GW. The queue is still ~95% clean by volume, but gas is the only major category growing — an early signal that developers are chasing firm, always-on power they can count on connecting.</p>
+
+  <h2>4. What's actually stepping in — and what's slowing it</h2>
+  <p>On the supply side, the IEA's global outlook (to 2035) has renewables covering roughly half of data-center demand growth, with natural gas (notably in the U.S., ~+175 TWh) and nuclear each adding about the same, and the first small modular reactors arriving <span class="stat">around 2030</span>. But every one of those has a lead-time problem:</p>
+  <ul>
+    <li><b>Grid connection.</b> The IEA estimates <span class="stat">~20% of planned data-center projects risk delay</span> from grid constraints. New transmission takes 4–8 years to build.</li>
+    <li><b>Equipment.</b> Wait times for large transformers and cables have doubled in three years.</li>
+    <li><b>Gas turbines.</b> Backlogs stretch to the end of the decade — GE Vernova alone reported an <span class="stat">~80 GW turbine backlog into 2029</span> — so new gas plants may not arrive before 2030.</li>
+  </ul>
+  <p>The fixes that need no new steel are the ones that work fastest: grid-enhancing technologies and advanced-conductor reconductoring can lift the capacity of lines already in the ground (per the U.S. DOE and GridLab), and making large new loads flexible — willing to curtail briefly at peaks — can free meaningful headroom on the existing grid. Those are the levers with the shortest path to a connected megawatt.</p>
+
+  <h2>5. Where the load lands decides who feels it</h2>
+  <p>National averages hide the real risk, because the load concentrates. About <span class="stat">half of U.S. data centers under development sit in pre-existing large clusters</span> (IEA), stacking new demand onto grids already carrying it. Virginia is the extreme case — the only state where data centers already exceed <span class="stat">20% of electricity use</span>, a share that could reach 39–57% by 2030 (EPRI) — and on EPRI's medium scenario, seven more states could cross 20% by decade's end. That geography is exactly what the <a href="../data-centers/">regional maps</a> track, market by market.</p>
+
+  <div class="callout">The question isn't whether the U.S. has enough power. It's whether the right wires, in the right places, get built before the GPUs show up.</div>
+
+  <div class="cta">
+    <p><b>The full picture, mapped.</b> The Gridlas report puts these forecasts, the queue data, and five regional deep-dives onto the grid — with high-res maps and the underlying dataset (CSV/GeoJSON), built entirely from public data.</p>
+    <a class="btn" href="../index.html">Get the report →</a>
+  </div>
+
+  <div class="note"><b>On the numbers</b> — This piece is built only from primary and authoritative sources, and every headline figure was cross-checked before publishing. Where forecasts disagree we show the range rather than pick a winner. Two caveats worth repeating: the LBNL 6.7–12% figure is a <span style="color:var(--text)">2028</span> projection, not 2030; and the IEA generation-mix and "20% at risk" figures are <span style="color:var(--text)">global, to 2035</span>, not a U.S.-through-2030 breakdown.</div>
+
+  <div class="sources">
+    <b>Sources:</b>
+    <ul>
+      <li><b>LBNL / Berkeley Lab</b> — "Queued Up" 2024 &amp; 2025 Editions (interconnection queue &amp; timelines); 2024 U.S. Data Center Energy Usage Report (DOE-funded)</li>
+      <li><b>U.S. EIA</b> — Short-Term Energy Outlook press release, Jan 2026 (demand growth)</li>
+      <li><b>EPRI</b> — "Powering Intelligence" (2024 &amp; 2026 updates)</li>
+      <li><b>IEA</b> — "Energy and AI" (2025) — global demand &amp; generation mix</li>
+      <li><b>U.S. DOE</b> Office of Electricity &amp; GridLab — grid-enhancing technologies, reconductoring</li>
+      <li><b>GE Vernova</b> — investor disclosures on gas-turbine backlog</li>
+    </ul>
+    See also the full <a href="../findings.html">methodology &amp; sources</a> and the <a href="../data-centers/">regional breakdowns</a>.
+  </div>
+
+  <div class="foot">
+    Prefer the map view? The <a href="../findings.html">visual analysis</a> plots this over the U.S. power grid, and the <a href="../data-centers/">regional pages</a> break it down market by market.
+    <br><br>
+    Gridlas · independent &amp; unaffiliated · built from public data.
+  </div>
+</div>
+</body>
+</html>
