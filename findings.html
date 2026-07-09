@@ -34,6 +34,19 @@
   "isAccessibleForFree": true
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"How much electricity do U.S. data centers use?","acceptedAnswer":{"@type":"Answer","text":"Data centers consumed about 4.4% of U.S. electricity in 2023. Lawrence Berkeley National Laboratory projects that share will reach 6.7% to 12% by 2028, reversing two decades of essentially flat national demand."}},
+    {"@type":"Question","name":"Why does it take so long to connect a data center to the power grid?","acceptedAnswer":{"@type":"Answer","text":"The wait is the interconnection queue. Nationally, the median time from interconnection request to commercial operation has more than doubled — from under two years in the 2000s to about 4.5 years for projects reaching operation in 2024 — because transmission planning, studies and grid upgrades move far slower than the load wants to arrive."}},
+    {"@type":"Question","name":"Which U.S. region has the most data centers?","acceptedAnswer":{"@type":"Answer","text":"Northern Virginia is the largest data-center market in the world, at roughly 4,040 MW of operating capacity — about 3.5 times every secondary U.S. market combined. Dallas–Fort Worth, Atlanta, Phoenix and central Ohio follow."}},
+    {"@type":"Question","name":"What is the ERCOT interconnection queue?","acceptedAnswer":{"@type":"Answer","text":"ERCOT's large-load interconnection queue is the list of big new loads seeking to connect to the Texas grid. It grew from about 63 GW at the end of 2024 to roughly 226 GW by November 2025, with about 77% of it data centers — but only a small fraction is operational, since a queue is a wish list, not a build plan."}},
+    {"@type":"Question","name":"Is there enough power for AI data centers?","acceptedAnswer":{"@type":"Answer","text":"The problem is location and timing, not total capacity. The U.S. has ample generation nationally, but data-center load concentrates onto a handful of already-stressed grids faster than they can respond. Studies suggest much of the near-term demand could be met by using existing grid capacity more flexibly."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -58,6 +71,8 @@
   .stat{font-family:'Space Grotesk';color:var(--white)}
   ul{padding-left:20px} li{margin:7px 0;font-size:16px}
   .callout{background:var(--surface);border-left:4px solid var(--cyan);border-radius:8px;padding:16px 18px;margin:26px 0;font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:18px}
+  .faq .q{font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:17.5px;margin:24px 0 0}
+  .faq p{margin:8px 0 0}
   .sources{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:26px 0;font-size:14.5px}
   .sources b{color:var(--white)}
   .foot{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 60px;color:var(--muted);font-size:14.5px}
@@ -97,6 +112,29 @@
   <p>Layering ~2,459 utility-scale power plants (≥100 MW, ~1,089 GW) under the demand picture makes the mismatch clear: generation blankets the country, but data-center load concentrates onto a handful of already-stressed grids. The problem isn't total capacity — it's location and timing.</p>
   <figure><img src="./assets/fig-gendemand.png" alt="Generation versus demand map"><figcaption>EIA power plants (colored by fuel) over data-center load by state. Source: U.S. EIA (public domain); clusters approximate.</figcaption></figure>
 
+  <h2>5. Five markets are carrying most of the load</h2>
+  <p>Zoom back out and the national picture resolves into a short list. Five markets absorb the bulk of the operating load and nearly all of the queue pressure — each for a different reason. I broke each one down separately; the short version:</p>
+  <figure><img src="./assets/fig-region-national.png" alt="National map of U.S. data-center clusters over the power grid"><figcaption>Where the load concentrates. Source: public EIA / CBRE / JLL (late 2025); clusters approximate.</figcaption></figure>
+  <ul>
+    <li><b><a href="./data-centers/northern-virginia/">Northern Virginia</a></b> — the anchor. At roughly <span class="stat">4,040 MW</span> operating it's the largest market on earth, and "Data Center Alley" in Loudoun County still sets the pace for the rest.</li>
+    <li><b><a href="./data-centers/texas-ercot-queue/">Texas (ERCOT)</a></b> — the pressure gauge. The large-load queue jumped from <span class="stat">63 GW to ~226 GW</span> in a year, about <span class="stat">77% of it data centers</span> — the clearest read on demand outrunning the grid.</li>
+    <li><b><a href="./data-centers/atlanta-georgia/">Atlanta &amp; Georgia</a></b> — the fastest riser in the Southeast, with roughly <span class="stat">2,076 MW</span> in the build pipeline and Georgia Power repeatedly revising its load forecast upward.</li>
+    <li><b><a href="./data-centers/phoenix-arizona/">Phoenix &amp; Arizona</a></b> — the desert cluster, ~<span class="stat">1,380 MW</span> across 100+ facilities, trading water and heat constraints for cheap land and fast permitting.</li>
+    <li><b><a href="./data-centers/columbus-ohio/">Central Ohio</a></b> — the breakout, where single gigawatt-scale campuses are reshaping AEP's planning around New Albany and Columbus.</li>
+  </ul>
+  <p>What ties them together isn't size — it's that each one is asking a single grid to absorb, in a few years, load that used to take a decade to plan for. The full <a href="./data-centers/">regional breakdown is here</a>.</p>
+
+  <h2>6. What actually breaks the logjam</h2>
+  <p>If the bottleneck is power and time, every fix is really trying to buy one or the other. Four are moving fastest:</p>
+  <ul>
+    <li><b>Skip the queue.</b> Behind-the-meter generation — on-site gas turbines, increasingly fuel cells — lets a campus power up without waiting years for a transmission interconnection. Fast, but it front-loads emissions and moves the fuel question on-site.</li>
+    <li><b>Buy firm, clean baseload.</b> The nuclear revival is real: hyperscalers have signed deals to restart a retired reactor (Three Mile Island, for Microsoft) and to co-locate directly at an existing plant (Talen's Susquehanna, for Amazon), alongside a wave of small-modular-reactor commitments that won't deliver until the 2030s.</li>
+    <li><b>Make the load flexible.</b> A 2025 Duke University (Nicholas Institute) study found the existing grid could absorb on the order of <span class="stat">100 GW</span> of new large load if those loads agreed to curtail power just ~0.5% of the time — pairing data centers with on-site batteries or backup generation turns "we need a new grid" into "use the grid we have, better."</li>
+    <li><b>Get more out of the wires we have.</b> Grid-enhancing technologies and reconductoring raise the capacity of lines already in the ground far faster than new transmission can be permitted. The cheapest megawatt is the one you don't have to build.</li>
+  </ul>
+  <div class="callout">None of these erase the core mismatch — compute scales in months, power in years. They decide who waits, and who pays.</div>
+  <p>Which levers each market actually pulls is where the regional story gets specific: Texas leans on behind-the-meter gas, Virginia and Ohio on utility buildout and flexibility, Phoenix on solar-plus-storage. That's the thread the <a href="./data-centers/">regional breakdowns</a> and the full report pick up.</p>
+
   <h2>Methodology &amp; sources</h2>
   <div class="sources">
     <p style="margin-top:0"><b>Tools:</b> maps and charts rendered with QGIS and Python (matplotlib) from raw public datasets. No proprietary data.</p>
@@ -107,8 +145,23 @@
       <li><b>ERCOT</b> — interconnection &amp; load reports (via Latitude Media / Utility Dive)</li>
       <li><b>CBRE / JLL</b> — North America Data Center reports, H2 2025</li>
       <li><b>IEA</b> — data-centre electricity analysis, 2025</li>
+      <li><b>Duke University</b> — Nicholas Institute, "Rethinking Load Growth" (2025) — grid load-flexibility headroom</li>
     </ul>
     <p style="margin-bottom:0"><b>Caveat:</b> data-center cluster locations and capacities are approximate, compiled from public market reports. Generation/transmission/queue figures are from the government/lab sources above. Current as of late 2025.</p>
+  </div>
+
+  <h2>Frequently asked</h2>
+  <div class="faq">
+    <p class="q">How much electricity do U.S. data centers use?</p>
+    <p>Data centers consumed about 4.4% of U.S. electricity in 2023. Lawrence Berkeley National Laboratory projects that share will reach 6.7% to 12% by 2028, reversing two decades of essentially flat national demand.</p>
+    <p class="q">Why does it take so long to connect a data center to the power grid?</p>
+    <p>The wait is the interconnection queue. Nationally, the median time from interconnection request to commercial operation has more than doubled — from under two years in the 2000s to about 4.5 years for projects reaching operation in 2024 — because transmission planning, studies and grid upgrades move far slower than the load wants to arrive.</p>
+    <p class="q">Which U.S. region has the most data centers?</p>
+    <p>Northern Virginia is the largest data-center market in the world, at roughly 4,040 MW of operating capacity — about 3.5 times every secondary U.S. market combined. Dallas–Fort Worth, Atlanta, Phoenix and central Ohio follow.</p>
+    <p class="q">What is the ERCOT interconnection queue?</p>
+    <p>ERCOT's large-load interconnection queue is the list of big new loads seeking to connect to the Texas grid. It grew from about 63 GW at the end of 2024 to roughly 226 GW by November 2025, with about 77% of it data centers — but only a small fraction is operational, since a queue is a wish list, not a build plan.</p>
+    <p class="q">Is there enough power for AI data centers?</p>
+    <p>The problem is location and timing, not total capacity. The U.S. has ample generation nationally, but data-center load concentrates onto a handful of already-stressed grids faster than they can respond. Studies suggest much of the near-term demand could be met by using existing grid capacity more flexibly.</p>
   </div>
 
   <div class="foot">
