@@ -73,6 +73,12 @@
   .callout{background:var(--surface);border-left:4px solid var(--cyan);border-radius:8px;padding:16px 18px;margin:26px 0;font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:18px}
   .faq .q{font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:17.5px;margin:24px 0 0}
   .faq p{margin:8px 0 0}
+  .datatable{margin:6px 0 26px;font-size:14px}
+  .datatable summary{color:var(--cyan);cursor:pointer;font-family:'IBM Plex Mono';font-size:12.5px}
+  .datatable table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13.5px}
+  .datatable th,.datatable td{border:1px solid var(--line);padding:6px 9px;text-align:right}
+  .datatable thead th,.datatable tbody th{color:var(--white);text-align:left}
+  .datatable td{color:var(--text);font-family:'IBM Plex Mono'}
   .sources{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:26px 0;font-size:14.5px}
   .sources b{color:var(--white)}
   .foot{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 60px;color:var(--muted);font-size:14.5px}
@@ -134,6 +140,73 @@
   </ul>
   <div class="callout">None of these erase the core mismatch — compute scales in months, power in years. They decide who waits, and who pays.</div>
   <p>Which levers each market actually pulls is where the regional story gets specific: Texas leans on behind-the-meter gas, Virginia and Ohio on utility buildout and flexibility, Phoenix on solar-plus-storage. That's the thread the <a href="./data-centers/">regional breakdowns</a> and the full report pick up.</p>
+
+  <h2>7. The money behind the buildout</h2>
+  <p>Demand is one story; the checkbook is another. Pull the four hyperscalers' capital expenditure straight from their 10-K filings and the scale of the bet is unmistakable: combined capex climbed from <span class="stat">~$125B in 2021 to ~$358B in fiscal 2025</span> — roughly <span class="stat">2.9× in four years</span>. The companies attribute the surge overwhelmingly to AI infrastructure, and every dollar of it eventually needs somewhere to plug in.</p>
+  <figure>
+  <svg viewBox="0 0 720 442" width="100%" role="img" aria-label="Stacked bar chart: combined capital expenditure of Amazon, Alphabet, Meta and Microsoft rose from about 125 billion dollars in fiscal 2021 to about 358 billion dollars in fiscal 2025." style="display:block;font-family:'IBM Plex Mono',monospace">
+  <line x1="46" y1="336.0" x2="706" y2="336.0" stroke="#23232F" stroke-width="1"/>
+  <text x="38" y="340.0" fill="#8A90A2" font-size="11" text-anchor="end">$0B</text>
+  <line x1="46" y1="256.5" x2="706" y2="256.5" stroke="#23232F" stroke-width="1"/>
+  <text x="38" y="260.5" fill="#8A90A2" font-size="11" text-anchor="end">$100B</text>
+  <line x1="46" y1="177.1" x2="706" y2="177.1" stroke="#23232F" stroke-width="1"/>
+  <text x="38" y="181.1" fill="#8A90A2" font-size="11" text-anchor="end">$200B</text>
+  <line x1="46" y1="97.6" x2="706" y2="97.6" stroke="#23232F" stroke-width="1"/>
+  <text x="38" y="101.6" fill="#8A90A2" font-size="11" text-anchor="end">$300B</text>
+  <rect x="75.0" y="289.5" width="74" height="46.5" rx="0" fill="#279BBE"><title>Amazon — FY2021: $61.0B</title></rect>
+  <rect x="75.0" y="269.9" width="74" height="17.6" rx="0" fill="#C77F2A"><title>Alphabet — FY2021: $24.6B</title></rect>
+  <rect x="75.0" y="255.1" width="74" height="12.8" rx="0" fill="#8C5FC9"><title>Meta — FY2021: $18.6B</title></rect>
+  <rect x="75.0" y="238.8" width="74" height="14.4" rx="4" fill="#3E9E68"><title>Microsoft — FY2021: $20.6B</title></rect>
+  <text x="112.0" y="228.7" fill="#EAFFFF" font-size="13" font-weight="600" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif">$125B</text>
+  <text x="112.0" y="356.0" fill="#8A90A2" font-size="12" text-anchor="middle">FY2021</text>
+  <rect x="207.0" y="287.4" width="74" height="48.6" rx="0" fill="#279BBE"><title>Amazon — FY2022: $63.6B</title></rect>
+  <rect x="207.0" y="262.4" width="74" height="23.0" rx="0" fill="#C77F2A"><title>Alphabet — FY2022: $31.5B</title></rect>
+  <rect x="207.0" y="237.4" width="74" height="23.0" rx="0" fill="#8C5FC9"><title>Meta — FY2022: $31.4B</title></rect>
+  <rect x="207.0" y="218.4" width="74" height="17.0" rx="4" fill="#3E9E68"><title>Microsoft — FY2022: $23.9B</title></rect>
+  <text x="244.0" y="208.4" fill="#EAFFFF" font-size="13" font-weight="600" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif">$150B</text>
+  <text x="244.0" y="356.0" fill="#8A90A2" font-size="12" text-anchor="middle">FY2022</text>
+  <rect x="339.0" y="296.1" width="74" height="39.9" rx="0" fill="#279BBE"><title>Amazon — FY2023: $52.7B</title></rect>
+  <rect x="339.0" y="270.5" width="74" height="23.6" rx="0" fill="#C77F2A"><title>Alphabet — FY2023: $32.2B</title></rect>
+  <rect x="339.0" y="248.8" width="74" height="19.7" rx="0" fill="#8C5FC9"><title>Meta — FY2023: $27.3B</title></rect>
+  <rect x="339.0" y="226.5" width="74" height="20.3" rx="4" fill="#3E9E68"><title>Microsoft — FY2023: $28.1B</title></rect>
+  <text x="376.0" y="216.4" fill="#EAFFFF" font-size="13" font-weight="600" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif">$140B</text>
+  <text x="376.0" y="356.0" fill="#8A90A2" font-size="12" text-anchor="middle">FY2023</text>
+  <rect x="471.0" y="272.0" width="74" height="64.0" rx="0" fill="#279BBE"><title>Amazon — FY2024: $83.0B</title></rect>
+  <rect x="471.0" y="230.3" width="74" height="39.8" rx="0" fill="#C77F2A"><title>Alphabet — FY2024: $52.5B</title></rect>
+  <rect x="471.0" y="200.7" width="74" height="27.6" rx="0" fill="#8C5FC9"><title>Meta — FY2024: $37.3B</title></rect>
+  <rect x="471.0" y="165.3" width="74" height="33.3" rx="4" fill="#3E9E68"><title>Microsoft — FY2024: $44.5B</title></rect>
+  <text x="508.0" y="155.3" fill="#EAFFFF" font-size="13" font-weight="600" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif">$217B</text>
+  <text x="508.0" y="356.0" fill="#8A90A2" font-size="12" text-anchor="middle">FY2024</text>
+  <rect x="603.0" y="233.2" width="74" height="102.8" rx="0" fill="#279BBE"><title>Amazon — FY2025: $131.8B</title></rect>
+  <rect x="603.0" y="160.6" width="74" height="70.7" rx="0" fill="#C77F2A"><title>Alphabet — FY2025: $91.5B</title></rect>
+  <rect x="603.0" y="105.2" width="74" height="53.4" rx="0" fill="#8C5FC9"><title>Meta — FY2025: $69.7B</title></rect>
+  <rect x="603.0" y="53.9" width="74" height="49.3" rx="4" fill="#3E9E68"><title>Microsoft — FY2025: $64.5B</title></rect>
+  <text x="640.0" y="43.9" fill="#EAFFFF" font-size="13" font-weight="600" text-anchor="middle" style="font-family:'Space Grotesk',sans-serif">$358B</text>
+  <text x="640.0" y="356.0" fill="#8A90A2" font-size="12" text-anchor="middle">FY2025</text>
+  <rect x="46" y="419" width="11" height="11" rx="2" fill="#279BBE"/>
+  <text x="62" y="428" fill="#8A90A2" font-size="11.5">Amazon</text>
+  <rect x="129.6" y="419" width="11" height="11" rx="2" fill="#C77F2A"/>
+  <text x="145.6" y="428" fill="#8A90A2" font-size="11.5">Alphabet</text>
+  <rect x="228.39999999999998" y="419" width="11" height="11" rx="2" fill="#8C5FC9"/>
+  <text x="244.39999999999998" y="428" fill="#8A90A2" font-size="11.5">Meta</text>
+  <rect x="296.79999999999995" y="419" width="11" height="11" rx="2" fill="#3E9E68"/>
+  <text x="312.79999999999995" y="428" fill="#8A90A2" font-size="11.5">Microsoft</text>
+  </svg>
+  <figcaption>Hyperscaler capital expenditure, FY2021–FY2025. Source: company 10-K filings via SEC EDGAR (us-gaap:PaymentsToAcquire… tags). Microsoft's fiscal year ends in June; the others in December. Capex includes non-data-center assets, but each company attributes the recent surge to AI infrastructure.</figcaption>
+  </figure>
+  <details class="datatable"><summary>Show the data table</summary>
+    <table>
+      <thead><tr><th>Fiscal year</th><th>Amazon</th><th>Alphabet</th><th>Meta</th><th>Microsoft</th><th>Total</th></tr></thead>
+      <tbody>
+      <tr><th scope="row">FY2021</th><td>$61.0B</td><td>$24.6B</td><td>$18.6B</td><td>$20.6B</td><td><b>$124.9B</b></td></tr>
+      <tr><th scope="row">FY2022</th><td>$63.6B</td><td>$31.5B</td><td>$31.4B</td><td>$23.9B</td><td><b>$150.5B</b></td></tr>
+      <tr><th scope="row">FY2023</th><td>$52.7B</td><td>$32.2B</td><td>$27.3B</td><td>$28.1B</td><td><b>$140.4B</b></td></tr>
+      <tr><th scope="row">FY2024</th><td>$83.0B</td><td>$52.5B</td><td>$37.3B</td><td>$44.5B</td><td><b>$217.3B</b></td></tr>
+      <tr><th scope="row">FY2025</th><td>$131.8B</td><td>$91.5B</td><td>$69.7B</td><td>$64.5B</td><td><b>$357.5B</b></td></tr>
+      </tbody>
+    </table>
+  </details>
+  <p>That is the capital force behind every map in this report. The spending is committed and still accelerating — which is exactly why the binding constraint has moved downstream, from "will they build?" to "can the grid take it?" The rest of this analysis is what happens when $358B of ambition meets a power system that scales in years.</p>
 
   <h2>Methodology &amp; sources</h2>
   <div class="sources">
