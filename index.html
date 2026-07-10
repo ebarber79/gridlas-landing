@@ -127,6 +127,10 @@
   .feat::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;background:var(--cyan);border-radius:3px}
   .feat h3{margin:0 0 6px;color:var(--white);font-size:17px;padding-left:10px}
   .feat p{margin:0;color:var(--muted);font-size:14px;padding-left:10px}
+  a.feat{text-decoration:none;color:inherit;display:block;transition:border-color .15s,transform .1s}
+  a.feat:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  a.feat .go{color:var(--cyan);font-family:'Space Grotesk';font-weight:600;font-size:13.5px;padding-left:10px;margin-top:12px;display:block}
+  .more-regions{color:var(--muted);font-size:14.5px;margin:22px 0 0;text-align:center}
   .peek{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
   .peek img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
   /* tiers */
@@ -220,6 +224,29 @@
       <p class="section-sub">Supply is everywhere — 2,459 utility-scale plants — but demand concentrates onto specific, already-stressed grids. The full report breaks down every market, queue, and scenario.</p>
       <a class="ghost" href="#lead" onclick="window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>document.querySelector('#lead input').focus(),400)">Get the free summary →</a>
     </div>
+  </section>
+
+  <section>
+    <h2>Read the research — free</h2>
+    <p class="section-sub">We publish our analysis in the open, every figure cited. Three deep-dives — a preview of the rigor behind the report.</p>
+    <div class="grid3">
+      <a class="feat" href="./grid-bottleneck/">
+        <h3>The grid bottleneck</h3>
+        <p>Why the real limit on AI isn't power plants — it's the interconnection queue, where median waits doubled to ~5 years and ~77% of proposed capacity is withdrawn.</p>
+        <span class="go">Read the analysis →</span>
+      </a>
+      <a class="feat" href="./powering-around-the-queue/">
+        <h3>Powering around the queue</h3>
+        <p>How the buildout routes around the 5-year wait — behind-the-meter gas, nuclear restarts, and SMRs. The deals, megawatts and dates, primary-source cited.</p>
+        <span class="go">Read the analysis →</span>
+      </a>
+      <a class="feat" href="./data-center-water/">
+        <h3>The water problem</h3>
+        <p>The constraint with no workaround. Cooling water intensity, hyperscaler use, and why ~2/3 of new U.S. data centers sit in high-water-stress areas.</p>
+        <span class="go">Read the analysis →</span>
+      </a>
+    </div>
+    <p class="more-regions">Plus <a href="./data-centers/">14 regional deep-dives</a> — Northern Virginia, Texas, Phoenix, Memphis, Salt Lake City, Reno and more.</p>
   </section>
 
   <section>
