@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Center Power &amp; Water Estimator | Gridlas</title>
+<meta name="description" content="Free calculator: enter a data-center size and U.S. market to estimate its annual electricity, homes-equivalent, interconnection wait, and water use — from public EIA / LBNL figures.">
+<link rel="canonical" href="https://gridlas.com/tools/data-center-estimator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gridlas">
+<meta property="og:url" content="https://gridlas.com/tools/data-center-estimator/">
+<meta property="og:title" content="Data Center Power & Water Estimator">
+<meta property="og:description" content="Enter a data-center size and market — get its power draw, homes-equivalent, grid wait, and water footprint. Free, from public data.">
+<meta property="og:image" content="https://gridlas.com/assets/og-report.png">
+<meta property="og:image:alt" content="Gridlas — the U.S. data-center power estimator">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Data Center Power & Water Estimator">
+<meta name="twitter:description" content="How much power and water would an AI data center actually need — and can the grid deliver it? Free estimator from public data.">
+<meta name="twitter:image" content="https://gridlas.com/assets/og-report.png">
+<meta name="twitter:image:alt" content="Gridlas data-center power estimator">
+<meta name="theme-color" content="#0A0A14">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Eugene Barber">
+<link rel="icon" href="../../assets/favicon.svg">
+<link rel="preload" href="../../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<link rel="stylesheet" href="../../assets/regional.css">
+<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=TCaVFy"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Gridlas Data Center Power & Water Estimator","url":"https://gridlas.com/tools/data-center-estimator/","applicationCategory":"BusinessApplication","operatingSystem":"Any (web)","description":"A free calculator that estimates a data center's annual electricity, homes-equivalent, interconnection wait, and water footprint by size and U.S. market, using public EIA / LBNL coefficients.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Eugene Barber"},"publisher":{"@type":"Organization","name":"Gridlas","url":"https://gridlas.com/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gridlas.com/"},{"@type":"ListItem","position":2,"name":"Data center power & water estimator","item":"https://gridlas.com/tools/data-center-estimator/"}]}
+</script>
+<style>
+  /* ---- estimator UI (scoped; inherits regional.css tokens) ---- */
+  .tool{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;margin:26px 0}
+  .controls{display:grid;grid-template-columns:1fr;gap:20px}
+  @media(min-width:620px){.controls{grid-template-columns:1fr 1fr}}
+  .ctrl label{display:block;font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:14.5px;margin-bottom:8px}
+  .ctrl .hint{font-family:'IBM Plex Mono';font-size:11.5px;color:var(--muted);font-weight:400;letter-spacing:.2px}
+  .sizewrap{display:flex;align-items:baseline;gap:8px}
+  #mw{width:120px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);
+      color:var(--white);font-family:'Space Grotesk';font-weight:700;font-size:22px}
+  #mw:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(55,197,224,.18)}
+  .unit{font-family:'IBM Plex Mono';color:var(--muted);font-size:13px}
+  input[type=range]{width:100%;margin-top:12px;accent-color:var(--cyan)}
+  select{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);
+         color:var(--white);font-family:'Inter';font-size:15px}
+  select:focus{outline:none;border-color:var(--cyan)}
+  .seg{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+  .seg button{flex:1;min-width:130px;background:var(--bg);border:1px solid var(--line);color:var(--muted);
+    font-family:'Inter';font-size:13.5px;padding:11px 10px;border-radius:10px;cursor:pointer;transition:.15s;text-align:left;line-height:1.35}
+  .seg button b{display:block;color:var(--text);font-family:'Space Grotesk';font-weight:600;font-size:14px}
+  .seg button[aria-pressed=true]{border-color:var(--cyan);color:var(--white);box-shadow:0 0 0 2px rgba(55,197,224,.25) inset}
+  .seg button[aria-pressed=true] b{color:var(--cyan)}
+
+  .chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 6px}
+  .chip{border-radius:12px;padding:13px 12px;border:1px solid var(--line);background:var(--bg);text-align:center}
+  .chip .ct{font-family:'IBM Plex Mono';font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+  .chip .cv{font-family:'Space Grotesk';font-weight:700;font-size:16px;margin-top:5px}
+  .chip.low .cv{color:#3E9E68}.chip.mod .cv{color:#C77F2A}.chip.high .cv{color:#FF7A3C}
+  .chip.low{border-color:rgba(62,158,104,.5)}.chip.mod{border-color:rgba(199,127,42,.5)}.chip.high{border-color:rgba(255,122,60,.55)}
+
+  .results{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);
+           border-radius:14px;overflow:hidden;margin:6px 0 4px}
+  @media(min-width:560px){.results{grid-template-columns:1fr 1fr}}
+  .res{background:var(--bg);padding:18px}
+  .res .rk{font-family:'IBM Plex Mono';font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+  .res .rv{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:27px;line-height:1.05;margin:6px 0 4px}
+  .res .rv .sm{font-size:15px;color:var(--text);font-weight:600}
+  .res .rd{font-size:13px;color:var(--muted);line-height:1.5}
+  .verdict{background:var(--surface);border-left:4px solid var(--cyan);border-radius:8px;padding:16px 18px;margin:18px 0 2px;
+           font-size:15.5px;color:var(--text)}
+  .verdict b{color:var(--white);font-weight:600}
+  details.method{margin:16px 0 2px;font-size:13.5px}
+  details.method summary{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--cyan);cursor:pointer;letter-spacing:.3px}
+  details.method .mbody{color:var(--muted);font-size:13px;line-height:1.6;margin-top:10px}
+  details.method code{color:var(--text);font-family:'IBM Plex Mono';font-size:12px}
+  .gate{background:var(--surface);border:1px solid var(--cyan);border-radius:14px;padding:24px;margin:30px 0;
+        box-shadow:0 0 24px rgba(55,197,224,.12)}
+  .gate h3{font-family:'Space Grotesk';color:var(--white);font-size:19px;margin:0 0 6px}
+  .gate p{color:var(--text);font-size:14.5px;margin:0 0 14px}
+  .gate form{display:flex;gap:10px;flex-wrap:wrap}
+  .gate input[type=email]{flex:1;min-width:200px;padding:13px 14px;border-radius:10px;border:1px solid var(--line);
+    background:var(--bg);color:var(--white);font-size:15px}
+  .gate input[type=email]:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(55,197,224,.18)}
+  .gate .fineprint{font-family:'IBM Plex Mono';font-size:11px;color:var(--muted);margin-top:10px}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);display:none;z-index:50;
+    font-family:'Space Grotesk';font-weight:600;font-size:14px;padding:12px 20px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><span class="dot"></span><a class="brand" href="../../index.html">gridlas</a><span class="spacer"></span><a class="navlink" href="../../data-centers/">Regions</a></nav>
+  <p class="crumb"><a href="../../index.html">Home</a> / Data center power &amp; water estimator</p>
+
+  <div class="kicker">Free tool · Interactive</div>
+  <h1>Data-center power &amp; water estimator</h1>
+  <p class="standfirst">Enter a data-center size and a U.S. market. See how much electricity and water it would really need — and whether the grid can deliver it.</p>
+  <p class="byline">Estimates from public EIA / LBNL coefficients · results are order-of-magnitude, not a substitute for an interconnection study</p>
+
+  <div class="tool">
+    <div class="controls">
+      <div class="ctrl">
+        <label for="mw">Facility size <span class="hint">— IT (compute) load</span></label>
+        <div class="sizewrap"><input id="mw" type="number" min="1" max="2000" step="5" value="250" inputmode="numeric"><span class="unit">MW</span></div>
+        <input id="mwr" type="range" min="5" max="2000" step="5" value="250" aria-label="Facility size in megawatts">
+        <div class="hint" style="margin-top:6px">A hyperscale AI campus is ~100–1,000 MW. xAI's Colossus draws ~422 MW.</div>
+      </div>
+      <div class="ctrl">
+        <label for="market">Market</label>
+        <select id="market" aria-label="U.S. data-center market"></select>
+        <div class="hint" id="mktnote" style="margin-top:8px"></div>
+      </div>
+    </div>
+
+    <div class="ctrl" style="margin-top:20px">
+      <label>Cooling method <span class="hint">— the power-vs-water trade-off</span></label>
+      <div class="seg" id="cooling">
+        <button data-c="evap" aria-pressed="true"><b>Evaporative (water-cooled)</b>Lower power, high water use</button>
+        <button data-c="air" aria-pressed="false"><b>Closed-loop / air-cooled</b>Near-zero on-site water, more power</button>
+      </div>
+    </div>
+
+    <div class="chips" id="chips" aria-live="polite">
+      <div class="chip" id="chipPower"><div class="ct">Power</div><div class="cv">—</div></div>
+      <div class="chip" id="chipGrid"><div class="ct">Grid wait</div><div class="cv">—</div></div>
+      <div class="chip" id="chipWater"><div class="ct">Water</div><div class="cv">—</div></div>
+    </div>
+
+    <div class="results" aria-live="polite">
+      <div class="res"><div class="rk">Facility power draw</div><div class="rv" id="rPower">—</div><div class="rd" id="rPowerD"></div></div>
+      <div class="res"><div class="rk">Annual electricity</div><div class="rv" id="rEnergy">—</div><div class="rd" id="rEnergyD"></div></div>
+      <div class="res"><div class="rk">Equivalent homes</div><div class="rv" id="rHomes">—</div><div class="rd" id="rHomesD"></div></div>
+      <div class="res"><div class="rk">Nuclear reactors (continuous)</div><div class="rv" id="rReact">—</div><div class="rd" id="rReactD"></div></div>
+      <div class="res"><div class="rk">Water withdrawal / year</div><div class="rv" id="rWater">—</div><div class="rd" id="rWaterD"></div></div>
+      <div class="res"><div class="rk">Time to power</div><div class="rv" id="rWait">—</div><div class="rd" id="rWaitD"></div></div>
+    </div>
+
+    <div class="verdict" id="verdict"></div>
+
+    <details class="method">
+      <summary>How this is calculated ▾</summary>
+      <div class="mbody">
+        <p>Every figure is an order-of-magnitude estimate from public coefficients — not a site-specific engineering study.</p>
+        <p><b>Power.</b> Facility power = IT load × <b>PUE</b> (Power Usage Effectiveness). We use PUE <code>1.20</code> for evaporative and <code>1.40</code> for closed-loop/air cooling (dry cooling spends more energy to avoid water). Annual energy = facility power × 8,760 h × <code>0.90</code> utilization (data centers run near-flat). <span class="hint">PUE range: LBNL 2024 / Uptime Institute (global avg ~1.5; hyperscale ~1.2).</span></p>
+        <p><b>Comparisons.</b> Homes = annual kWh ÷ <code>10,500</code> kWh (avg U.S. household/yr, EIA). Reactors = average draw ÷ (1,000 MW × <code>0.925</code> capacity factor) — a typical U.S. reactor running 24/7 (EIA).</p>
+        <p><b>Water.</b> On-site withdrawal = annual kWh × <b>WUE</b> (Water Usage Effectiveness): <code>1.8</code> L/kWh evaporative, <code>~0.1</code> L/kWh closed-loop/air (Gridlas — "The water problem," hyperscaler ESG reports). Households = gallons ÷ <code>109,500</code> gal (~300 gal/day, EPA). <b>Indirect</b> water at the power plant can add ~10× more — not counted here.</p>
+        <p><b>Grid wait &amp; workaround</b> reflect each market's reported interconnection reality (national average ~4.5 yr to interconnect; LBNL). Water-stress flags follow WRI Aqueduct.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="callout">The pattern the tool keeps surfacing: the demand is easy to size — it's the <b>wires and the water</b> that decide whether, and where, it actually gets built.</div>
+
+  <div class="gate">
+    <h3>Get the full regional breakdown</h3>
+    <p>The Gridlas report ranks every major U.S. metro by capacity, queue and pipeline — with high-res maps and the underlying dataset. We'll email you the free 3-page executive summary now.</p>
+    <form id="lead" novalidate>
+      <input type="email" name="email" id="leadEmail" placeholder="you@company.com" required aria-label="Email">
+      <button class="btn" type="submit">Email me the summary →</button>
+    </form>
+    <div class="fineprint">No spam. Unsubscribe anytime. We email the report, not noise.</div>
+  </div>
+
+  <div class="related">
+    <h3>Go deeper</h3>
+    <ul>
+      <li><a href="../../grid-bottleneck/">The grid bottleneck (pillar) →</a></li>
+      <li><a href="../../powering-around-the-queue/">Powering around the queue (pillar) →</a></li>
+      <li><a href="../../data-center-water/">The water problem (pillar) →</a></li>
+      <li><a href="../../data-centers/">Data centers by region →</a></li>
+      <li><a href="../../data-centers/texas-ercot-queue/">Texas &amp; the ERCOT queue →</a></li>
+      <li><a href="../../findings.html">The analysis &amp; sources →</a></li>
+    </ul>
+  </div>
+
+  <div class="sources">
+    <b>Sources &amp; caveats:</b> Coefficients from U.S. EIA (household energy, reactor capacity factor), LBNL 2024 &amp; Uptime Institute (PUE, interconnection timelines), hyperscaler 2023 ESG reports and Gridlas's own water analysis (WUE), U.S. EPA (household water), WRI Aqueduct (water stress). Outputs are order-of-magnitude estimates for a fully-loaded facility and will differ from any specific site. See the full <a href="../../findings.html">methodology &amp; sources</a>.
+  </div>
+
+  <div class="foot">Gridlas · independent &amp; unaffiliated · built from public data. · <a href="../../findings.html">Read the full analysis →</a></div>
+</div>
+
+<div class="toast" id="toast">✓ Check your inbox — summary on the way.</div>
+<script>
+/* ================= market data (from Gridlas region pages) ================= */
+var MARKETS = [
+  {id:'national', name:'National average / other', grid:'U.S. avg', gridSev:'high', wait:'~4.5 years', stress:'moderate', gas:'growing',
+    note:'Average U.S. interconnection wait is ~4.5 years — the binding constraint almost everywhere.'},
+  {id:'nova', name:'Northern Virginia (PJM / Dominion)', grid:'PJM · Dominion', gridSev:'high', wait:'Multi-year', stress:'low', gas:'emerging',
+    note:"World's largest DC market; Dominion has warned of multi-year timelines to energize new load."},
+  {id:'ercot', name:'Texas — Dallas–Fort Worth (ERCOT)', grid:'ERCOT', gridSev:'high', wait:'Years (226 GW queued)', stress:'high', gas:'common',
+    note:'~226 GW queued in ERCOT (~77% data centers) vs an ~85 GW record peak. On-site gas is common.'},
+  {id:'phoenix', name:'Phoenix / Arizona (APS · SRP)', grid:'APS / SRP', gridSev:'high', wait:'Multi-year', stress:'high', gas:'common',
+    note:'Desert market — water-stressed. Builds trend to air-cooling and on-site generation deals.'},
+  {id:'atlanta', name:'Atlanta / Georgia (Georgia Power)', grid:'Georgia Power', gridSev:'high', wait:'Multi-year', stress:'low', gas:'common',
+    note:'Georgia Power is planning a large gas buildout to meet surging data-center load.'},
+  {id:'ohio', name:'Central Ohio / Columbus (AEP · PJM)', grid:'AEP Ohio · PJM', gridSev:'high', wait:'Multi-year', stress:'low', gas:'emerging',
+    note:'AEP Ohio has fought over special tariffs for large data-center loads amid multi-year queues.'},
+  {id:'sv', name:'Silicon Valley / Santa Clara (SVP)', grid:'Silicon Valley Power', gridSev:'high', wait:'Power-capped', stress:'high', gas:'rare',
+    note:'Mature, power-capped grid — finished sites sit waiting on power. Data centers ~60% of city load.'},
+  {id:'chicago', name:'Chicago / Illinois (ComEd · PJM)', grid:'ComEd · PJM', gridSev:'high', wait:'Multi-year', stress:'low', gas:'emerging',
+    note:'Fast-growing Midwest hub on Great Lakes water; still gated by PJM interconnection timelines.'},
+  {id:'ny', name:'New York tri-state', grid:'NYISO / PJM', gridSev:'high', wait:'Multi-year', stress:'low', gas:'rare',
+    note:'Dense, constrained grids and higher power prices shape where load can land.'},
+  {id:'slc', name:'Salt Lake City / Utah (Rocky Mtn Power)', grid:'PacifiCorp', gridSev:'high', wait:'Multi-year', stress:'high', gas:'common',
+    note:'Utah SB 132 lets ≥100 MW loads self-supply power when the utility can\'t serve them — on-site gas approved.'},
+  {id:'reno', name:'Reno / Nevada (NV Energy)', grid:'NV Energy', gridSev:'high', wait:'Faster, but capping', stress:'high', gas:'common',
+    note:'Built for speed-to-power, but ~22 GW of DC interest vs an ~8.5 GW peak; >350 MW on-site gas sought at TRIC.'},
+  {id:'tn', name:'Nashville / Memphis (TVA)', grid:'TVA', gridSev:'high', wait:'Multi-year', stress:'low', gas:'common',
+    note:'TVA is building ~6+ GW of mostly-gas generation; xAI Colossus runs on-site gas near Memphis.'},
+  {id:'kc', name:'Kansas City (Evergy · SPP)', grid:'Evergy · SPP', gridSev:'high', wait:'Multi-year', stress:'moderate', gas:'common',
+    note:'Evergy nearly tripled planned gas (1.9→4.7 GW) to serve large-load agreements.'}
+];
+
+var COOL = {
+  evap:{pue:1.20, wue:1.8, label:'evaporative (water-cooled)'},
+  air :{pue:1.40, wue:0.1, label:'closed-loop / air-cooled'}
+};
+var HOME_KWH=10500, HOME_WATER_GAL=109500, REACTOR_MW=1000, REACTOR_CF=0.925, UTIL=0.90, L_PER_GAL=3.785;
+
+/* ================= helpers ================= */
+function commas(n){ return Math.round(n).toLocaleString('en-US'); }
+function sig(n){ // human-friendly big number
+  if(n>=1e9) return (n/1e9).toFixed(n<1e10?2:1)+'B';
+  if(n>=1e6) return (n/1e6).toFixed(n<1e7?2:1)+'M';
+  if(n>=1e3) return commas(n);
+  return (Math.round(n*10)/10).toString();
+}
+function energyStr(mwh){ // MWh -> GWh / TWh
+  if(mwh>=1e6) return (mwh/1e6).toFixed(2)+' TWh';
+  if(mwh>=1e3) return (mwh/1e3).toFixed(mwh<1e4?2:0)+' GWh';
+  return commas(mwh)+' MWh';
+}
+function galStr(g){
+  if(g>=1e9) return (g/1e9).toFixed(2)+'B gal';
+  if(g>=1e6) return (g/1e6).toFixed(g<1e7?1:0)+'M gal';
+  return commas(g)+' gal';
+}
+function setChip(el, sev, txt){ el.className='chip '+sev; el.querySelector('.cv').textContent=txt; }
+
+/* ================= state + wiring ================= */
+var state={mw:250, market:'ercot', cool:'evap'};
+var $=function(id){return document.getElementById(id);};
+
+(function initMarkets(){
+  var sel=$('market');
+  MARKETS.forEach(function(m){ var o=document.createElement('option'); o.value=m.id; o.textContent=m.name; sel.appendChild(o); });
+  sel.value=state.market;
+})();
+
+function market(){ return MARKETS.find(function(m){return m.id===state.market;}); }
+
+function render(){
+  var c=COOL[state.cool], m=market();
+  var itMW=state.mw;
+  var facilityMW=itMW*c.pue;
+  var avgMW=facilityMW*UTIL;
+  var annualMWh=avgMW*8760;
+  var annualKWh=annualMWh*1000;
+  var homes=annualKWh/HOME_KWH;
+  var reactors=avgMW/(REACTOR_MW*REACTOR_CF);
+  var waterGal=(annualKWh*c.wue)/L_PER_GAL;
+  var waterHouses=waterGal/HOME_WATER_GAL;
+  var pctLess=Math.round((1-COOL.air.wue/COOL.evap.wue)*100);
+
+  $('rPower').innerHTML=commas(facilityMW)+' <span class="sm">MW</span>';
+  $('rPowerD').textContent=itMW+' MW IT load × '+c.pue.toFixed(2)+' PUE.';
+  $('rEnergy').textContent=energyStr(annualMWh);
+  $('rEnergyD').textContent='at ~90% utilization, 24/7/365.';
+  $('rHomes').innerHTML=sig(homes)+' <span class="sm">homes</span>';
+  $('rHomesD').textContent='U.S. households this could power for a year.';
+  $('rReact').textContent=reactors>=1?reactors.toFixed(reactors<10?2:1):reactors.toFixed(2);
+  $('rReactD').textContent='continuous output of ~1 GW reactors, running non-stop.';
+  if(state.cool==='air'){
+    $('rWater').innerHTML='~'+galStr(waterGal)+' <span class="sm"></span>';
+    $('rWaterD').textContent='~'+pctLess+'% less than evaporative — the trade-off is more power (indirect plant water still applies).';
+  }else{
+    $('rWater').textContent=galStr(waterGal);
+    $('rWaterD').textContent='on-site withdrawal ≈ '+sig(waterHouses)+' households\' water use.';
+  }
+  $('rWait').textContent=m.wait;
+  $('rWaitD').textContent=m.grid+' · on-site gas '+m.gas+'.';
+  $('mktnote').textContent=m.note;
+
+  /* constraint chips */
+  var pSev = facilityMW>400?'high':(facilityMW>=120?'mod':'low');
+  setChip($('chipPower'), pSev, pSev==='high'?'Heavy':(pSev==='mod'?'Large':'Modest'));
+  setChip($('chipGrid'), m.gridSev, m.gridSev==='high'?'Years':'Months');
+  var wSev = state.cool==='air' ? 'low' : (m.stress==='high'?'high':(m.stress==='moderate'?'mod':'mod'));
+  setChip($('chipWater'), wSev, state.cool==='air'?'Minimal':(wSev==='high'?'Strained':'Notable'));
+
+  /* verdict */
+  var gasLine = (m.gas==='common') ? 'Expect an <b>on-site gas</b> workaround to skip the queue.'
+             : (m.gas==='emerging'||m.gas==='growing') ? 'On-site generation deals are increasingly the workaround here.'
+             : 'On-site generation is still uncommon here — this load leans on the existing grid.';
+  var waterLine = state.cool==='air'
+      ? 'Closed-loop cooling cuts on-site water ~'+pctLess+'% vs evaporative — at the cost of more power.'
+      : (m.stress==='high'
+          ? 'With evaporative cooling in a <b>water-stressed</b> grid, that ~'+galStr(waterGal)+'/yr is the constraint with no workaround.'
+          : 'Evaporative cooling withdraws ~'+galStr(waterGal)+'/yr — meaningful, though '+m.grid+' is not highly water-stressed.');
+  $('verdict').innerHTML='A <b>'+itMW+' MW</b> facility in <b>'+m.name.replace(/\s*\(.*/,'')+'</b> would draw about <b>'+commas(facilityMW)+' MW</b> — roughly <b>'+sig(homes)+' homes</b>, or the non-stop output of <b>'+ (reactors>=1?reactors.toFixed(1):reactors.toFixed(2)) +' nuclear reactors</b>. Grid wait: <b>'+m.wait+'</b>. '+gasLine+' '+waterLine;
+}
+
+/* inputs */
+$('mw').addEventListener('input', function(){ var v=Math.max(1,Math.min(2000,+this.value||0)); state.mw=v; $('mwr').value=Math.max(5,Math.min(2000,v)); render(); });
+$('mwr').addEventListener('input', function(){ state.mw=+this.value; $('mw').value=this.value; render(); });
+$('market').addEventListener('change', function(){ state.market=this.value; render(); });
+Array.prototype.forEach.call(document.querySelectorAll('#cooling button'), function(b){
+  b.addEventListener('click', function(){
+    Array.prototype.forEach.call(document.querySelectorAll('#cooling button'), function(x){ x.setAttribute('aria-pressed','false'); });
+    b.setAttribute('aria-pressed','true'); state.cool=b.getAttribute('data-c'); render();
+  });
+});
+render();
+
+/* ================= Klaviyo capture (same as landing page) ================= */
+var KLAVIYO_LIST_ID='Um8YCH', KLAVIYO_COMPANY='TCaVFy';
+var form=$('lead'), toast=$('toast');
+function showToast(msg,ok){ toast.textContent=msg; toast.style.background=ok?'var(--cyan)':'#FF7A3C'; toast.style.color='#06131A'; toast.style.display='block'; setTimeout(function(){toast.style.display='none';},4500); }
+function downloadSample(){ try{ var a=document.createElement('a'); a.href='../../Gridlas-Powering-AI-Sample.pdf'; a.download=''; document.body.appendChild(a); a.click(); a.remove(); }catch(e){} }
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  var email=($('leadEmail').value||'').trim(); if(!email){return;}
+  if(!KLAVIYO_LIST_ID||KLAVIYO_LIST_ID==='YOUR_LIST_ID'){ downloadSample(); showToast('✓ Summary downloading — connect Klaviyo to capture emails.',true); return; }
+  var body=new URLSearchParams({ g:KLAVIYO_LIST_ID, email:email, '$source':'estimator-tool' });
+  fetch('https://manage.kmail-lists.com/ajax/subscriptions/subscribe',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+    .then(function(r){return r.json();})
+    .then(function(d){ if(d&&d.success){ downloadSample(); form.reset(); showToast('✓ Check your inbox — summary on the way.',true); } else { showToast((d&&d.errors&&d.errors[0])||'Hmm, try again in a moment.',false); } })
+    .catch(function(){ downloadSample(); showToast('✓ Summary downloading.',true); });
+});
+</script>
+</body>
+</html>
