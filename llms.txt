@@ -1,0 +1,29 @@
+# Gridlas
+
+> Independent research on the U.S. AI data-center buildout and the power grid, built entirely from public primary sources (EIA, LBNL, ERCOT, CBRE). Every figure is cited and traceable. No sponsors, no vendor affiliations. Author: Eugene Barber.
+
+Gridlas publishes the **"Powering AI — The U.S. Data Center Buildout Report"** (2026): where AI data centers are being built, the power they need, and the grid interconnection bottlenecks ahead. A free 3-page executive summary is available; the full 36-page report and companion CSV/GeoJSON dataset are sold at gridlas.com.
+
+## Key figures (public data, cite-ready)
+- Data centers are projected to rise from ~4.4% of U.S. electricity today to ~12% by 2028.
+- The typical grid interconnection wait is ~4.5 years.
+- ~226 GW of capacity is queued in ERCOT (Texas); ~77% of it is data centers.
+- Northern Virginia is the largest market on Earth at ~4,040 MW — about 3.5× every secondary U.S. market combined.
+
+## Core analysis (free, primary-source cited)
+- [The grid bottleneck](https://gridlas.com/grid-bottleneck/): why the real limit on AI is the interconnection queue, not power plants.
+- [Powering around the queue](https://gridlas.com/powering-around-the-queue/): behind-the-meter gas, nuclear restarts, and SMRs routing around the wait.
+- [The water problem](https://gridlas.com/data-center-water/): cooling-water intensity and high-water-stress siting.
+- [The interconnection bottleneck](https://gridlas.com/power-grid-interconnection-bottleneck/)
+- [The Texas AI power rush](https://gridlas.com/texas-ai-power-rush/)
+- [Data Center Alley (Northern Virginia)](https://gridlas.com/northern-virginia-data-center-hub/)
+- [Findings & methodology](https://gridlas.com/findings.html)
+
+## Regional deep-dives
+- [Data centers by U.S. region (16 markets)](https://gridlas.com/data-centers/): Northern Virginia, Texas/ERCOT, Atlanta, Phoenix, Central Ohio, Silicon Valley, Chicago, New York, Hillsboro/Oregon, Memphis, Iowa, Salt Lake City, Reno, Nashville, Kansas City, Dallas–Fort Worth.
+
+## Tools
+- [Data-center power & water estimator](https://gridlas.com/tools/data-center-estimator/): enter a facility size and U.S. market to compute power draw, homes-equivalent, grid wait, and water footprint from public EIA/LBNL figures.
+
+## The report
+- [Powering AI report + dataset](https://gridlas.com/#pricing): full 36-page PDF, companion dataset, and annual pass.

@@ -27,7 +27,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "Article","datePublished":"2026-07-09","dateModified":"2026-07-12",
   "headline": "Powering Around the Queue: How AI Is Buying Its Way Past the Grid",
   "description": "If interconnection is the bottleneck, here&#x27;s the workaround: behind-the-meter gas (xAI, Meta), nuclear restarts (Three Mile Island, Palisades, Duane Arnold) and SMRs. Data-backed.",
   "image": "https://gridlas.com/assets/fig-hero.png",
@@ -38,6 +38,9 @@
   "keywords": ["behind the meter gas data center", "nuclear restart data center", "Three Mile Island Microsoft", "SMR data center Amazon Google", "xAI Colossus gas turbines", "data center power workaround", "on-site power generation AI"],
   "isAccessibleForFree": true
 }
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are AI data centers getting power around the five-year grid queue?","acceptedAnswer":{"@type":"Answer","text":"Three routes: burn gas on-site now, restart nuclear reactors that had been shut down, and bet on small modular reactors (SMRs) for the 2030s. Each trades a premium — cost, emissions, or execution risk — for time to power."}},{"@type":"Question","name":"What is behind-the-meter (on-site) gas generation?","acceptedAnswer":{"@type":"Answer","text":"Building your own power plant at the campus to skip the interconnection queue entirely. xAI's Colossus in Memphis wheeled in 35 gas turbines (about 422 MW); for Meta's Richland Parish campus, Entergy is building 2.26 GW of dedicated gas, online from 2028."}},{"@type":"Question","name":"Which nuclear plants are restarting to power AI?","acceptedAnswer":{"@type":"Answer","text":"Three Mile Island Unit 1 (rechristened Crane, 835 MW, on a 20-year Microsoft PPA, target 2028), Palisades in Michigan (800 MW, the first U.S. reactor approved to return from decommissioning), and Iowa's Duane Arnold (about 615 MW, a 25-year Google PPA, target early 2029)."}},{"@type":"Question","name":"When will small modular reactors (SMRs) actually deliver power?","acceptedAnswer":{"@type":"Answer","text":"Not one commercial SMR is operating in the U.S. today. First units are targeted for around 2030, and first-of-a-kind nuclear projects have a long history of slipping — so SMRs answer the 2030s demand curve, not the cluster a hyperscaler is energizing this year."}}]}
 </script>
 <link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -76,6 +79,10 @@
   .btn{display:inline-block;background:var(--cyan);color:#04121a;font-family:'Space Grotesk';font-weight:700;padding:12px 22px;border-radius:9px;margin-top:8px}
   .foot{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 60px;color:var(--muted);font-size:14.5px}
   .foot a{font-weight:600}
+  .faq{margin:34px 0}
+  .faq details{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:12px 16px;margin:9px 0}
+  .faq summary{font-family:'Space Grotesk';font-weight:600;color:var(--white);cursor:pointer;font-size:16px}
+  .faq p{margin:10px 0 2px;font-size:15.5px}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gridlas.com/"},{"@type":"ListItem","position":2,"name":"Powering Around the Queue","item":"https://gridlas.com/powering-around-the-queue/"}]}
@@ -88,7 +95,7 @@
   <div class="kicker">Analysis · EIA · NRC · DOE · company filings &amp; PPAs</div>
   <h1>Powering around the queue: how AI is buying its way past the grid</h1>
   <p class="standfirst">If the interconnection queue is a five-year line, the fastest way through it is not to stand in it. Three workarounds are already reshaping who gets power — and when.</p>
-  <p class="byline">A Gridlas analysis · built from public data · figures 2024–2026, primary sources cited throughout</p>
+  <p class="byline">A Gridlas analysis · built from public data · figures 2024–2026, primary sources cited throughout · Updated Jul 2026</p>
 
   <p class="lead">Our <a href="../grid-bottleneck/">companion analysis</a> made the case that the real limit on the AI buildout isn't generation — it's the <b style="color:var(--white)">interconnection queue</b>, where the median wait has doubled to about five years and roughly 77% of proposed capacity is eventually withdrawn. So the hyperscalers stopped waiting. Faced with a queue measured in years and GPUs measured in months, they are routing around it three ways: <b style="color:var(--white)">burn gas on-site now</b>, <b style="color:var(--white)">restart the reactors we already shut down</b>, and <b style="color:var(--white)">bet on small modular reactors</b> for the 2030s. Here is what each route actually delivers, in megawatts and dates, from the public record.</p>
 
@@ -235,9 +242,17 @@
 
   <div class="callout">The AI buildout has decided it can't wait for the grid. What it's building instead — gas, restarts, reactors — is the real map of where U.S. power is heading.</div>
 
+  <h2>Frequently asked</h2>
+  <div class="faq">
+    <details><summary>How are AI data centers getting power around the five-year grid queue?</summary><p>Three routes: burn gas on-site now, restart nuclear reactors that had been shut down, and bet on small modular reactors (SMRs) for the 2030s. Each trades a premium — cost, emissions, or execution risk — for time to power.</p></details>
+    <details><summary>What is behind-the-meter (on-site) gas generation?</summary><p>Building your own power plant at the campus to skip the interconnection queue entirely. xAI's Colossus in Memphis wheeled in 35 gas turbines (~422 MW); for Meta's Richland Parish campus, Entergy is building 2.26 GW of dedicated gas, online from 2028.</p></details>
+    <details><summary>Which nuclear plants are restarting to power AI?</summary><p>Three Mile Island Unit 1 (rechristened Crane, 835 MW, on a 20-year Microsoft PPA, target 2028), Palisades in Michigan (800 MW, the first U.S. reactor approved to return from decommissioning), and Iowa's Duane Arnold (~615 MW, a 25-year Google PPA, target early 2029).</p></details>
+    <details><summary>When will small modular reactors (SMRs) actually deliver power?</summary><p>Not one commercial SMR is operating in the U.S. today. First units are targeted for around 2030, and first-of-a-kind nuclear projects have a long history of slipping — so SMRs answer the 2030s demand curve, not the cluster a hyperscaler is energizing this year.</p></details>
+  </div>
+
   <div class="cta">
     <p><b>The full picture, mapped.</b> The Gridlas report puts the demand forecasts, the interconnection queue, and five regional deep-dives onto the grid — with high-res maps and the underlying dataset (CSV/GeoJSON), built entirely from public data.</p>
-    <a class="btn" href="../index.html">Get the report →</a>
+    <a class="btn" href="/?utm_source=gridlas&utm_medium=content&utm_content=powering-around-the-queue#pricing">Get the report →</a>
   </div>
 
   <div class="sources">
