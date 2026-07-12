@@ -16,10 +16,12 @@
     <meta property="og:image" content="https://gridlas.com/assets/og-report.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Gridlas — the U.S. grid interconnection queue bottleneck and AI data-center power demand.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The 4.5-Year Wait: America's Power Grid is Bottlenecking the AI Boom">
     <meta name="twitter:description" content="The biggest obstacle to AI's growth isn't code, it's the 4.5-year average wait time to connect new power sources to the national grid.">
     <meta name="twitter:image" content="https://gridlas.com/assets/og-report.jpg">
+    <meta name="twitter:image:alt" content="Gridlas — the U.S. grid interconnection queue bottleneck and AI data-center power demand.">
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Article","headline":"The 4.5-Year Wait: America's Power Grid is Bottlenecking the AI Boom","description":"The biggest obstacle to AI's growth isn't code, it's the 4.5-year average wait time to connect new power sources to the national grid.","mainEntityOfPage":{"@type":"WebPage","@id":"https://gridlas.com/power-grid-interconnection-bottleneck/"},"image":"https://gridlas.com/assets/og-report.jpg","author":{"@type":"Person","name":"Eugene Barber"},"publisher":{"@type":"Organization","name":"Gridlas","logo":{"@type":"ImageObject","url":"https://gridlas.com/assets/favicon.svg"}}}
     </script>
@@ -60,9 +62,15 @@
   .btn{display:inline-block;background:var(--cyan);color:#04121a;font-family:'Space Grotesk';font-weight:700;padding:12px 22px;border-radius:9px;margin-top:8px}
   .foot{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 60px;color:var(--muted);font-size:14.5px}
   .foot a{font-weight:600}
+  .faq details{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:12px 16px;margin:9px 0}
+  .faq summary{cursor:pointer;font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:16px}
+  .faq details p{margin:10px 0 2px;font-size:15px;color:var(--text)}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gridlas.com/"},{"@type":"ListItem","position":2,"name":"The Grid Interconnection Bottleneck","item":"https://gridlas.com/power-grid-interconnection-bottleneck/"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long is the U.S. grid interconnection wait?", "acceptedAnswer": {"@type": "Answer", "text": "The typical interconnection queue wait is now roughly 4.5 years — the multi-year process every new power plant or battery must complete before it can connect to the grid."}}, {"@type": "Question", "name": "Why is the interconnection queue so backed up?", "acceptedAnswer": {"@type": "Answer", "text": "Three compounding causes: a historic flood of new applications (renewables plus data-center demand) overwhelming grid operators, a high share of speculative projects clogging the queue, and the need for expensive transmission upgrades to connect new capacity."}}, {"@type": "Question", "name": "How does the queue affect AI data centers?", "acceptedAnswer": {"@type": "Answer", "text": "A ~4.5-year wait means the power available for the next generation of AI is set by decisions made half a decade earlier, pushing operators toward on-site generation and other ways to jump the queue."}}]}
 </script>
 </head>
 <body>
@@ -85,10 +93,19 @@
         <p>A 4.5-year wait time means the power for the next AI generation is based on decisions made half a decade ago. This delay is forcing developers to get creative and is a key reason why even established hubs like <a href="../northern-virginia-data-center-hub/">Northern Virginia face power challenges</a>. The race is on to find ways to jump the queue.</p>
         <p>Understanding this bottleneck is key to understanding the real-world constraints on the growth of artificial intelligence.</p></div>
 
+  <h2>Frequently asked</h2>
+  <div class="faq">
+    <details><summary>How long is the U.S. grid interconnection wait?</summary><p>The typical interconnection queue wait is now roughly 4.5 years — the multi-year process every new power plant or battery must complete before it can connect to the grid.</p></details>
+    <details><summary>Why is the interconnection queue so backed up?</summary><p>Three compounding causes: a historic flood of new applications (renewables plus data-center demand) overwhelming grid operators, a high share of speculative projects clogging the queue, and the need for expensive transmission upgrades to connect new capacity.</p></details>
+    <details><summary>How does the queue affect AI data centers?</summary><p>A ~4.5-year wait means the power available for the next generation of AI is set by decisions made half a decade earlier, pushing operators toward on-site generation and other ways to jump the queue.</p></details>
+  </div>
+  <p style="margin-top:22px"><a href="https://twitter.com/intent/tweet?text=The%20real%20bottleneck%20on%20AI%20isn%27t%20chips%20%E2%80%94%20it%27s%20the%20~4.5-year%20wait%20to%20plug%20into%20the%20U.S.%20power%20grid.%20via%20%40gridlas%20https%3A//gridlas.com/power-grid-interconnection-bottleneck/" target="_blank" rel="noopener">Share this on X →</a></p>
+
   <div class="cta">
     <div style="font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:20px">See the full U.S. data-center buildout, mapped</div>
     <p style="color:var(--muted);margin:8px 0 4px">Where AI is landing, the power it needs, and the grid bottlenecks ahead — every figure cited.</p>
     <a class="btn" href="../index.html">Read the research →</a>
+    <p style="margin:14px 0 0;font-size:14px"><a href="../tools/data-center-estimator/">Or try the free power &amp; water estimator →</a></p>
   </div>
 
   <div class="foot">
