@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://gridlas.com/texas-ai-power-rush/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
-    <link rel="icon" href="/assets/favicon.svg">
+    <link rel="icon" href="../assets/favicon.svg">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Gridlas">
     <meta property="og:url" content="https://gridlas.com/texas-ai-power-rush/">
@@ -23,14 +23,73 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Article","headline":"The Texas Power Rush: Can the Grid Handle the AI Boom?","description":"Texas is the new frontier for AI data centers, with 226 GW of power in the ERCOT queue. But can the grid deliver before the boom goes bust?","mainEntityOfPage":{"@type":"WebPage","@id":"https://gridlas.com/texas-ai-power-rush/"},"image":"https://gridlas.com/assets/og-report.jpg","author":{"@type":"Person","name":"Eugene Barber"},"publisher":{"@type":"Organization","name":"Gridlas","logo":{"@type":"ImageObject","url":"https://gridlas.com/assets/favicon.svg"}}}
     </script>
+<link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+  :root{--bg:#0A0A14;--surface:#15151F;--line:#23232F;--cyan:#37C5E0;--white:#EAFFFF;--text:#D8DBE6;--muted:#8A90A2}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--cyan);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+  nav{display:flex;align-items:center;gap:9px;padding:20px 0;border-bottom:1px solid var(--line);margin-bottom:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+  .brand{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:18px}
+  .spacer{flex:1} .navlink{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--muted)}
+  h1{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:33px;line-height:1.14;margin:30px 0 8px}
+  h2{font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:23px;margin:48px 0 6px}
+  .kicker{font-family:'IBM Plex Mono';color:var(--cyan);font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase}
+  .standfirst{font-size:18px;color:var(--muted);margin:6px 0 0}
+  .byline{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--muted);margin:18px 0 0;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  p{margin:16px 0;font-size:16.5px}
+  .lead{font-size:18.5px;color:var(--text)}
+  figure{margin:30px 0;padding:0}
+  figcaption{font-family:'IBM Plex Mono';font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+  .stat{font-family:'Space Grotesk';color:var(--white)}
+  ul{padding-left:20px} li{margin:8px 0;font-size:16px}
+  .statrow{display:flex;gap:12px;margin:24px 0;flex-wrap:wrap}
+  .statrow .s{flex:1;min-width:150px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:15px 16px}
+  .statrow .n{font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:24px}
+  .statrow .l{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+  .callout{background:var(--surface);border-left:4px solid var(--cyan);border-radius:8px;padding:16px 18px;margin:26px 0;font-family:'Space Grotesk';font-weight:600;color:var(--white);font-size:18px}
+  .note{background:rgba(55,197,224,.05);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:24px 0;font-size:14px;color:var(--muted)}
+  .note b{color:var(--cyan);font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.5px;text-transform:uppercase}
+  .sources{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:26px 0;font-size:14.5px}
+  .sources b{color:var(--white)}
+  .cta{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;margin:34px 0;text-align:center}
+  .btn{display:inline-block;background:var(--cyan);color:#04121a;font-family:'Space Grotesk';font-weight:700;padding:12px 22px;border-radius:9px;margin-top:8px}
+  .foot{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 60px;color:var(--muted);font-size:14.5px}
+  .foot a{font-weight:600}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gridlas.com/"},{"@type":"ListItem","position":2,"name":"The Texas Power Rush","item":"https://gridlas.com/texas-ai-power-rush/"}]}
+</script>
 </head>
 <body>
-    <article>
-        <h1>The Texas Power Rush: Can the Grid Handle the AI Boom?</h1>
-        <p>Texas is ground zero for the next phase of the AI revolution. With its vast land, business-friendly climate, and—most importantly—an independent power grid (ERCOT) that promises faster connections, data center developers are flocking to the state. The numbers are staggering: a colossal 226 GW of new power projects are currently waiting in the ERCOT interconnection queue, much of it driven by AI demand.</p>
-        <p>But this boom is balanced on a knife's edge. While the queue is flush with solar, wind, and battery storage projects, the question isn't whether Texas can generate enough power, but whether it can build the transmission infrastructure to deliver it in time. The infamous <a href="/power-grid-interconnection-bottleneck/">interconnection queue</a> is the single biggest bottleneck, with projects facing multi-year waits for approval and construction.</p>
-        <p>This "Great Wait" creates a high-stakes race for data center operators. They need gigawatts of power now, not in five years. As a result, many are turning to power-intensive solutions like on-site natural gas generation, putting further strain on the grid and complicating the state's energy transition. While Texas has the potential to become the world's AI power hub, its success hinges on navigating this critical infrastructure challenge, a situation also being faced by established markets like <a href="/northern-virginia-data-center-hub/">Northern Virginia</a>.</p>
-        <p>To understand the full scope of the Texas buildout and how it fits into the national picture, <strong><a href="https://www.gridlas.com">get the full, data-driven analysis at Gridlas.com</a></strong>.</p>
-    </article>
+<div class="wrap">
+  <nav><span class="dot"></span><a class="brand" href="../index.html">gridlas</a><span class="spacer"></span><a class="navlink" href="../findings.html">Analysis</a> · <a class="navlink" href="../data-centers/">Regions</a></nav>
+
+  <div class="kicker">Analysis · ERCOT · AI Data Centers</div>
+  <h1>The Texas Power Rush: Can the Grid Handle the AI Boom?</h1>
+  <p class="standfirst">Texas is ground zero for the next phase of AI — but its 226 GW ERCOT queue is a race between generation and the transmission to deliver it.</p>
+  <p class="byline">A Gridlas analysis · built from public data · primary sources cited</p>
+
+  <div class="article"><p>Texas is ground zero for the next phase of the AI revolution. With its vast land, business-friendly climate, and—most importantly—an independent power grid (ERCOT) that promises faster connections, data center developers are flocking to the state. The numbers are staggering: a colossal 226 GW of new power projects are currently waiting in the ERCOT interconnection queue, much of it driven by AI demand.</p>
+        <p>But this boom is balanced on a knife's edge. While the queue is flush with solar, wind, and battery storage projects, the question isn't whether Texas can generate enough power, but whether it can build the transmission infrastructure to deliver it in time. The infamous <a href="../power-grid-interconnection-bottleneck/">interconnection queue</a> is the single biggest bottleneck, with projects facing multi-year waits for approval and construction.</p>
+        <p>This "Great Wait" creates a high-stakes race for data center operators. They need gigawatts of power now, not in five years. As a result, many are turning to power-intensive solutions like on-site natural gas generation, putting further strain on the grid and complicating the state's energy transition. While Texas has the potential to become the world's AI power hub, its success hinges on navigating this critical infrastructure challenge, a situation also being faced by established markets like <a href="../northern-virginia-data-center-hub/">Northern Virginia</a>.</p>
+        <p>To understand the full scope of the Texas buildout and how it fits into the national picture, <strong><a href="../index.html">get the full, data-driven analysis at Gridlas.com</a></strong>.</p></div>
+
+  <div class="cta">
+    <div style="font-family:'Space Grotesk';font-weight:700;color:var(--white);font-size:20px">See the full U.S. data-center buildout, mapped</div>
+    <p style="color:var(--muted);margin:8px 0 4px">Where AI is landing, the power it needs, and the grid bottlenecks ahead — every figure cited.</p>
+    <a class="btn" href="../index.html">Read the research →</a>
+  </div>
+
+  <div class="foot">
+    Related — <a href="../grid-bottleneck/">the grid bottleneck</a> · <a href="../powering-around-the-queue/">powering around the queue</a> · <a href="../data-center-water/">the water problem</a> · <a href="../data-centers/">regional breakdowns</a>.
+    <br><br>
+    Gridlas · independent &amp; unaffiliated · built from public data.
+  </div>
+</div>
 </body>
 </html>
