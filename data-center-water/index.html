@@ -39,6 +39,9 @@
   "isAccessibleForFree": true
 }
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much water do AI data centers use for cooling?","acceptedAnswer":{"@type":"Answer","text":"Most large data centers reject heat by evaporating water in cooling towers. The industry-average Water Usage Effectiveness (WUE) is about 1.8 liters per kWh. Google's data centers used 6.4 billion gallons in 2023 — about 95% for cooling, up ~50% since 2021; Microsoft used 1.7 billion and Meta about 0.81 billion. The largest campuses can draw several million gallons a day."}},{"@type":"Question","name":"What share of new U.S. data centers are in high-water-stress areas?","acceptedAnswer":{"@type":"Answer","text":"A 2025 Bloomberg analysis found about two-thirds of new U.S. data centers built or in development since 2022 sit in places already under high water stress, and just five states account for 72% of them — including Arizona and Texas, among the most drought-exposed in the country."}},{"@type":"Question","name":"Does zero-water cooling actually eliminate water use?","acceptedAnswer":{"@type":"Answer","text":"No — air and closed-loop cooling move the water upstream rather than erase it. A drier cooling design usually needs more electricity, and thermoelectric power generation is itself water-intensive; the indirect water footprint from a data center's electricity is estimated at roughly 10 times its direct cooling use."}},{"@type":"Question","name":"Why might water, not power, decide where data centers get built?","acceptedAnswer":{"@type":"Answer","text":"Power has exits — gas on-site, a nuclear PPA, a new line. Water is local, political, and has far fewer exits; once a basin is stressed, no contract refills it. Water is likely to push new campuses toward the Midwest and Pacific Northwest and away from the sunbelt basins cheap power made attractive."}}]}
+</script>
 <link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/fonts.css">
@@ -213,6 +216,14 @@
   <p>So water is likely to become the harder gate. It won't stop the buildout, but it will increasingly decide its <em>geography</em> — pushing new campuses toward the Midwest and the Pacific Northwest, toward recycled-water deals, and away from the sunbelt basins that cheap power and fast permitting made attractive in the first place. The map of AI, in the end, may be drawn less by where the electrons are than by where the water is.</p>
 
   <div class="callout">The buildout has proven it can find power almost anywhere. Whether it can find water — in the places it actually wants to build — is the constraint still without a workaround.</div>
+
+  <h2>Frequently asked</h2>
+  <div class="faq">
+    <details><summary>How much water do AI data centers use for cooling?</summary><p>Most large data centers reject heat by evaporating water in cooling towers. The industry-average Water Usage Effectiveness (WUE) is about 1.8 liters per kWh. Google's data centers used 6.4 billion gallons in 2023 — about 95% for cooling, up ~50% since 2021; Microsoft used 1.7 billion and Meta about 0.81 billion. The largest campuses can draw several million gallons a day.</p></details>
+    <details><summary>What share of new U.S. data centers are in high-water-stress areas?</summary><p>A 2025 Bloomberg analysis found about two-thirds of new U.S. data centers built or in development since 2022 sit in places already under high water stress, and just five states account for 72% of them — including Arizona and Texas, among the most drought-exposed in the country.</p></details>
+    <details><summary>Does "zero-water" cooling actually eliminate water use?</summary><p>No — air and closed-loop cooling move the water upstream rather than erase it. A drier cooling design usually needs more electricity, and thermoelectric power generation is itself water-intensive; the indirect water footprint from a data center's electricity is estimated at roughly 10× its direct cooling use.</p></details>
+    <details><summary>Why might water, not power, decide where data centers get built?</summary><p>Power has exits — gas on-site, a nuclear PPA, a new line. Water is local, political, and has far fewer exits; once a basin is stressed, no contract refills it. Water is likely to push new campuses toward the Midwest and Pacific Northwest and away from the sunbelt basins cheap power made attractive.</p></details>
+  </div>
 
   <div class="cta">
     <p><b>The full picture, mapped.</b> The Gridlas report puts demand, the interconnection queue, and five regional deep-dives onto the grid — with high-res maps and the underlying dataset (CSV/GeoJSON), built entirely from public data.</p>
