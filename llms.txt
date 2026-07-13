@@ -18,6 +18,7 @@ Gridlas publishes the **"Powering AI — The U.S. Data Center Buildout Report"**
 - [The Texas AI power rush](https://gridlas.com/texas-ai-power-rush/)
 - [Data Center Alley (Northern Virginia)](https://gridlas.com/northern-virginia-data-center-hub/)
 - [Findings & methodology](https://gridlas.com/findings.html)
+- [Glossary of AI data-center & power-grid terms](https://gridlas.com/glossary/): plain-English, cited definitions — interconnection queue, hyperscale, PUE, WUE, behind-the-meter, SMR, baseload, curtailment and more.
 
 ## Regional deep-dives
 - [Data centers by U.S. region (16 markets)](https://gridlas.com/data-centers/): Northern Virginia, Texas/ERCOT, Atlanta, Phoenix, Central Ohio, Silicon Valley, Chicago, New York, Hillsboro/Oregon, Memphis, Iowa, Salt Lake City, Reno, Nashville, Kansas City, Dallas–Fort Worth.
