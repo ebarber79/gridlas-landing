@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Gridlas — Powering AI: the U.S. Data Center Buildout</title>
+  <link>https://gridlas.com/</link>
+  <atom:link href="https://gridlas.com/feed.xml" rel="self" type="application/rss+xml" />
+  <description>Independent research on the U.S. AI data-center buildout and the power grid — built from public EIA, LBNL, ERCOT &amp; CBRE data, every figure cited.</description>
+  <language>en-us</language>
+  <lastBuildDate>Sun, 12 Jul 2026 12:00:00 +0000</lastBuildDate>
+  <generator>Gridlas</generator>
+  <item>
+    <title>The grid bottleneck: can the U.S. power the AI buildout through 2030?</title>
+    <link>https://gridlas.com/grid-bottleneck/</link>
+    <guid isPermaLink="true">https://gridlas.com/grid-bottleneck/</guid>
+    <description>Why the real limit on AI isn't power plants — it's the interconnection queue, where median waits doubled to ~5 years and ~77% of proposed capacity is withdrawn.</description>
+    <pubDate>Sun, 12 Jul 2026 12:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>Powering around the queue: how AI is buying its way past the grid</title>
+    <link>https://gridlas.com/powering-around-the-queue/</link>
+    <guid isPermaLink="true">https://gridlas.com/powering-around-the-queue/</guid>
+    <description>Behind-the-meter gas, nuclear restarts, and small modular reactors — the deals, megawatts and dates, primary-source cited.</description>
+    <pubDate>Sun, 12 Jul 2026 12:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>The water problem: the constraint with no workaround</title>
+    <link>https://gridlas.com/data-center-water/</link>
+    <guid isPermaLink="true">https://gridlas.com/data-center-water/</guid>
+    <description>Cooling-water intensity, hyperscaler use, and why ~2/3 of new U.S. data centers sit in high-water-stress areas.</description>
+    <pubDate>Sun, 12 Jul 2026 12:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>The Texas power rush: can the grid handle the AI boom?</title>
+    <link>https://gridlas.com/texas-ai-power-rush/</link>
+    <guid isPermaLink="true">https://gridlas.com/texas-ai-power-rush/</guid>
+    <description>226 GW queued in ERCOT, ~77% data centers — the AI race is now a transmission problem, not a generation one.</description>
+    <pubDate>Sun, 12 Jul 2026 12:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>Data Center Alley's dilemma: can Northern Virginia power its future?</title>
+    <link>https://gridlas.com/northern-virginia-data-center-hub/</link>
+    <guid isPermaLink="true">https://gridlas.com/northern-virginia-data-center-hub/</guid>
+    <description>The world's largest data-center market at ~4,040 MW — where power availability is now the number-one constraint.</description>
+    <pubDate>Sun, 12 Jul 2026 12:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>The 4.5-year wait: America's power grid is bottlenecking the AI boom</title>
+    <link>https://gridlas.com/power-grid-interconnection-bottleneck/</link>
+    <guid isPermaLink="true">https://gridlas.com/power-grid-interconnection-bottleneck/</guid>
+    <description>The interconnection queue explained: why the power for the next AI generation was decided half a decade ago.</description>
+    <pubDate>Sun, 12 Jul 2026 12:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>Data centers by U.S. region: 16 markets, mapped</title>
+    <link>https://gridlas.com/data-centers/</link>
+    <guid isPermaLink="true">https://gridlas.com/data-centers/</guid>
+    <description>Power demand, queues and constraints across Northern Virginia, Texas, Phoenix, Atlanta, Ohio and 11 more markets.</description>
+    <pubDate>Sun, 12 Jul 2026 12:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>Glossary: AI data centers &amp; the power grid</title>
+    <link>https://gridlas.com/glossary/</link>
+    <guid isPermaLink="true">https://gridlas.com/glossary/</guid>
+    <description>Plain-English, cited definitions of the terms behind the AI power buildout — interconnection queue, hyperscale, PUE, WUE, SMR and more.</description>
+    <pubDate>Sun, 12 Jul 2026 12:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>Data center power &amp; water estimator</title>
+    <link>https://gridlas.com/tools/data-center-estimator/</link>
+    <guid isPermaLink="true">https://gridlas.com/tools/data-center-estimator/</guid>
+    <description>A free calculator: enter a facility size and U.S. market, see power draw, homes-equivalent, grid wait and water footprint instantly.</description>
+    <pubDate>Sun, 12 Jul 2026 12:00:00 +0000</pubDate>
+  </item>
+</channel>
+</rss>
