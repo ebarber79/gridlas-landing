@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://gridlas.com/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/peek.png</image:loc>
+      <image:title>Generation vs. demand map — U.S. power plants over data-center load</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/tools/data-center-estimator/</loc>
@@ -47,102 +52,209 @@
     <lastmod>2026-06-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-national.png</image:loc>
+      <image:title>National map of U.S. data-center clusters over the power grid</image:title>
+      <image:caption>Major U.S. data-center clusters over the power grid. Source: public EIA / CBRE / JLL (late 2025); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/northern-virginia/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-va.png</image:loc>
+      <image:title>Map of Northern Virginia data-center clusters over the power grid</image:title>
+      <image:caption>Northern Virginia data-center clusters over the power grid. Source: public EIA / CBRE / JLL (late 2025); cluster locations approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/texas-ercot-queue/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-tx.png</image:loc>
+      <image:title>Map of Texas data-center clusters and power plants over the ERCOT grid</image:title>
+      <image:caption>Texas data-center clusters and generation over the ERCOT grid. Source: public EIA / ERCOT (late 2025); clusters approximate.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-funnel.png</image:loc>
+      <image:title>Queued versus operational capacity in ERCOT</image:title>
+      <image:caption>Queued ≠ built: how little of the ERCOT large-load queue is operational. Source: ERCOT / Latitude Media (Nov 2025).</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/dallas-fort-worth/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-tx.png</image:loc>
+      <image:title>Map of Texas data-center clusters and power plants over the ERCOT grid, including Dallas–Fort Worth</image:title>
+      <image:caption>Texas clusters and generation over the ERCOT grid; DFW is the northern anchor. Source: public EIA / ERCOT (late 2025); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/silicon-valley-santa-clara/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-national.png</image:loc>
+      <image:title>National map of U.S. data-center clusters over the power grid; Silicon Valley is the constrained West Coast node</image:title>
+      <image:caption>National context — Silicon Valley is the mature, supply-capped West Coast node. Source: public EIA / CBRE (late 2025); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/chicago-illinois/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-national.png</image:loc>
+      <image:title>National map of U.S. data-center clusters over the power grid; Chicago anchors the Midwest</image:title>
+      <image:caption>National context — Chicago is the Midwest's dominant data-center node. Source: public EIA / CBRE (late 2025); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/new-york-tri-state/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-national.png</image:loc>
+      <image:title>National map of U.S. data-center clusters over the power grid; the New York tri-state anchors the Northeast</image:title>
+      <image:caption>National context — the tri-state is the Northeast's connectivity and financial-latency anchor. Source: public EIA / CBRE (late 2025); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/iowa-data-centers/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-national.png</image:loc>
+      <image:title>National map of U.S. data-center clusters over the power grid; Iowa is the wind-powered heartland node</image:title>
+      <image:caption>National context — Iowa is the wind-powered heartland node, drawing hyperscale AI training onto a low-cost, low-carbon grid. Source: public EIA / reporting (end-2025); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/memphis-tennessee/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-national.png</image:loc>
+      <image:title>National map of U.S. data-center clusters over the power grid; Memphis is the emergent Mid-South node in TVA territory</image:title>
+      <image:caption>National context — Memphis is an emergent node in TVA territory, defined less by market size than by how it got powered. Source: public EIA / reporting (late 2025); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/hillsboro-oregon/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-national.png</image:loc>
+      <image:title>National map of U.S. data-center clusters over the power grid; Hillsboro is the Pacific Northwest node</image:title>
+      <image:caption>National context — Hillsboro is the Pacific Northwest node, anchored to cheap hydro and the transpacific fiber landings. Source: public EIA / CBRE (end-2025); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/atlanta-georgia/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-ga.png</image:loc>
+      <image:title>Map of Georgia data-center clusters and power plants over the grid</image:title>
+      <image:caption>Georgia data-center clusters and generation over the grid. Source: public EIA / CBRE (late 2025); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/phoenix-arizona/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-az.png</image:loc>
+      <image:title>Map of Arizona data-center clusters and power plants over the grid</image:title>
+      <image:caption>Arizona data-center clusters and generation over the grid. Source: public EIA / CBRE (late 2025); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/columbus-ohio/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-oh.png</image:loc>
+      <image:title>Map of Ohio data-center clusters and power plants over the grid</image:title>
+      <image:caption>Ohio data-center clusters and generation over the grid. Source: public EIA / CBRE (late 2025); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/salt-lake-city-utah/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-national.png</image:loc>
+      <image:title>National map of U.S. data-center clusters over the power grid; Salt Lake City and Utah's Wasatch Front is the Mountain West node</image:title>
+      <image:caption>National context — Utah's Wasatch Front is the Mountain West node, drawing on cheap power and a legislated right to self-supply. Source: public EIA / CBRE (2026); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/reno-nevada/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-national.png</image:loc>
+      <image:title>National map of U.S. data-center clusters over the power grid; Reno and Northern Nevada is the Great Basin node</image:title>
+      <image:caption>National context — Northern Nevada is the Great Basin node, built on fast permitting and cheap land. Source: public EIA / CBRE (2026); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/nashville-tennessee/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-national.png</image:loc>
+      <image:title>National map of U.S. data-center clusters over the power grid; Nashville and Middle Tennessee sit in TVA territory in the Southeast</image:title>
+      <image:caption>National context — Middle Tennessee is a TVA-territory node in the fast-growing Southeast. Source: public EIA / CBRE (2026); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/data-centers/kansas-city/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  
+    <image:image>
+      <image:loc>https://gridlas.com/assets/fig-region-national.png</image:loc>
+      <image:title>National map of U.S. data-center clusters over the power grid; Kansas City is the emerging Midwest node straddling Missouri and Kansas</image:title>
+      <image:caption>National context — Kansas City is an emerging Midwest node in SPP territory, straddling Missouri and Kansas. Source: public EIA / CBRE (2026); clusters approximate.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://gridlas.com/texas-ai-power-rush/</loc>
