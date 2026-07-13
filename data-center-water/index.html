@@ -87,6 +87,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gridlas.com/"},{"@type":"ListItem","position":2,"name":"The Water Problem","item":"https://gridlas.com/data-center-water/"}]}
 </script>
+<link rel="stylesheet" href="../assets/lead-form.css">
 </head>
 <body>
 <div class="wrap">
@@ -230,6 +231,15 @@
     <a class="btn" href="/?utm_source=gridlas&utm_medium=content&utm_content=data-center-water#pricing">Get the report →</a>
   </div>
 
+  <div class="lead-cta">
+    <p><b>Prefer the free 3-page summary first?</b> The 8 findings and the chart that explains the AI power crunch — straight to your inbox.</p>
+    <form class="lead-form" data-source="data-center-water" data-pdf="../Gridlas-Powering-AI-Sample.pdf" novalidate>
+      <input type="email" placeholder="you@company.com" required aria-label="Email">
+      <button type="submit">Email me the summary →</button>
+    </form>
+    <p class="lead-fine">No spam. Unsubscribe anytime.</p>
+  </div>
+
   <div class="note"><b>On the numbers</b> — Company water figures are self-reported <span style="color:var(--text)">direct</span> consumption for the stated year and cover cooling plus humidification; the far larger indirect footprint from electricity generation is excluded. WUE benchmarks are typical ranges, not a single facility. The Bloomberg siting analysis counts facilities in high-stress watersheds (WRI Aqueduct), not their size or actual withdrawals. Headline single-project figures (e.g. the ~16-billion-gallon Utah number) are contested permitting estimates — treat them as worst-case, not confirmed draw.</div>
 
   <div class="sources">
@@ -250,5 +260,6 @@
     Gridlas · independent &amp; unaffiliated · built from public data.
   </div>
 </div>
+<script src="../assets/lead-form.js" defer></script>
 </body>
 </html>

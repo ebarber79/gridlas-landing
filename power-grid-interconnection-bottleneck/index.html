@@ -72,6 +72,7 @@
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long is the U.S. grid interconnection wait?", "acceptedAnswer": {"@type": "Answer", "text": "The typical interconnection queue wait is now roughly 4.5 years — the multi-year process every new power plant or battery must complete before it can connect to the grid."}}, {"@type": "Question", "name": "Why is the interconnection queue so backed up?", "acceptedAnswer": {"@type": "Answer", "text": "Three compounding causes: a historic flood of new applications (renewables plus data-center demand) overwhelming grid operators, a high share of speculative projects clogging the queue, and the need for expensive transmission upgrades to connect new capacity."}}, {"@type": "Question", "name": "How does the queue affect AI data centers?", "acceptedAnswer": {"@type": "Answer", "text": "A ~4.5-year wait means the power available for the next generation of AI is set by decisions made half a decade earlier, pushing operators toward on-site generation and other ways to jump the queue."}}]}
 </script>
+<link rel="stylesheet" href="../assets/lead-form.css">
 </head>
 <body>
 <div class="wrap">
@@ -108,11 +109,20 @@
     <p style="margin:14px 0 0;font-size:14px"><a href="../tools/data-center-estimator/">Or try the free power &amp; water estimator →</a></p>
   </div>
 
+  <div class="lead-cta">
+    <p><b>Prefer the free 3-page summary first?</b> The 8 findings and the chart that explains the AI power crunch — straight to your inbox.</p>
+    <form class="lead-form" data-source="power-grid-interconnection-bottleneck" data-pdf="../Gridlas-Powering-AI-Sample.pdf" novalidate>
+      <input type="email" placeholder="you@company.com" required aria-label="Email">
+      <button type="submit">Email me the summary →</button>
+    </form>
+    <p class="lead-fine">No spam. Unsubscribe anytime.</p>
+  </div>
   <div class="foot">
     Related — <a href="../grid-bottleneck/">the grid bottleneck</a> · <a href="../powering-around-the-queue/">powering around the queue</a> · <a href="../data-center-water/">the water problem</a> · <a href="../data-centers/">regional breakdowns</a>.
     <br><br>
     Gridlas · independent &amp; unaffiliated · built from public data.
   </div>
 </div>
+<script src="../assets/lead-form.js" defer></script>
 </body>
 </html>

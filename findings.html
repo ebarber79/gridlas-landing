@@ -87,6 +87,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gridlas.com/"},{"@type":"ListItem","position":2,"name":"Analysis","item":"https://gridlas.com/findings.html"}]}
 </script>
+<link rel="stylesheet" href="assets/lead-form.css">
 </head>
 <body>
 <div class="wrap">
@@ -240,11 +241,21 @@
     <p>The problem is location and timing, not total capacity. The U.S. has ample generation nationally, but data-center load concentrates onto a handful of already-stressed grids faster than they can respond. Studies suggest much of the near-term demand could be met by using existing grid capacity more flexibly.</p>
   </div>
 
+  <div class="lead-cta">
+    <p><b>Prefer the free 3-page summary first?</b> The 8 findings and the chart that explains the AI power crunch — straight to your inbox.</p>
+    <form class="lead-form" data-source="findings" data-pdf="Gridlas-Powering-AI-Sample.pdf" novalidate>
+      <input type="email" placeholder="you@company.com" required aria-label="Email">
+      <button type="submit">Email me the summary →</button>
+    </form>
+    <p class="lead-fine">No spam. Unsubscribe anytime.</p>
+  </div>
+
   <div class="foot">
     I compiled the full version — five regional deep-dives, a 12-month outlook, and the underlying dataset (CSV/GeoJSON) — into a report. If you want the maps in high-res, the data, or just to talk methodology, it's all <a href="./index.html">over here</a>. You can also browse the <a href="./data-centers/">regional breakdowns by state</a>, or read the deeper <a href="./grid-bottleneck/">grid-bottleneck analysis</a> on why the constraint is interconnection, not generation — and its companion, <a href="./powering-around-the-queue/">powering around the queue</a>, on how the buildout is routing around it with on-site gas and nuclear — and <a href="./data-center-water/">the water problem</a>, on the resource that can't be trucked in. Feedback and corrections welcome.
     <br><br>
     Gridlas · independent &amp; unaffiliated · built from public data.
   </div>
 </div>
+<script src="assets/lead-form.js" defer></script>
 </body>
 </html>

@@ -87,6 +87,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the real bottleneck for powering AI data centers?","acceptedAnswer":{"@type":"Answer","text":"Not power plants — the grid interconnection queue. The median wait to connect a project has roughly doubled to about 5 years, and around 77% of proposed capacity is ultimately withdrawn. Compute scales in months; interconnection scales in years."}},{"@type":"Question","name":"How long does it take to connect new power to the grid?","acceptedAnswer":{"@type":"Answer","text":"The median interconnection wait is about 5 years, and building new transmission takes 4–8 years. The IEA estimates about 20% of planned data-center projects risk delay from grid constraints."}},{"@type":"Question","name":"Is there enough power generation for the AI buildout?","acceptedAnswer":{"@type":"Answer","text":"Generation isn't the binding constraint — throughput is. The queue is still about 95% clean by volume; the question is whether the right wires, in the right places, get built before the GPUs show up."}},{"@type":"Question","name":"What kind of power is growing fastest in the queue?","acceptedAnswer":{"@type":"Answer","text":"Natural gas — up 72% to 136 GW in 2024 — as developers chase firm, always-on power they can count on connecting, even as solar, storage and wind requests fell."}}]}
 </script>
+<link rel="stylesheet" href="../assets/lead-form.css">
 </head>
 <body>
 <div class="wrap">
@@ -217,6 +218,15 @@
     <a class="btn" href="/?utm_source=gridlas&utm_medium=content&utm_content=grid-bottleneck#pricing">Get the report →</a>
   </div>
 
+  <div class="lead-cta">
+    <p><b>Prefer the free 3-page summary first?</b> The 8 findings and the chart that explains the AI power crunch — straight to your inbox.</p>
+    <form class="lead-form" data-source="grid-bottleneck" data-pdf="../Gridlas-Powering-AI-Sample.pdf" novalidate>
+      <input type="email" placeholder="you@company.com" required aria-label="Email">
+      <button type="submit">Email me the summary →</button>
+    </form>
+    <p class="lead-fine">No spam. Unsubscribe anytime.</p>
+  </div>
+
   <div class="note"><b>On the numbers</b> — This piece is built only from primary and authoritative sources, and every headline figure was cross-checked before publishing. Where forecasts disagree we show the range rather than pick a winner. Two caveats worth repeating: the LBNL 6.7–12% figure is a <span style="color:var(--text)">2028</span> projection, not 2030; and the IEA generation-mix and "20% at risk" figures are <span style="color:var(--text)">global, to 2035</span>, not a U.S.-through-2030 breakdown.</div>
 
   <div class="sources">
@@ -238,5 +248,6 @@
     Gridlas · independent &amp; unaffiliated · built from public data.
   </div>
 </div>
+<script src="../assets/lead-form.js" defer></script>
 </body>
 </html>
