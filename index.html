@@ -297,6 +297,11 @@
   section{padding:56px 0}
   h2{font-size:30px;color:var(--white);margin:0 0 8px}
   .section-sub{color:var(--muted);margin:0 0 28px}
+  .prose{max-width:68ch}
+  .prose p{color:var(--text);font-size:16.5px;line-height:1.7;margin:0 0 16px}
+  .prose h3{color:var(--white);font-size:19px;margin:30px 0 8px}
+  .prose a{color:var(--cyan)}
+  .prose .caveat{color:var(--muted);font-size:14.5px;border-left:3px solid var(--line);padding-left:14px;margin-top:24px}
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .feat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;position:relative}
   .feat::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;background:var(--cyan);border-radius:3px}
@@ -389,6 +394,25 @@
     <div class="stat"><div class="n">4,040 MW</div><div class="l">Northern Virginia capacity</div></div>
   </div>
 
+  <section class="prose">
+    <h2>Why the AI buildout is now a power problem</h2>
+    <p>For most of the last decade the binding constraint on large-scale computing was silicon. It isn't any more. What now determines where — and how fast — AI capacity gets built is electricity: how much a region has, how quickly new supply can be connected, and whether the transmission exists to move it.</p>
+
+    <h3>How much power the buildout actually needs</h3>
+    <p>Estimates disagree, and the spread matters more than any single headline number. LBNL and DOE put U.S. data-center consumption at 6.7–12% of national electricity by 2028, or roughly 74–132 GW. EPRI's 2026 analysis projects 9–17% by 2030 — about 60% above its own 2024 estimate. Across all published models, 2030 U.S. forecasts span roughly 200 to over 1,050 TWh per year, a fivefold spread. We publish the range rather than pick a winner; every figure here traces to a public primary source and is <a href="./findings.html">documented in the methodology</a>.</p>
+
+    <h3>The bottleneck is the queue, not the power plants</h3>
+    <p>The U.S. is not short of proposed generation. It is short of <em>connected</em> generation. The median wait to plug a new project into the grid has roughly doubled, to about 4.5–5 years depending on the dataset. And most queued capacity is never built at all: of everything that requested interconnection between 2000 and 2019, just 13% had been built by the end of 2024, while 77% was withdrawn. The queue behaves as an attrition filter, not a build pipeline. Compute scales in months; interconnection scales in years. <a href="./grid-bottleneck/">Read the full breakdown →</a></p>
+
+    <h3>Demand lands on specific grids</h3>
+    <p>Supply is spread across 2,459 utility-scale plants, but demand concentrates. Northern Virginia alone operates about 4,040 MW — more data-center capacity than any market on Earth. In Texas, roughly 226 GW sits in the ERCOT queue, around 77% of it data centers. Those are the grids where the collision happens first. <a href="./data-centers/">See all 16 regional deep-dives →</a></p>
+
+    <h3>What operators do while they wait</h3>
+    <p>Rather than wait out the queue, developers increasingly route around it — behind-the-meter gas, nuclear power purchase agreements and restarts, and small modular reactors. The queue's composition is shifting to match: total volume fell about 12% in 2024 as withdrawals outpaced new requests, even as natural gas surged 72% to 136 GW. <a href="./powering-around-the-queue/">How the workarounds actually work →</a> And there is a second constraint behind the first — <a href="./data-center-water/">cooling water</a>, much of it demanded in already high-water-stress regions.</p>
+
+    <p class="caveat">New to the terminology? The <a href="./glossary/">glossary</a> defines interconnection queue, behind-the-meter, PUE, WUE, curtailment and more — in plain English, with sources.</p>
+  </section>
+
   <section>
     <h2>What's inside the full report</h2>
     <p class="section-sub">36 pages of maps, data, and analysis — every figure sourced.</p>
@@ -473,7 +497,7 @@
 <footer class="wrap">
   Built from public U.S. EIA, Lawrence Berkeley National Laboratory, ERCOT, CBRE &amp; IEA data. Data-center cluster figures are approximate. Independent &amp; unaffiliated. © 2026 Gridlas · <a href="https://gridlas.com">gridlas.com</a><br>
   <b style="color:var(--text)">Refund policy:</b> all sales are final. The report and dataset are delivered instantly as digital downloads and are non-refundable.<br>
-  Explore: <a href="./tools/data-center-estimator/">the power &amp; water estimator</a> · <a href="./findings.html">the analysis</a> · <a href="./glossary/">the glossary</a> · <a href="./grid-bottleneck/">the grid bottleneck</a> · <a href="./powering-around-the-queue/">powering around the queue</a> · <a href="./data-center-water/">the water problem</a> · <a href="./texas-ai-power-rush/">the Texas power rush</a> · <a href="./northern-virginia-data-center-hub/">Data Center Alley</a> · <a href="./power-grid-interconnection-bottleneck/">the interconnection bottleneck</a> · <a href="./data-centers/">data centers by region</a> · <a href="./data-centers/northern-virginia/">Northern Virginia</a> · <a href="./data-centers/texas-ercot-queue/">Texas</a> · <a href="./data-centers/atlanta-georgia/">Atlanta</a> · <a href="./data-centers/phoenix-arizona/">Phoenix</a> · <a href="./data-centers/columbus-ohio/">Ohio</a> · <a href="./data-centers/dallas-fort-worth/">Dallas–Fort Worth</a> · <a href="./data-centers/silicon-valley-santa-clara/">Silicon Valley</a> · <a href="./data-centers/chicago-illinois/">Chicago</a> · <a href="./data-centers/new-york-tri-state/">New York</a> · <a href="./data-centers/salt-lake-city-utah/">Salt Lake City</a> · <a href="./data-centers/reno-nevada/">Reno</a> · <a href="./data-centers/nashville-tennessee/">Nashville</a> · <a href="./data-centers/kansas-city/">Kansas City</a> · <a href="./data-centers/memphis-tennessee/">Memphis</a> · <a href="./data-centers/hillsboro-oregon/">Hillsboro / Oregon</a> · <a href="./data-centers/iowa-data-centers/">Iowa</a>
+  Explore: <a href="./tools/data-center-estimator/">the power &amp; water estimator</a> · <a href="./findings.html">the analysis</a> · <a href="./glossary/">the glossary</a> · <a href="./grid-bottleneck/">the grid bottleneck</a> · <a href="./powering-around-the-queue/">powering around the queue</a> · <a href="./data-center-water/">the water problem</a> · <a href="./data-centers/">data centers by region</a> · <a href="./data-centers/northern-virginia/">Northern Virginia</a> · <a href="./data-centers/texas-ercot-queue/">Texas</a> · <a href="./data-centers/atlanta-georgia/">Atlanta</a> · <a href="./data-centers/phoenix-arizona/">Phoenix</a> · <a href="./data-centers/columbus-ohio/">Ohio</a> · <a href="./data-centers/dallas-fort-worth/">Dallas–Fort Worth</a> · <a href="./data-centers/silicon-valley-santa-clara/">Silicon Valley</a> · <a href="./data-centers/chicago-illinois/">Chicago</a> · <a href="./data-centers/new-york-tri-state/">New York</a> · <a href="./data-centers/salt-lake-city-utah/">Salt Lake City</a> · <a href="./data-centers/reno-nevada/">Reno</a> · <a href="./data-centers/nashville-tennessee/">Nashville</a> · <a href="./data-centers/kansas-city/">Kansas City</a> · <a href="./data-centers/memphis-tennessee/">Memphis</a> · <a href="./data-centers/hillsboro-oregon/">Hillsboro / Oregon</a> · <a href="./data-centers/iowa-data-centers/">Iowa</a>
 </footer>
 
 <div class="toast" id="toast">✓ Check your inbox — summary on the way.</div>

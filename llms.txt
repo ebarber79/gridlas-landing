@@ -14,9 +14,6 @@ Gridlas publishes the **"Powering AI — The U.S. Data Center Buildout Report"**
 - [The grid bottleneck](https://gridlas.com/grid-bottleneck/): why the real limit on AI is the interconnection queue, not power plants.
 - [Powering around the queue](https://gridlas.com/powering-around-the-queue/): behind-the-meter gas, nuclear restarts, and SMRs routing around the wait.
 - [The water problem](https://gridlas.com/data-center-water/): cooling-water intensity and high-water-stress siting.
-- [The interconnection bottleneck](https://gridlas.com/power-grid-interconnection-bottleneck/)
-- [The Texas AI power rush](https://gridlas.com/texas-ai-power-rush/)
-- [Data Center Alley (Northern Virginia)](https://gridlas.com/northern-virginia-data-center-hub/)
 - [Findings & methodology](https://gridlas.com/findings.html)
 - [Glossary of AI data-center & power-grid terms](https://gridlas.com/glossary/): plain-English, cited definitions — interconnection queue, hyperscale, PUE, WUE, behind-the-meter, SMR, baseload, curtailment and more.
 
