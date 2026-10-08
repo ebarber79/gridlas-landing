@@ -257,6 +257,9 @@
     background:url('./assets/hero.png') center/cover no-repeat}
   @supports (background:image-set(url(x) type('image/webp'))){
     .hero-bg{background:image-set(url('./assets/hero.webp') type('image/webp'),url('./assets/hero.png') type('image/png')) center/cover no-repeat}}
+  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
+  .hero-video.on{opacity:1}
+  @media (prefers-reduced-motion:reduce){.hero-video{display:none}}
   .hero-bg::after{content:"";position:absolute;inset:0;
     background:radial-gradient(80% 70% at 50% 30%,rgba(10,10,20,.2),var(--bg) 75%)}
   .hero-inner{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;
@@ -361,7 +364,14 @@
 </div>
 
 <header class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg"><video class="hero-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
+  <script>
+  // Background film loop: skipped for reduced-motion / Save-Data; hero.webp stays as the fallback underneath.
+  (function(){var v=document.querySelector('.hero-video');if(!v)return;
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches||(navigator.connection&&navigator.connection.saveData))return;
+    v.addEventListener('playing',function(){v.classList.add('on')},{once:true});
+    v.src='./assets/hero-loop.mp4';var p=v.play();if(p&&p.catch)p.catch(function(){});})();
+  </script>
   <div class="wrap hero-inner">
     <div>
       <div class="eyebrow">Free Executive Summary</div>
