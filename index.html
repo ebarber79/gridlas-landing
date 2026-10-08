@@ -561,7 +561,7 @@
       showToast('✓ Summary downloading — connect Klaviyo to capture emails.', true);
       return;
     }
-    var body = new URLSearchParams({ g: KLAVIYO_LIST_ID, email: email, '$source': 'gridlas-landing' });
+    var body = new URLSearchParams({ g: KLAVIYO_LIST_ID, email: email, '$source': 'gridlas-landing' + (window.GRIDLAS_UTM ? ' / ' + window.GRIDLAS_UTM.utm_campaign + ' / ' + (window.GRIDLAS_UTM.utm_source || '') : '') });
     fetch('https://manage.kmail-lists.com/ajax/subscriptions/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },  // simple type → no CORS preflight
@@ -575,6 +575,21 @@
     })
     .catch(function(){ downloadSample(); showToast('✓ Summary downloading.', true); });
   });
+</script>
+<script>
+  // Campaign attribution: if the visitor arrived with UTM tags (e.g. from the video posts),
+  // carry them onto the Shopify buy links (keeping each link's utm_content tier) and the Klaviyo signup source.
+  (function(){
+    var q=new URLSearchParams(location.search), keys=['utm_source','utm_medium','utm_campaign'], u=null;
+    if(q.get('utm_campaign')){ u={}; keys.forEach(function(k){ if(q.get(k)) u[k]=q.get(k); });
+      try{ sessionStorage.setItem('gridlas_utm', JSON.stringify(u)); }catch(e){} }
+    else { try{ u=JSON.parse(sessionStorage.getItem('gridlas_utm')||'null'); }catch(e){} }
+    if(!u) return;
+    window.GRIDLAS_UTM=u;
+    document.querySelectorAll('a[href^="https://buy.gridlas.com/"]').forEach(function(a){
+      var url=new URL(a.href); keys.forEach(function(k){ if(u[k]) url.searchParams.set(k,u[k]); }); a.href=url.toString();
+    });
+  })();
 </script>
 </body>
 </html>
