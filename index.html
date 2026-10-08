@@ -315,6 +315,7 @@
   a.feat .go{color:var(--cyan);font-family:'Space Grotesk';font-weight:600;font-size:13.5px;padding-left:10px;margin-top:12px;display:block}
   .more-regions{color:var(--muted);font-size:14.5px;margin:22px 0 0;text-align:center}
   .peek{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+  .film video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--surface);border:1px solid var(--line);border-radius:14px}
   .peek img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
   /* tiers */
   .tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -403,6 +404,12 @@
     <div class="stat"><div class="n">~4.5 yrs</div><div class="l">typical interconnection wait</div></div>
     <div class="stat"><div class="n">4,040 MW</div><div class="l">Northern Virginia capacity</div></div>
   </div>
+
+  <section class="film">
+    <h2>The 28-second version</h2>
+    <p class="section-sub">Where the AI buildout meets the grid — in under half a minute. Sound on.</p>
+    <video controls playsinline preload="none" poster="./assets/film-poster.jpg" width="1280" height="720"><source src="./assets/film.mp4" type="video/mp4">Your browser can't play this video. <a href="./assets/film.mp4">Download it</a> instead.</video>
+  </section>
 
   <section class="prose">
     <h2>Why the AI buildout is now a power problem</h2>
