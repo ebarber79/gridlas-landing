@@ -90,6 +90,9 @@
   .gate .fineprint{font-family:'IBM Plex Mono';font-size:11px;color:var(--muted);margin-top:10px}
   .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);display:none;z-index:50;
     font-family:'Space Grotesk';font-weight:600;font-size:14px;padding:12px 20px;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+  .ghost{display:inline-block;color:var(--cyan);border:1px solid var(--cyan);border-radius:10px;
+    padding:11px 16px;text-align:center;font-family:'Space Grotesk';font-weight:600;font-size:14px;text-decoration:none;margin-top:4px}
+  .skiplead{margin:2px 0 8px}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to estimate a data center's power and water footprint","description":"Estimate a data center's annual electricity use, homes-equivalent, grid interconnection wait, and water footprint from its size and U.S. market, using public EIA/LBNL coefficients.","totalTime":"PT1M","tool":[{"@type":"HowToTool","name":"Gridlas Data Center Power & Water Estimator"}],"step":[{"@type":"HowToStep","position":1,"name":"Enter the facility size","text":"Enter the data center's IT (compute) load in megawatts (MW) — from about 1 MW up to 2,000 MW — using the number field or slider."},{"@type":"HowToStep","position":2,"name":"Choose the U.S. market","text":"Select the U.S. market (e.g. Northern Virginia, Texas/ERCOT, Phoenix) so the estimate uses that region's grid and water-stress context."},{"@type":"HowToStep","position":3,"name":"Pick a cooling method","text":"Choose the cooling method to set the power-versus-water trade-off between evaporative and drier cooling designs."},{"@type":"HowToStep","position":4,"name":"Read the results","text":"The tool instantly returns estimated annual electricity use, homes-equivalent, grid interconnection wait, and water footprint — computed from public EIA and LBNL figures."}]}
@@ -105,6 +108,7 @@
   <h1>Data-center power &amp; water estimator</h1>
   <p class="standfirst">Enter a data-center size and a U.S. market. See how much electricity and water it would really need — and whether the grid can deliver it.</p>
   <p class="byline">Estimates from public EIA / LBNL coefficients · results are order-of-magnitude, not a substitute for an interconnection study</p>
+  <p class="skiplead"><a class="ghost" href="#lead" onclick="event.preventDefault();document.querySelector('.gate').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>document.querySelector('#leadEmail').focus({preventScroll:true}),400)">Just want the full report? Get the free summary →</a></p>
 
   <div class="tool">
     <div class="controls">
@@ -162,10 +166,10 @@
 
   <div class="gate">
     <h3>Get the full regional breakdown</h3>
-    <p>The Gridlas report ranks every major U.S. metro by capacity, queue and pipeline — with high-res maps and the underlying dataset. We'll email you the free 3-page executive summary now.</p>
+    <p>The Gridlas report ranks every major U.S. metro by capacity, queue and pipeline — with high-res maps and the underlying dataset. Enter your email — the free 3-page executive summary downloads instantly, and we'll send a copy to your inbox too.</p>
     <form id="lead" novalidate>
       <input type="email" name="email" id="leadEmail" placeholder="you@company.com" required aria-label="Email">
-      <button class="btn" type="submit">Email me the summary →</button>
+      <button class="btn" type="submit">Get the summary →</button>
     </form>
     <div class="fineprint">No spam. Unsubscribe anytime. We email the report, not noise.</div>
   </div>
@@ -322,6 +326,26 @@ Array.prototype.forEach.call(document.querySelectorAll('#cooling button'), funct
 });
 render();
 
+/* ================= engagement tracking (funnel visibility via Klaviyo events) ================= */
+function track(name,props){ try{ window.klaviyo&&klaviyo.push(['track',name,props||{}]); }catch(e){} }
+(function(){
+  var started=false;
+  function onFirstInteract(){ if(started)return; started=true; track('Started Estimator',{page:location.pathname}); }
+  ['input','change'].forEach(function(ev){
+    $('mw').addEventListener(ev,onFirstInteract); $('mwr').addEventListener(ev,onFirstInteract); $('market').addEventListener(ev,onFirstInteract);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#cooling button'), function(b){ b.addEventListener('click',onFirstInteract); });
+  try{
+    var gateSeen=false, gateEl=document.querySelector('.gate');
+    if(gateEl&&'IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting&&!gateSeen){ gateSeen=true; track('Viewed Estimator Gate',{page:location.pathname}); io.disconnect(); } });
+      },{threshold:0.5});
+      io.observe(gateEl);
+    }
+  }catch(e){}
+})();
+
 /* ================= Klaviyo capture (same as landing page) ================= */
 var KLAVIYO_LIST_ID='Um8YCH', KLAVIYO_COMPANY='TCaVFy';
 var form=$('lead'), toast=$('toast');
@@ -329,13 +353,14 @@ function showToast(msg,ok){ toast.textContent=msg; toast.style.background=ok?'va
 function downloadSample(){ try{ var a=document.createElement('a'); a.href='../../Gridlas-Powering-AI-Sample.pdf'; a.download=''; document.body.appendChild(a); a.click(); a.remove(); }catch(e){} }
 form.addEventListener('submit', function(e){
   e.preventDefault();
-  var email=($('leadEmail').value||'').trim(); if(!email){return;}
+  var email=($('leadEmail').value||'').trim();
+  if(!email||email.indexOf('@')===-1){ showToast('Enter a valid email to get the summary.',false); return; }
   if(!KLAVIYO_LIST_ID||KLAVIYO_LIST_ID==='YOUR_LIST_ID'){ downloadSample(); showToast('✓ Summary downloading — connect Klaviyo to capture emails.',true); return; }
   var body=new URLSearchParams({ g:KLAVIYO_LIST_ID, email:email, '$source':'estimator-tool' });
   fetch('https://manage.kmail-lists.com/ajax/subscriptions/subscribe',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
     .then(function(r){return r.json();})
-    .then(function(d){ if(d&&d.success){ downloadSample(); form.reset(); showToast('✓ Check your inbox — summary on the way.',true); } else { showToast((d&&d.errors&&d.errors[0])||'Hmm, try again in a moment.',false); } })
-    .catch(function(){ downloadSample(); showToast('✓ Summary downloading.',true); });
+    .then(function(d){ if(d&&d.success){ downloadSample(); form.reset(); showToast('✓ Check your inbox — summary on the way.',true); track('Estimator Lead Submitted',{page:location.pathname}); } else { showToast((d&&d.errors&&d.errors[0])||'Hmm, try again in a moment.',false); } })
+    .catch(function(){ downloadSample(); showToast('✓ Summary downloading.',true); track('Estimator Lead Submitted',{page:location.pathname}); });
 });
 </script>
 </body>
