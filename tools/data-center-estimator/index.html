@@ -153,7 +153,7 @@
         <p><b>Power.</b> Facility power = IT load × <b>PUE</b> (Power Usage Effectiveness). We use PUE <code>1.20</code> for evaporative and <code>1.40</code> for closed-loop/air cooling (dry cooling spends more energy to avoid water). Annual energy = facility power × 8,760 h × <code>0.90</code> utilization (data centers run near-flat). <span class="hint">PUE range: LBNL 2024 / Uptime Institute (global avg ~1.5; hyperscale ~1.2).</span></p>
         <p><b>Comparisons.</b> Homes = annual kWh ÷ <code>10,500</code> kWh (avg U.S. household/yr, EIA). Reactors = average draw ÷ (1,000 MW × <code>0.925</code> capacity factor) — a typical U.S. reactor running 24/7 (EIA).</p>
         <p><b>Water.</b> On-site withdrawal = annual kWh × <b>WUE</b> (Water Usage Effectiveness): <code>1.8</code> L/kWh evaporative, <code>~0.1</code> L/kWh closed-loop/air (Gridlas — "The water problem," hyperscaler ESG reports). Households = gallons ÷ <code>109,500</code> gal (~300 gal/day, EPA). <b>Indirect</b> water at the power plant can add ~10× more — not counted here.</p>
-        <p><b>Grid wait &amp; workaround</b> reflect each market's reported interconnection reality (national average ~4.5 yr to interconnect; LBNL). Water-stress flags follow WRI Aqueduct.</p>
+        <p><b>Grid wait &amp; workaround</b> reflect each market's reported interconnection reality (national median ~5 yr to interconnect; LBNL). Water-stress flags follow WRI Aqueduct.</p>
       </div>
     </details>
   </div>
@@ -193,12 +193,12 @@
 <script>
 /* ================= market data (from Gridlas region pages) ================= */
 var MARKETS = [
-  {id:'national', name:'National average / other', grid:'U.S. avg', gridSev:'high', wait:'~4.5 years', stress:'moderate', gas:'growing',
-    note:'Average U.S. interconnection wait is ~4.5 years — the binding constraint almost everywhere.'},
+  {id:'national', name:'National average / other', grid:'U.S. avg', gridSev:'high', wait:'~5 years', stress:'moderate', gas:'growing',
+    note:'The median U.S. interconnection wait is now ~5 years — the binding constraint almost everywhere.'},
   {id:'nova', name:'Northern Virginia (PJM / Dominion)', grid:'PJM · Dominion', gridSev:'high', wait:'Multi-year', stress:'low', gas:'emerging',
     note:"World's largest DC market; Dominion has warned of multi-year timelines to energize new load."},
-  {id:'ercot', name:'Texas — Dallas–Fort Worth (ERCOT)', grid:'ERCOT', gridSev:'high', wait:'Years (226 GW queued)', stress:'high', gas:'common',
-    note:'~226 GW queued in ERCOT (~77% data centers) vs an ~85 GW record peak. On-site gas is common.'},
+  {id:'ercot', name:'Texas — Dallas–Fort Worth (ERCOT)', grid:'ERCOT', gridSev:'high', wait:'Years (474 GW queued)', stress:'high', gas:'common',
+    note:'~474 GW queued in ERCOT (~90% data centers), with under 1% of it drawing power. On-site gas is common.'},
   {id:'phoenix', name:'Phoenix / Arizona (APS · SRP)', grid:'APS / SRP', gridSev:'high', wait:'Multi-year', stress:'high', gas:'common',
     note:'Desert market — water-stressed. Builds trend to air-cooling and on-site generation deals.'},
   {id:'atlanta', name:'Atlanta / Georgia (Georgia Power)', grid:'Georgia Power', gridSev:'high', wait:'Multi-year', stress:'low', gas:'common',
@@ -214,11 +214,11 @@ var MARKETS = [
   {id:'slc', name:'Salt Lake City / Utah (Rocky Mtn Power)', grid:'PacifiCorp', gridSev:'high', wait:'Multi-year', stress:'high', gas:'common',
     note:'Utah SB 132 lets ≥100 MW loads self-supply power when the utility can\'t serve them — on-site gas approved.'},
   {id:'reno', name:'Reno / Nevada (NV Energy)', grid:'NV Energy', gridSev:'high', wait:'Faster, but capping', stress:'high', gas:'common',
-    note:'Built for speed-to-power, but ~22 GW of DC interest vs an ~8.5 GW peak; >350 MW on-site gas sought at TRIC.'},
+    note:'Built for speed-to-power, but ~22 GW of DC interest vs an ~8.2 GW peak; >350 MW on-site gas sought at TRIC.'},
   {id:'tn', name:'Nashville / Memphis (TVA)', grid:'TVA', gridSev:'high', wait:'Multi-year', stress:'low', gas:'common',
-    note:'TVA is building ~6+ GW of mostly-gas generation; xAI Colossus runs on-site gas near Memphis.'},
+    note:'TVA has ~4.1 GW of mostly-gas generation under construction; xAI Colossus runs on-site gas near Memphis.'},
   {id:'kc', name:'Kansas City (Evergy · SPP)', grid:'Evergy · SPP', gridSev:'high', wait:'Multi-year', stress:'moderate', gas:'common',
-    note:'Evergy nearly tripled planned gas (1.9→4.7 GW) to serve large-load agreements.'}
+    note:'Evergy now plans ~4.7 GW of new Missouri gas and cut planned renewables 90%+ to serve large-load agreements.'}
 ];
 
 var COOL = {
