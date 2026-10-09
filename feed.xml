@@ -6,13 +6,13 @@
   <atom:link href="https://gridlas.com/feed.xml" rel="self" type="application/rss+xml" />
   <description>Independent research on the U.S. AI data-center buildout and the power grid — built from public EIA, LBNL, ERCOT &amp; CBRE data, every figure cited.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 12 Jul 2026 12:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 09 Oct 2026 12:00:00 +0000</lastBuildDate>
   <generator>Gridlas</generator>
   <item>
     <title>The grid bottleneck: can the U.S. power the AI buildout through 2030?</title>
     <link>https://gridlas.com/grid-bottleneck/</link>
     <guid isPermaLink="true">https://gridlas.com/grid-bottleneck/</guid>
-    <description>Why the real limit on AI isn't power plants — it's the interconnection queue, where median waits doubled to ~5 years and ~77% of proposed capacity is withdrawn.</description>
+    <description>Why the real limit on AI isn't power plants — it's the interconnection queue, where median waits more than doubled to ~5 years and ~75% of proposed capacity is withdrawn.</description>
     <pubDate>Sun, 12 Jul 2026 12:00:00 +0000</pubDate>
   </item>
   <item>

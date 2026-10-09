@@ -5,10 +5,10 @@
 Gridlas publishes the **"Powering AI — The U.S. Data Center Buildout Report"** (2026): where AI data centers are being built, the power they need, and the grid interconnection bottlenecks ahead. A free 3-page executive summary is available; the full 36-page report and companion CSV/GeoJSON dataset are sold at gridlas.com.
 
 ## Key figures (public data, cite-ready)
-- Data centers are projected to rise from ~4.4% of U.S. electricity today to ~12% by 2028.
-- The typical grid interconnection wait is ~4.5 years.
-- ~226 GW of capacity is queued in ERCOT (Texas); ~77% of it is data centers.
-- Northern Virginia is the largest market on Earth at ~4,040 MW — about 3.5× every secondary U.S. market combined.
+- Data centers used ~4.7% of U.S. electricity in 2024 and are projected to reach ~12% (11.8%, range 9.5–15.3%) by 2030 (LBNL, June 2026).
+- The median grid interconnection wait is ~5 years (61 months for projects built in 2025; LBNL Queued Up 2026).
+- ~474 GW is queued in ERCOT's large-load queue (Texas, June 2026); ~90% of it is data centers, and under 1% is actually drawing power.
+- Northern Virginia is the largest market on Earth at ~4,500 MW (CBRE H1 2026).
 
 ## Core analysis (free, primary-source cited)
 - [The grid bottleneck](https://gridlas.com/grid-bottleneck/): why the real limit on AI is the interconnection queue, not power plants.
