@@ -1,0 +1,34 @@
+name: Source-claim regression checks
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-claims:
+    runs-on: ubuntu-latest
+    env:
+      GRIDLAS_BASE_REF: origin/${{ github.base_ref || 'main' }}
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify comparison baseline exists
+        run: git rev-parse --verify "${GRIDLAS_BASE_REF}^{commit}"
+      - name: Python source and markup contracts
+        run: python -B -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Execute the estimator script in an isolated DOM fixture
+        run: node --test tests/test_estimator_scope.cjs
+      - name: Validate changed-line whitespace
+        run: git diff --check "${GRIDLAS_BASE_REF}...HEAD"
