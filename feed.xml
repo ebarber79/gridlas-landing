@@ -12,7 +12,7 @@
     <title>The grid bottleneck: can the U.S. power the AI buildout through 2030?</title>
     <link>https://gridlas.com/grid-bottleneck/</link>
     <guid isPermaLink="true">https://gridlas.com/grid-bottleneck/</guid>
-    <description>Why the real limit on AI isn't power plants — it's the interconnection queue, where median waits more than doubled to ~5 years and ~75% of proposed capacity is withdrawn.</description>
+    <description>For generation and storage projects completed in 2025, the median request-to-operation duration was ~5 years; this is not a data-center connection-time estimate. Supply queues and large-load connections are separate constraints.</description>
     <pubDate>Sun, 12 Jul 2026 12:00:00 +0000</pubDate>
   </item>
   <item>
@@ -47,7 +47,7 @@
     <title>Data center power &amp; water estimator</title>
     <link>https://gridlas.com/tools/data-center-estimator/</link>
     <guid isPermaLink="true">https://gridlas.com/tools/data-center-estimator/</guid>
-    <description>A free calculator: enter a facility size and U.S. market, see power draw, homes-equivalent, grid wait and water footprint instantly.</description>
+    <description>A free calculator for estimated power draw, homes-equivalent and water footprint, with qualitative regional grid context. Connection timing is not estimated.</description>
     <pubDate>Sun, 12 Jul 2026 12:00:00 +0000</pubDate>
   </item>
 </channel>

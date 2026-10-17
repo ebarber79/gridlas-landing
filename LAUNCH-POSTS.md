@@ -1,4 +1,5 @@
-# Gridlas Launch — Ready-to-Post Copy
+# Gridlas Launch — Historical Draft Copy
+_Draft only — not ready to publish. Figures and campaign links below retain historical dates and require source/date review before reuse. Generation-queue statistics are not data-center connection schedules._
 _All UTM-tagged. Post LinkedIn + X in Step 4 (2–4 hrs after HN/Reddit are live)._
 
 ---
@@ -22,8 +23,8 @@ I spent time pulling public datasets (EIA, Lawrence Berkeley National Lab, ERCOT
 
 → Data centers consumed 4.4% of U.S. electricity in 2023. LBNL projects 6.7–12% by 2028.
 → ERCOT's large-load interconnection queue went from 63 GW to ~226 GW in roughly one year. About 77% is data centers. Only 1.8% is operational.
-→ Northern Virginia (~4,040 MW) is larger than every other U.S. market combined — by 3.5×.
-→ The median wait from interconnection request to commercial operation has grown to ~4.5 years.
+→ Northern Virginia is a major operating market; compare it with other markets at matching dates and using the same capacity definition.
+→ For generation and storage projects completed in 2024, the median time from interconnection request to operation was ~4.5 years. That does not measure a data center's connection wait.
 
 Compute scales in months. Power scales in years. That mismatch is the whole story.
 
@@ -45,7 +46,7 @@ Full analysis with all maps and sources here: https://gridlas.com/findings.html?
 ```
 The bottleneck for AI isn't chips.
 
-It's electricity — and a 4.5-year wait to connect to the grid.
+It's electricity — and site-specific constraints on connecting new load and supply.
 
 I mapped every major U.S. data center cluster over the power grid using public EIA + ERCOT data. Here's what the numbers look like 🧵
 ```
@@ -63,7 +64,7 @@ The demand isn't spread evenly — it concentrates onto specific grids, around t
 ```
 Northern Virginia: ~4,040 MW of operating capacity.
 
-That's roughly 3.5× every other U.S. market combined.
+Use matching observation dates and capacity definitions when comparing it with other markets.
 
 Dallas, Atlanta, Phoenix, and Columbus are each crossing a gigawatt — but NoVA is in a different category entirely.
 ```
@@ -84,11 +85,11 @@ A queue is a wish list, not a build plan.
 
 **Tweet 5:**
 ```
-Why so little gets through?
+There is a separate supply-side queue.
 
-The wait.
+For generation and storage projects completed in 2024, median request-to-operation duration was ~4.5 years.
 
-Median time from interconnection request → commercial operation has gone from under 2 years (2000s) to ~4.5 years for projects completing in 2024.
+That is not a measured data-center connection wait and does not explain ERCOT's large-load operating share by itself.
 
 Compute scales in months. Power scales in years.
 ```

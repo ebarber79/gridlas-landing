@@ -16,7 +16,7 @@
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Gridlas — Powering AI: the U.S. Data Center Buildout Report. A glowing map of U.S. power demand with key stats: 4.7%→12% of U.S. power to data centers by 2030, 474 GW queued in Texas, ~5-year grid interconnection wait.">
+<meta property="og:image:alt" content="Gridlas — Powering AI: the U.S. Data Center Buildout Report. A glowing map of U.S. power demand with key stats: 4.7%→12% of U.S. power to data centers by 2030, 474 GW queued in Texas, and an approximately five-year generation interconnection statistic.">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Powering AI — The U.S. Data Center Buildout Report">
@@ -129,12 +129,12 @@
     },
     {
       "@type": "Observation",
-      "name": "Typical U.S. grid interconnection wait",
+      "name": "Median U.S. generation and storage interconnection duration for projects completed in 2025",
       "measuredValue": "5",
       "unitText": "years",
       "observationDate": "2025",
       "measurementMethod": "LBNL 'Queued Up' 2026 Edition (median 61 months, request to operation, for 2025 builds)",
-      "description": "The typical grid interconnection wait is about 5 years."
+      "description": "Generation and storage projects completed in 2025 spent about 5 years from request to operation; this is not a data-center connection-time estimate."
     },
     {
       "@type": "Observation",
@@ -161,8 +161,8 @@
     },
     {
       "@type": "Question",
-      "name": "How long is the typical grid interconnection wait for new data-center power?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The typical interconnection wait is about 5 years, a key bottleneck between where AI data centers want to build and where the grid can actually deliver power." }
+      "name": "What does the roughly five-year interconnection statistic measure?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It measures generation and storage projects completed in 2025, not a national data-center connection wait. A data center's connection schedule depends on its utility, location, requested load and required upgrades." }
     },
     {
       "@type": "Question",
@@ -401,7 +401,7 @@
   <div class="stats">
     <div class="stat"><div class="n">4.7%→12%</div><div class="l">U.S. electricity to data centers, 2024→2030</div></div>
     <div class="stat"><div class="n">474 GW</div><div class="l">queued in Texas · ~90% data centers</div></div>
-    <div class="stat"><div class="n">~5 yrs</div><div class="l">typical interconnection wait</div></div>
+    <div class="stat"><div class="n">~5 yrs</div><div class="l">median grid connection · generation projects completed in 2025</div></div>
     <div class="stat"><div class="n">~4,500 MW</div><div class="l">Northern Virginia capacity</div></div>
   </div>
 
@@ -419,15 +419,15 @@
     <p>The forecasts are converging — upward. LBNL's 2025 Update (June 2026) found data centers used 4.7% of U.S. electricity in 2024 and projects about 12% by 2030 (a 9.5–15.3% range), requiring roughly 148 GW of grid connections. EPRI's 2026 analysis lands in the same place: 9–17% by 2030, about 60% above its own 2024 estimate. The leading 2026 studies now span roughly 380–840 TWh a year in 2030, about a twofold spread. We still publish the range rather than pick a winner; every figure here traces to a public primary source and is <a href="./findings.html">documented in the methodology</a>.</p>
 
     <h3>The bottleneck is the queue, not the power plants</h3>
-    <p>The U.S. is not short of proposed generation. It is short of <em>connected</em> generation. The median wait to plug a new project into the grid has more than doubled, to about 5 years (61 months for projects built in 2025). And most queued capacity is never built at all: of everything that requested interconnection between 2000 and 2020, just 13% is operating, while about 75% was withdrawn. The queue behaves as an attrition filter, not a build pipeline. Compute scales in months; interconnection scales in years. <a href="./grid-bottleneck/">Read the full breakdown →</a></p>
+    <p>The U.S. is not short of proposed generation. It is short of <em>connected</em> generation. For generation and storage projects completed in 2025, the median time from interconnection request to operation was about 5 years (61 months), according to <a href="https://eta-publications.lbl.gov/sites/default/files/2026-06/queued_up_2026_edition.pdf">LBNL's Queued Up: 2026 Edition</a>. That study excludes large-load queues: this is not a national estimate of how long a data center waits to connect. And most queued generation capacity is never built at all: of everything that requested interconnection between 2000 and 2020, just 13% is operating, while about 75% was withdrawn. The generation queue behaves as an attrition filter, not a build pipeline. <a href="./grid-bottleneck/">Read the full breakdown →</a></p>
 
     <h3>Demand lands on specific grids</h3>
-    <p>Supply is spread across 2,459 utility-scale plants, but demand concentrates. Northern Virginia alone operates about 4,500 MW — more data-center capacity than any market on Earth. In Texas, roughly 474 GW sits in the ERCOT large-load queue, around 90% of it data centers, and under 1% of it is actually drawing power. Those are the grids where the collision happens first. <a href="./data-centers/">See all 16 regional deep-dives →</a></p>
+    <p>Our supply map includes 2,459 utility-scale plants rated ≥100 MW, but demand concentrates. Northern Virginia alone operates about 4,500 MW — more data-center capacity than any market on Earth. In Texas, roughly 474 GW sits in the ERCOT large-load queue, around 90% of it data centers, and under 1% of it is actually drawing power. Those are the grids where the collision happens first. <a href="./data-centers/">See all 16 regional deep-dives →</a></p>
 
     <h3>What operators do while they wait</h3>
-    <p>Rather than wait out the queue, developers increasingly route around it — behind-the-meter gas, nuclear power purchase agreements and restarts, and small modular reactors. The queue's composition is shifting to match: total volume fell about 10% in 2025 as withdrawals outpaced new requests, even as natural gas requests surged 86% to 253 GW. <a href="./powering-around-the-queue/">How the workarounds actually work →</a> And there is a second constraint behind the first — <a href="./data-center-water/">cooling water</a>, much of it demanded in already high-water-stress regions.</p>
+    <p>Developers pursue alternatives to grid-connection constraints — behind-the-meter gas, nuclear power purchase agreements and restarts, and small modular reactors. Separately, the generation and storage queue's composition is shifting: total volume fell about 10% in 2025 as withdrawals outpaced new requests, even as natural gas requests surged 86% to 253 GW. <a href="./powering-around-the-queue/">How the workarounds actually work →</a> And there is a second constraint behind the first — <a href="./data-center-water/">cooling water</a>, much of it demanded in already high-water-stress regions.</p>
 
-    <p class="caveat">New to the terminology? The <a href="./glossary/">glossary</a> defines interconnection queue, behind-the-meter, PUE, WUE, curtailment and more — in plain English, with sources.</p>
+    <p class="caveat">Figures have different observation dates; forecasts are not operating capacity. See the <a href="./findings.html#data-scope">data dates and scope notes</a>. New to the terminology? The <a href="./glossary/">glossary</a> defines interconnection queue, behind-the-meter, PUE, WUE, curtailment and more.</p>
   </section>
 
   <section>
@@ -447,7 +447,7 @@
     <picture><source srcset="./assets/peek.webp" type="image/webp"><img src="./assets/peek.png" alt="Generation vs. demand map — U.S. power plants over data-center load" width="1400" height="959" decoding="async" loading="lazy"></picture>
     <div>
       <h2>The collision, mapped</h2>
-      <p class="section-sub">Supply is everywhere — 2,459 utility-scale plants — but demand concentrates onto specific, already-stressed grids. The full report breaks down every market, queue, and scenario.</p>
+      <p class="section-sub">Our map covers 2,459 utility-scale plants rated ≥100 MW; demand concentrates onto specific, already-stressed grids. The full report breaks down every market, queue, and scenario.</p>
       <a class="ghost focus-lead" href="#lead">Get the free summary →</a>
     </div>
   </section>
@@ -457,18 +457,18 @@
     <p class="section-sub">We publish our analysis in the open, every figure cited. Three deep-dives — a preview of the rigor behind the report.</p>
     <a class="feat" href="./tools/data-center-estimator/" style="border-color:var(--cyan);box-shadow:0 0 24px rgba(55,197,224,.12);margin-bottom:16px">
       <h3>🧮 New — Data-center power &amp; water estimator</h3>
-      <p>Interactive: enter a facility size and U.S. market, and see its power draw, homes-equivalent, grid wait and water footprint instantly — computed from public EIA / LBNL figures.</p>
+      <p>Interactive: enter a facility size and U.S. market to explore estimated power draw, homes-equivalent and water footprint, alongside regional grid context. These scenarios are not a utility connection schedule.</p>
       <span class="go">Try the free tool →</span>
     </a>
     <div class="grid3">
       <a class="feat" href="./grid-bottleneck/">
         <h3>The grid bottleneck</h3>
-        <p>Why the real limit on AI isn't power plants — it's the interconnection queue, where median waits more than doubled to ~5 years and ~75% of proposed capacity is withdrawn.</p>
+        <p>Why proposed supply is not connected supply: generation and storage projects completed in 2025 took a median ~5 years to connect. Generation queues and data-center load queues measure different things.</p>
         <span class="go">Read the analysis →</span>
       </a>
       <a class="feat" href="./powering-around-the-queue/">
         <h3>Powering around the queue</h3>
-        <p>How the buildout routes around the 5-year wait — behind-the-meter gas, nuclear restarts, and SMRs. The deals, megawatts and dates, primary-source cited.</p>
+        <p>How developers pursue alternatives to grid-connection constraints — behind-the-meter gas, nuclear restarts, and SMRs. The deals, megawatts and dates, primary-source cited.</p>
         <span class="go">Read the analysis →</span>
       </a>
       <a class="feat" href="./data-center-water/">
