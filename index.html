@@ -16,7 +16,7 @@
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Gridlas — Powering AI: the U.S. Data Center Buildout Report. A glowing map of U.S. power demand with key stats: 4.7%→12% of U.S. power to data centers by 2030, 474 GW queued in Texas, ~5-year grid interconnection wait.">
+<meta property="og:image:alt" content="Gridlas — Powering AI: the U.S. Data Center Buildout Report. A glowing map of U.S. power demand with key stats: 4.7%→12% of U.S. power to data centers by 2030, 474 GW queued in Texas, ~5-year median wait to connect new power plants.">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Powering AI — The U.S. Data Center Buildout Report">
@@ -80,7 +80,7 @@
   "variableMeasured": [
     { "@type": "PropertyValue", "name": "Operating data-center power capacity", "unitText": "MW" },
     { "@type": "PropertyValue", "name": "Interconnection queue capacity", "unitText": "GW" },
-    { "@type": "PropertyValue", "name": "Grid interconnection wait time", "unitText": "years" },
+    { "@type": "PropertyValue", "name": "Power-plant interconnection wait time", "unitText": "years" },
     { "@type": "PropertyValue", "name": "Water usage effectiveness (WUE)", "unitText": "L/kWh" },
     { "@type": "PropertyValue", "name": "Data-center share of U.S. electricity", "unitText": "percent" }
   ],
@@ -123,12 +123,12 @@
     },
     {
       "@type": "Observation",
-      "name": "Typical U.S. grid interconnection wait",
+      "name": "Median wait to connect new U.S. power plants",
       "measuredValue": "5",
       "unitText": "years",
       "observationDate": "2025",
       "measurementMethod": "LBNL 'Queued Up' 2026 Edition (median 61 months, request to operation, for 2025 builds)",
-      "description": "The typical grid interconnection wait is about 5 years."
+      "description": "New power plants and storage take a median of about 5 years from interconnection request to operation."
     },
     {
       "@type": "Observation",
@@ -155,8 +155,8 @@
     },
     {
       "@type": "Question",
-      "name": "How long is the typical grid interconnection wait for new data-center power?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The typical interconnection wait is about 5 years, a key bottleneck between where AI data centers want to build and where the grid can actually deliver power." }
+      "name": "How long does it take to connect new power plants to the grid?",
+      "acceptedAnswer": { "@type": "Answer", "text": "New power plants and storage take a median of about 5 years from interconnection request to operation (LBNL, 2025 builds). That is why new supply lags data-center demand. Data centers wait separately, in utilities' large-load queues, where timelines vary by utility." }
     },
     {
       "@type": "Question",
@@ -387,7 +387,7 @@
   <div class="stats">
     <div class="stat"><div class="n">4.7%→12%</div><div class="l">U.S. electricity to data centers, 2024→2030</div></div>
     <div class="stat"><div class="n">474 GW</div><div class="l">queued in Texas · ~90% data centers</div></div>
-    <div class="stat"><div class="n">~5 yrs</div><div class="l">typical interconnection wait</div></div>
+    <div class="stat"><div class="n">~5 yrs</div><div class="l">median wait to connect new power plants</div></div>
     <div class="stat"><div class="n">~4,500 MW</div><div class="l">Northern Virginia capacity</div></div>
   </div>
 
@@ -449,12 +449,12 @@
     <div class="grid3">
       <a class="feat" href="./grid-bottleneck/">
         <h3>The grid bottleneck</h3>
-        <p>Why the real limit on AI isn't power plants — it's the interconnection queue, where median waits more than doubled to ~5 years and ~75% of proposed capacity is withdrawn.</p>
+        <p>Why the real limit on AI isn't power plants — it's the interconnection queue, where median waits for new power plants more than doubled to ~5 years and ~75% of proposed capacity is withdrawn.</p>
         <span class="go">Read the analysis →</span>
       </a>
       <a class="feat" href="./powering-around-the-queue/">
         <h3>Powering around the queue</h3>
-        <p>How the buildout routes around the 5-year wait — behind-the-meter gas, nuclear restarts, and SMRs. The deals, megawatts and dates, primary-source cited.</p>
+        <p>How the buildout routes around years-long grid waits — behind-the-meter gas, nuclear restarts, and SMRs. The deals, megawatts and dates, primary-source cited.</p>
         <span class="go">Read the analysis →</span>
       </a>
       <a class="feat" href="./data-center-water/">

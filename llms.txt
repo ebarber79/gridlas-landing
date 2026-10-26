@@ -6,7 +6,7 @@ Gridlas publishes the **"Powering AI — The U.S. Data Center Buildout Report"**
 
 ## Key figures (public data, cite-ready)
 - Data centers used ~4.7% of U.S. electricity in 2024 and are projected to reach ~12% (11.8%, range 9.5–15.3%) by 2030 (LBNL, June 2026).
-- The median grid interconnection wait is ~5 years (61 months for projects built in 2025; LBNL Queued Up 2026).
+- New power plants and storage take a median of ~5 years to connect to the grid (61 months for projects built in 2025; LBNL Queued Up 2026). Data centers wait separately in utility large-load queues, where timelines vary by utility.
 - ~474 GW is queued in ERCOT's large-load queue (Texas, June 2026); ~90% of it is data centers, and under 1% is actually drawing power.
 - Northern Virginia is the largest market on Earth at ~4,500 MW (CBRE H1 2026).
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Data Center Power &amp; Water Estimator | Gridlas</title>
-<meta name="description" content="Free calculator: enter a data-center size and U.S. market to estimate annual electricity, homes-equivalent, interconnection wait, and water use.">
+<meta name="description" content="Free calculator: enter a data-center size and U.S. market to estimate annual electricity, homes-equivalent, time to power, and water use.">
 <link rel="canonical" href="https://gridlas.com/tools/data-center-estimator/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gridlas">
@@ -29,7 +29,7 @@
 <link rel="stylesheet" href="../../assets/regional.css">
 <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=TCaVFy"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"Gridlas Data Center Power & Water Estimator","url":"https://gridlas.com/tools/data-center-estimator/","applicationCategory":"BusinessApplication","operatingSystem":"Any (web)","description":"A free calculator that estimates a data center's annual electricity, homes-equivalent, interconnection wait, and water footprint by size and U.S. market, using public EIA / LBNL coefficients.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Eugene Barber"},"publisher":{"@type":"Organization","name":"Gridlas","url":"https://gridlas.com/"}}
+{"@context":"https://schema.org","@type":"WebApplication","name":"Gridlas Data Center Power & Water Estimator","url":"https://gridlas.com/tools/data-center-estimator/","applicationCategory":"BusinessApplication","operatingSystem":"Any (web)","description":"A free calculator that estimates a data center's annual electricity, homes-equivalent, time to power, and water footprint by size and U.S. market, using public EIA / LBNL coefficients.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Eugene Barber"},"publisher":{"@type":"Organization","name":"Gridlas","url":"https://gridlas.com/"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gridlas.com/"},{"@type":"ListItem","position":2,"name":"Data center power & water estimator","item":"https://gridlas.com/tools/data-center-estimator/"}]}
@@ -95,7 +95,7 @@
   .skiplead{margin:2px 0 8px}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HowTo","name":"How to estimate a data center's power and water footprint","description":"Estimate a data center's annual electricity use, homes-equivalent, grid interconnection wait, and water footprint from its size and U.S. market, using public EIA/LBNL coefficients.","totalTime":"PT1M","tool":[{"@type":"HowToTool","name":"Gridlas Data Center Power & Water Estimator"}],"step":[{"@type":"HowToStep","position":1,"name":"Enter the facility size","text":"Enter the data center's IT (compute) load in megawatts (MW) — from about 1 MW up to 2,000 MW — using the number field or slider."},{"@type":"HowToStep","position":2,"name":"Choose the U.S. market","text":"Select the U.S. market (e.g. Northern Virginia, Texas/ERCOT, Phoenix) so the estimate uses that region's grid and water-stress context."},{"@type":"HowToStep","position":3,"name":"Pick a cooling method","text":"Choose the cooling method to set the power-versus-water trade-off between evaporative and drier cooling designs."},{"@type":"HowToStep","position":4,"name":"Read the results","text":"The tool instantly returns estimated annual electricity use, homes-equivalent, grid interconnection wait, and water footprint — computed from public EIA and LBNL figures."}]}
+{"@context":"https://schema.org","@type":"HowTo","name":"How to estimate a data center's power and water footprint","description":"Estimate a data center's annual electricity use, homes-equivalent, time to power, and water footprint from its size and U.S. market, using public EIA/LBNL coefficients.","totalTime":"PT1M","tool":[{"@type":"HowToTool","name":"Gridlas Data Center Power & Water Estimator"}],"step":[{"@type":"HowToStep","position":1,"name":"Enter the facility size","text":"Enter the data center's IT (compute) load in megawatts (MW) — from about 1 MW up to 2,000 MW — using the number field or slider."},{"@type":"HowToStep","position":2,"name":"Choose the U.S. market","text":"Select the U.S. market (e.g. Northern Virginia, Texas/ERCOT, Phoenix) so the estimate uses that region's grid and water-stress context."},{"@type":"HowToStep","position":3,"name":"Pick a cooling method","text":"Choose the cooling method to set the power-versus-water trade-off between evaporative and drier cooling designs."},{"@type":"HowToStep","position":4,"name":"Read the results","text":"The tool instantly returns estimated annual electricity use, homes-equivalent, time to power, and water footprint — computed from public EIA and LBNL figures."}]}
 </script>
 <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "ae18f305d05241cc8359ec3da70da3d3"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
@@ -157,7 +157,7 @@
         <p><b>Power.</b> Facility power = IT load × <b>PUE</b> (Power Usage Effectiveness). We use PUE <code>1.20</code> for evaporative and <code>1.40</code> for closed-loop/air cooling (dry cooling spends more energy to avoid water). Annual energy = facility power × 8,760 h × <code>0.90</code> utilization (data centers run near-flat). <span class="hint">PUE range: LBNL 2024 / Uptime Institute (global avg ~1.5; hyperscale ~1.2).</span></p>
         <p><b>Comparisons.</b> Homes = annual kWh ÷ <code>10,500</code> kWh (avg U.S. household/yr, EIA). Reactors = average draw ÷ (1,000 MW × <code>0.925</code> capacity factor) — a typical U.S. reactor running 24/7 (EIA).</p>
         <p><b>Water.</b> On-site withdrawal = annual kWh × <b>WUE</b> (Water Usage Effectiveness): <code>1.8</code> L/kWh evaporative, <code>~0.1</code> L/kWh closed-loop/air (Gridlas — "The water problem," hyperscaler ESG reports). Households = gallons ÷ <code>109,500</code> gal (~300 gal/day, EPA). <b>Indirect</b> water at the power plant can add ~10× more — not counted here.</p>
-        <p><b>Grid wait &amp; workaround</b> reflect each market's reported interconnection reality (national median ~5 yr to interconnect; LBNL). Water-stress flags follow WRI Aqueduct.</p>
+        <p><b>Grid wait &amp; workaround</b> are qualitative labels drawn from each market's utility and grid-operator statements (see the region pages). There is no public national median for how long a data center waits for power. LBNL's ~5-year median measures how long <i>power plants</i> take to connect, not data centers; it's context for why new supply lags. Water-stress flags use WRI Aqueduct 4.0 baseline water stress for the river basin around each market's main data-center cluster: <i>low</i> = Low or Low–Medium, <i>moderate</i> = Medium–High or a mix across the metro, <i>high</i> = High or Extremely High.</p>
       </div>
     </details>
   </div>
@@ -187,7 +187,7 @@
   </div>
 
   <div class="sources">
-    <b>Sources &amp; caveats:</b> Coefficients from U.S. EIA (household energy, reactor capacity factor), LBNL 2024 &amp; Uptime Institute (PUE, interconnection timelines), hyperscaler 2023 ESG reports and Gridlas's own water analysis (WUE), U.S. EPA (household water), WRI Aqueduct (water stress). Outputs are order-of-magnitude estimates for a fully-loaded facility and will differ from any specific site. See the full <a href="../../findings.html">methodology &amp; sources</a>.
+    <b>Sources &amp; caveats:</b> Coefficients from U.S. EIA (household energy, reactor capacity factor), LBNL 2024 &amp; Uptime Institute (PUE), utility and grid-operator statements (time to power), hyperscaler 2023 ESG reports and Gridlas's own water analysis (WUE), U.S. EPA (household water), WRI Aqueduct 4.0 (water stress). Outputs are order-of-magnitude estimates for a fully-loaded facility and will differ from any specific site. See the full <a href="../../findings.html">methodology &amp; sources</a>.
   </div>
 
   <div class="foot">Gridlas · independent &amp; unaffiliated · built from public data. · <a href="../../findings.html">Read the full analysis →</a></div>
@@ -197,23 +197,23 @@
 <script>
 /* ================= market data (from Gridlas region pages) ================= */
 var MARKETS = [
-  {id:'national', name:'National average / other', grid:'U.S. avg', gridSev:'high', wait:'~5 years', stress:'moderate', gas:'growing',
-    note:'The median U.S. interconnection wait is now ~5 years — the binding constraint almost everywhere.'},
-  {id:'nova', name:'Northern Virginia (PJM / Dominion)', grid:'PJM · Dominion', gridSev:'high', wait:'Multi-year', stress:'low', gas:'emerging',
-    note:"World's largest DC market; Dominion has warned of multi-year timelines to energize new load."},
-  {id:'ercot', name:'Texas — Dallas–Fort Worth (ERCOT)', grid:'ERCOT', gridSev:'high', wait:'Years (474 GW queued)', stress:'high', gas:'common',
-    note:'~474 GW queued in ERCOT (~90% data centers), with under 1% of it drawing power. On-site gas is common.'},
+  {id:'national', name:'National average / other', grid:'U.S. avg', gridSev:'high', wait:'Varies by utility', stress:'moderate', gas:'growing',
+    note:'There is no national figure for how long a new data center waits for power — it depends on the utility. For context, new power plants now take a median ~5 years to connect (LBNL), which is why supply lags demand.'},
+  {id:'nova', name:'Northern Virginia (PJM / Dominion)', grid:'PJM · Dominion', gridSev:'high', wait:'Years (dates run to 2031+)', stress:'moderate', gas:'emerging',
+    note:"World's largest DC market. Dominion has given connection dates to 25 GW of new data centers through 2031; another 45 GW has no date yet (May 2026). Water stress is Low around Ashburn but High in parts of Prince William and Fairfax (WRI)."},
+  {id:'ercot', name:'Texas — Dallas–Fort Worth (ERCOT)', grid:'ERCOT', gridSev:'high', wait:'Years; ≥75 MW approvals paused', stress:'high', gas:'common',
+    note:'~474 GW of large-load requests in ERCOT (~90% data centers); about 2% had been approved to energize. Approvals for data centers ≥75 MW paused for a state audit since Aug 2026. On-site gas is common. Water stress: Low–Medium in Dallas, Extremely High in Fort Worth (WRI).'},
   {id:'phoenix', name:'Phoenix / Arizona (APS · SRP)', grid:'APS / SRP', gridSev:'high', wait:'Multi-year', stress:'high', gas:'common',
     note:'Desert market — water-stressed. Builds trend to air-cooling and on-site generation deals.'},
-  {id:'atlanta', name:'Atlanta / Georgia (Georgia Power)', grid:'Georgia Power', gridSev:'high', wait:'Multi-year', stress:'low', gas:'common',
+  {id:'atlanta', name:'Atlanta / Georgia (Georgia Power)', grid:'Georgia Power', gridSev:'high', wait:'Multi-year', stress:'high', gas:'common',
     note:'Georgia Power is planning a large gas buildout to meet surging data-center load.'},
-  {id:'ohio', name:'Central Ohio / Columbus (AEP · PJM)', grid:'AEP Ohio · PJM', gridSev:'high', wait:'Multi-year', stress:'low', gas:'emerging',
+  {id:'ohio', name:'Central Ohio / Columbus (AEP · PJM)', grid:'AEP Ohio · PJM', gridSev:'high', wait:'Multi-year', stress:'moderate', gas:'emerging',
     note:'AEP Ohio has fought over special tariffs for large data-center loads amid multi-year queues.'},
-  {id:'sv', name:'Silicon Valley / Santa Clara (SVP)', grid:'Silicon Valley Power', gridSev:'high', wait:'Power-capped', stress:'high', gas:'rare',
+  {id:'sv', name:'Silicon Valley / Santa Clara (SVP)', grid:'Silicon Valley Power', gridSev:'high', wait:'Power-capped', stress:'low', gas:'rare',
     note:'Mature, power-capped grid — finished sites sit waiting on power. Data centers ~60% of city load.'},
-  {id:'chicago', name:'Chicago / Illinois (ComEd · PJM)', grid:'ComEd · PJM', gridSev:'high', wait:'Multi-year', stress:'low', gas:'emerging',
-    note:'Fast-growing Midwest hub on Great Lakes water; still gated by PJM interconnection timelines.'},
-  {id:'ny', name:'New York tri-state', grid:'NYISO / PJM', gridSev:'high', wait:'Multi-year', stress:'low', gas:'rare',
+  {id:'chicago', name:'Chicago / Illinois (ComEd · PJM)', grid:'ComEd · PJM', gridSev:'high', wait:'Multi-year', stress:'high', gas:'emerging',
+    note:'Fast-growing Midwest hub, still gated by PJM interconnection timelines. WRI rates the Chicago-area basins High for water stress despite Lake Michigan.'},
+  {id:'ny', name:'New York tri-state', grid:'NYISO / PJM', gridSev:'high', wait:'Multi-year', stress:'moderate', gas:'rare',
     note:'Dense, constrained grids and higher power prices shape where load can land.'},
   {id:'slc', name:'Salt Lake City / Utah (Rocky Mtn Power)', grid:'PacifiCorp', gridSev:'high', wait:'Multi-year', stress:'high', gas:'common',
     note:'Utah SB 132 lets ≥100 MW loads self-supply power when the utility can\'t serve them — on-site gas approved.'},
@@ -221,7 +221,7 @@ var MARKETS = [
     note:'Built for speed-to-power, but ~22 GW of DC interest vs an ~8.2 GW peak; >350 MW on-site gas sought at TRIC.'},
   {id:'tn', name:'Nashville / Memphis (TVA)', grid:'TVA', gridSev:'high', wait:'Multi-year', stress:'low', gas:'common',
     note:'TVA has ~4.1 GW of mostly-gas generation under construction; xAI Colossus runs on-site gas near Memphis.'},
-  {id:'kc', name:'Kansas City (Evergy · SPP)', grid:'Evergy · SPP', gridSev:'high', wait:'Multi-year', stress:'moderate', gas:'common',
+  {id:'kc', name:'Kansas City (Evergy · SPP)', grid:'Evergy · SPP', gridSev:'high', wait:'Multi-year', stress:'low', gas:'common',
     note:'Evergy now plans ~4.7 GW of new Missouri gas and cut planned renewables 90%+ to serve large-load agreements.'}
 ];
 
