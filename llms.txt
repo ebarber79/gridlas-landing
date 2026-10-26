@@ -2,7 +2,7 @@
 
 > Independent research on the U.S. AI data-center buildout and the power grid, built entirely from public primary sources (EIA, LBNL, ERCOT, CBRE). Every figure is cited and traceable. No sponsors, no vendor affiliations. Author: Eugene Barber.
 
-Gridlas publishes the **"Powering AI — The U.S. Data Center Buildout Report"** (2026): where AI data centers are being built, the power they need, and the grid interconnection bottlenecks ahead. A free 3-page executive summary is available; the full 36-page report and companion CSV/GeoJSON dataset are sold at gridlas.com.
+Gridlas publishes the **"Powering AI — The U.S. Data Center Buildout Report"** (2026): where AI data centers are being built, the power they need, and the grid interconnection bottlenecks ahead. A free 3-page executive summary is available; the full 36-page report is sold at gridlas.com, with an optional 12-Month Pass for quarterly updates.
 
 ## Key figures (public data, cite-ready)
 - Data centers used ~4.7% of U.S. electricity in 2024 and are projected to reach ~12% (11.8%, range 9.5–15.3%) by 2030 (LBNL, June 2026).
@@ -24,4 +24,4 @@ Gridlas publishes the **"Powering AI — The U.S. Data Center Buildout Report"**
 - [Data-center power & water estimator](https://gridlas.com/tools/data-center-estimator/): enter a facility size and U.S. market to compute power draw, homes-equivalent, grid wait, and water footprint from public EIA/LBNL figures.
 
 ## The report
-- [Powering AI report + dataset](https://gridlas.com/#pricing): full 36-page PDF, companion dataset, and annual pass.
+- [Powering AI report](https://gridlas.com/#pricing): full 36-page PDF and 12-Month Pass.
