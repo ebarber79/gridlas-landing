@@ -157,7 +157,7 @@
         <p><b>Power.</b> Facility power = IT load × <b>PUE</b> (Power Usage Effectiveness). We use PUE <code>1.20</code> for evaporative and <code>1.40</code> for closed-loop/air cooling (dry cooling spends more energy to avoid water). Annual energy = facility power × 8,760 h × <code>0.90</code> utilization (data centers run near-flat). <span class="hint">PUE range: LBNL 2024 / Uptime Institute (global avg ~1.5; hyperscale ~1.2).</span></p>
         <p><b>Comparisons.</b> Homes = annual kWh ÷ <code>10,500</code> kWh (avg U.S. household/yr, EIA). Reactors = average draw ÷ (1,000 MW × <code>0.925</code> capacity factor) — a typical U.S. reactor running 24/7 (EIA).</p>
         <p><b>Water.</b> On-site withdrawal = annual kWh × <b>WUE</b> (Water Usage Effectiveness): <code>1.8</code> L/kWh evaporative, <code>~0.1</code> L/kWh closed-loop/air (Gridlas — "The water problem," hyperscaler ESG reports). Households = gallons ÷ <code>109,500</code> gal (~300 gal/day, EPA). <b>Indirect</b> water at the power plant can add ~10× more — not counted here.</p>
-        <p><b>Grid wait &amp; workaround</b> are qualitative labels drawn from each market's utility and grid-operator statements (see the region pages). There is no public national median for how long a data center waits for power. LBNL's ~5-year median measures how long <i>power plants</i> take to connect, not data centers; it's context for why new supply lags. Water-stress flags follow WRI Aqueduct.</p>
+        <p><b>Grid wait &amp; workaround</b> are qualitative labels drawn from each market's utility and grid-operator statements (see the region pages). There is no public national median for how long a data center waits for power. LBNL's ~5-year median measures how long <i>power plants</i> take to connect, not data centers; it's context for why new supply lags. Water-stress flags use WRI Aqueduct 4.0 baseline water stress for the river basin around each market's main data-center cluster: <i>low</i> = Low or Low–Medium, <i>moderate</i> = Medium–High or a mix across the metro, <i>high</i> = High or Extremely High.</p>
       </div>
     </details>
   </div>
@@ -187,7 +187,7 @@
   </div>
 
   <div class="sources">
-    <b>Sources &amp; caveats:</b> Coefficients from U.S. EIA (household energy, reactor capacity factor), LBNL 2024 &amp; Uptime Institute (PUE), utility and grid-operator statements (time to power), hyperscaler 2023 ESG reports and Gridlas's own water analysis (WUE), U.S. EPA (household water), WRI Aqueduct (water stress). Outputs are order-of-magnitude estimates for a fully-loaded facility and will differ from any specific site. See the full <a href="../../findings.html">methodology &amp; sources</a>.
+    <b>Sources &amp; caveats:</b> Coefficients from U.S. EIA (household energy, reactor capacity factor), LBNL 2024 &amp; Uptime Institute (PUE), utility and grid-operator statements (time to power), hyperscaler 2023 ESG reports and Gridlas's own water analysis (WUE), U.S. EPA (household water), WRI Aqueduct 4.0 (water stress). Outputs are order-of-magnitude estimates for a fully-loaded facility and will differ from any specific site. See the full <a href="../../findings.html">methodology &amp; sources</a>.
   </div>
 
   <div class="foot">Gridlas · independent &amp; unaffiliated · built from public data. · <a href="../../findings.html">Read the full analysis →</a></div>
@@ -199,21 +199,21 @@
 var MARKETS = [
   {id:'national', name:'National average / other', grid:'U.S. avg', gridSev:'high', wait:'Varies by utility', stress:'moderate', gas:'growing',
     note:'There is no national figure for how long a new data center waits for power — it depends on the utility. For context, new power plants now take a median ~5 years to connect (LBNL), which is why supply lags demand.'},
-  {id:'nova', name:'Northern Virginia (PJM / Dominion)', grid:'PJM · Dominion', gridSev:'high', wait:'Years (dates run to 2031+)', stress:'low', gas:'emerging',
-    note:"World's largest DC market. Dominion has given connection dates to 25 GW of new data centers through 2031; another 45 GW has no date yet (May 2026)."},
+  {id:'nova', name:'Northern Virginia (PJM / Dominion)', grid:'PJM · Dominion', gridSev:'high', wait:'Years (dates run to 2031+)', stress:'moderate', gas:'emerging',
+    note:"World's largest DC market. Dominion has given connection dates to 25 GW of new data centers through 2031; another 45 GW has no date yet (May 2026). Water stress is Low around Ashburn but High in parts of Prince William and Fairfax (WRI)."},
   {id:'ercot', name:'Texas — Dallas–Fort Worth (ERCOT)', grid:'ERCOT', gridSev:'high', wait:'Years; ≥75 MW approvals paused', stress:'high', gas:'common',
-    note:'~474 GW of large-load requests in ERCOT (~90% data centers); about 2% had been approved to energize. Approvals for data centers ≥75 MW paused for a state audit since Aug 2026. On-site gas is common.'},
+    note:'~474 GW of large-load requests in ERCOT (~90% data centers); about 2% had been approved to energize. Approvals for data centers ≥75 MW paused for a state audit since Aug 2026. On-site gas is common. Water stress: Low–Medium in Dallas, Extremely High in Fort Worth (WRI).'},
   {id:'phoenix', name:'Phoenix / Arizona (APS · SRP)', grid:'APS / SRP', gridSev:'high', wait:'Multi-year', stress:'high', gas:'common',
     note:'Desert market — water-stressed. Builds trend to air-cooling and on-site generation deals.'},
-  {id:'atlanta', name:'Atlanta / Georgia (Georgia Power)', grid:'Georgia Power', gridSev:'high', wait:'Multi-year', stress:'low', gas:'common',
+  {id:'atlanta', name:'Atlanta / Georgia (Georgia Power)', grid:'Georgia Power', gridSev:'high', wait:'Multi-year', stress:'high', gas:'common',
     note:'Georgia Power is planning a large gas buildout to meet surging data-center load.'},
-  {id:'ohio', name:'Central Ohio / Columbus (AEP · PJM)', grid:'AEP Ohio · PJM', gridSev:'high', wait:'Multi-year', stress:'low', gas:'emerging',
+  {id:'ohio', name:'Central Ohio / Columbus (AEP · PJM)', grid:'AEP Ohio · PJM', gridSev:'high', wait:'Multi-year', stress:'moderate', gas:'emerging',
     note:'AEP Ohio has fought over special tariffs for large data-center loads amid multi-year queues.'},
-  {id:'sv', name:'Silicon Valley / Santa Clara (SVP)', grid:'Silicon Valley Power', gridSev:'high', wait:'Power-capped', stress:'high', gas:'rare',
+  {id:'sv', name:'Silicon Valley / Santa Clara (SVP)', grid:'Silicon Valley Power', gridSev:'high', wait:'Power-capped', stress:'low', gas:'rare',
     note:'Mature, power-capped grid — finished sites sit waiting on power. Data centers ~60% of city load.'},
-  {id:'chicago', name:'Chicago / Illinois (ComEd · PJM)', grid:'ComEd · PJM', gridSev:'high', wait:'Multi-year', stress:'low', gas:'emerging',
-    note:'Fast-growing Midwest hub on Great Lakes water; still gated by PJM interconnection timelines.'},
-  {id:'ny', name:'New York tri-state', grid:'NYISO / PJM', gridSev:'high', wait:'Multi-year', stress:'low', gas:'rare',
+  {id:'chicago', name:'Chicago / Illinois (ComEd · PJM)', grid:'ComEd · PJM', gridSev:'high', wait:'Multi-year', stress:'high', gas:'emerging',
+    note:'Fast-growing Midwest hub, still gated by PJM interconnection timelines. WRI rates the Chicago-area basins High for water stress despite Lake Michigan.'},
+  {id:'ny', name:'New York tri-state', grid:'NYISO / PJM', gridSev:'high', wait:'Multi-year', stress:'moderate', gas:'rare',
     note:'Dense, constrained grids and higher power prices shape where load can land.'},
   {id:'slc', name:'Salt Lake City / Utah (Rocky Mtn Power)', grid:'PacifiCorp', gridSev:'high', wait:'Multi-year', stress:'high', gas:'common',
     note:'Utah SB 132 lets ≥100 MW loads self-supply power when the utility can\'t serve them — on-site gas approved.'},
@@ -221,7 +221,7 @@ var MARKETS = [
     note:'Built for speed-to-power, but ~22 GW of DC interest vs an ~8.2 GW peak; >350 MW on-site gas sought at TRIC.'},
   {id:'tn', name:'Nashville / Memphis (TVA)', grid:'TVA', gridSev:'high', wait:'Multi-year', stress:'low', gas:'common',
     note:'TVA has ~4.1 GW of mostly-gas generation under construction; xAI Colossus runs on-site gas near Memphis.'},
-  {id:'kc', name:'Kansas City (Evergy · SPP)', grid:'Evergy · SPP', gridSev:'high', wait:'Multi-year', stress:'moderate', gas:'common',
+  {id:'kc', name:'Kansas City (Evergy · SPP)', grid:'Evergy · SPP', gridSev:'high', wait:'Multi-year', stress:'low', gas:'common',
     note:'Evergy now plans ~4.7 GW of new Missouri gas and cut planned renewables 90%+ to serve large-load agreements.'}
 ];
 
