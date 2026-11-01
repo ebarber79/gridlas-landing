@@ -24,4 +24,4 @@ Gridlas publishes the **"Powering AI — The U.S. Data Center Buildout Report"**
 - [Data-center power & water estimator](https://gridlas.com/tools/data-center-estimator/): enter a facility size and U.S. market to compute power draw, homes-equivalent, grid wait, and water footprint from public EIA/LBNL figures.
 
 ## The report
-- [Powering AI report](https://gridlas.com/#pricing): full 36-page PDF and 12-Month Pass.
+- [Powering AI report](https://gridlas.com/#pricing): full 36-page PDF ($99), 12-Month Pass with 4 quarterly editions and the companion dataset ($349), and Organization Pass ($799).
